@@ -1,0 +1,55 @@
+
+--- Job MinPerd_Base_perdidas_Qopt_v1.gms Start 12/09/25 18:54:19
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- MinPerd_Base_perdidas_Qopt_v1.gms(395) 3 Mb
+--- Starting execution
+--- MinPerd_Base_perdidas_Qopt_v1.gms(536) 4 Mb
+--- Generating NLP model OPF
+--- MinPerd_Base_perdidas_Qopt_v1.gms(537) 6 Mb
+---   241 rows  301 columns  1,015 non-zeroes
+---   5,834 nl-code  709 nl-non-zeroes
+--- MinPerd_Base_perdidas_Qopt_v1.gms(537) 4 Mb
+--- Executing CONOPT
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ Reading Data
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.0110298829E+01 (Input point)
+                                Pre-triangular equations:       26
+                                Post-triangular equations:      49
+      1   0        1.7110169873E+01 (After pre-processing)
+      2   0        1.7110169873E+01 (After scaling)
+     10   0    18  1.7008471057E+01               1.0E+00      F  T
+     20   0    18  1.7000394889E+01               1.0E+00      F  T
+ 
+ ** Feasible solution. Value of objective =   1.019238617779E-04
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     31   3        1.0187293879E-04 1.2E-05     1 5.1E-01      F  F
+     41   3        4.0830692770E-05 7.3E-06     1 0.0E+00      F  F
+ 
+ ** Feasible solution. The tolerances are minimal and
+    there is no change in objective although the reduced
+    gradient is greater than the tolerance.
+ 
+--- Restarting execution
+--- MinPerd_Base_perdidas_Qopt_v1.gms(537) 0 Mb
+--- Reading solution for model OPF
+--- Executing after solve
+--- MinPerd_Base_perdidas_Qopt_v1.gms(637) 3 Mb
+--- Putfile RESULT_Base_minuto0008 C:\TFG\TFG_Smart_Set_Points\creacion_dataset\datosDias2\day_1\RESULT_Base_minuto0008.put
+*** Status: Normal completion
+--- Job MinPerd_Base_perdidas_Qopt_v1.gms Stop 12/09/25 18:54:20 elapsed 0:00:00.303
