@@ -10,13 +10,9 @@ def _fit_model(estimator, X, y):
 
 class ElectricSequentialRegressor(RegressorMixin, BaseEstimator):
     def __init__(self, estimator1=None, estimator2=None, pivot_col_index=-1, n_jobs=None):
-        assert estimator1 is not None and estimator2 is not None, 'Must specify an estimator'
-        assert is_regressor(estimator1) and is_regressor(estimator2), 'Estimator must be a regressor'
         self.estimator1 = estimator1
         self.estimator2 = estimator2
-        assert pivot_col_index is not None and isinstance(pivot_col_index, int), 'pivot_col_index must be an integer'
         self.pivot_col_index = pivot_col_index
-        assert n_jobs is None or isinstance(n_jobs, int), 'n_jobs must be an integer'
         self.n_jobs = n_jobs
 
     def __sklearn_tags__(self):
@@ -26,6 +22,11 @@ class ElectricSequentialRegressor(RegressorMixin, BaseEstimator):
         return tags
 
     def fit(self, X, y):
+        assert self.estimator1 is not None and self.estimator2 is not None, 'Must specify an estimator'
+        assert is_regressor(self.estimator1) and is_regressor(self.estimator2), 'Estimator must be a regressor'
+        assert self.pivot_col_index is not None and isinstance(self.pivot_col_index, int), 'pivot_col_index must be an integer'
+        assert self.n_jobs is None or isinstance(self.n_jobs, int), 'n_jobs must be an integer'
+
         X, y = validate_data(self, X, y, multi_output=True)
         assert y.ndim >= 2 and y.shape[1] >= 2, 'y must have at least 2 columns'
         self.n_outputs_ = y.shape[1]
