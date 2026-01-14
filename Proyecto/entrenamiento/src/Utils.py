@@ -11,7 +11,7 @@ def shifted_mape(y_true, y_pred):
     return mean_absolute_percentage_error(y_true + 1.0, y_pred + 1.0)
 
 
-def plot_performance_analysis(y_true, y_pred, variable_name, unit_label):
+def plot_performance_analysis(y_true, y_pred, variable_name, unit_label, path=None):
     epsilon = 1e-10
     pct_error = ((y_true - y_pred) / (y_true + epsilon)) * 100
 
@@ -20,7 +20,7 @@ def plot_performance_analysis(y_true, y_pred, variable_name, unit_label):
     axes[0].hist(pct_error, bins=100, range=(-40, 40), color='#1f77b4', edgecolor='none')
     axes[0].set_xlabel('Error (%)')
     axes[0].set_ylabel('Frecuencia')
-    axes[0].set_title(f'Distribución del Error Porcentual - {variable_name}')
+    axes[0].set_title(f'Distribucion del Error Porcentual - {variable_name}')
     axes[0].grid(True, alpha=0.3)
 
     axes[1].scatter(y_true, y_pred, alpha=0.6, color='blue', s=20, label='Predicciones')
@@ -36,7 +36,8 @@ def plot_performance_analysis(y_true, y_pred, variable_name, unit_label):
 
     plt.tight_layout()
     plt.show()
-
+    if path is not None:
+        fig.savefig(path)
 
 def mse_column_score(y_true, y_pred, col_idx):
     y_true = np.array(y_true)

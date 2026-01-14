@@ -1,0 +1,9 @@
+setup.py
+entrenamiento_tfg.egg-info/PKG-INFO
+entrenamiento_tfg.egg-info/SOURCES.txt
+entrenamiento_tfg.egg-info/dependency_links.txt
+entrenamiento_tfg.egg-info/top_level.txt
+src/ElectricSequentialRegressor.py
+src/NN_Utils.py
+src/Utils.py
+src/__init__.py
