@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.4)  27 DEC 2025 20:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.4)  5 FEB 2026 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1059,7 +1059,7 @@ Package caption Info: End \AtBeginDocument code.
 Couldn't patch \ttl@straight@ii
 Couldn't patch \ttl@straight@ii
 (sections/00_portada.tex
-<figures/etsii_us.png, id=154, 1463.4675pt x 282.3348pt>
+<figures/etsii_us.png, id=162, 1463.4675pt x 282.3348pt>
 File: figures/etsii_us.png Graphic file (type png)
 <use figures/etsii_us.png>
 Package pdftex.def Info: figures/etsii_us.png  used on input line 6.
@@ -1102,17 +1102,19 @@ LaTeX Font Info:    Trying to load font information for OT1+zplm on input line
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-Package tocbasic Info: Using my definition of `\numberline' on input line 13.
-Package tocbasic Info: Using my definition of `\numberline' on input line 24.
-Package tocbasic Info: Using my definition of `\numberline' on input line 29.
-Package tocbasic Info: Using my definition of `\numberline' on input line 34.
+Package tocbasic Info: Using my definition of `\numberline' on input line 5.
+Package tocbasic Info: Using my definition of `\numberline' on input line 14.
+Package tocbasic Info: Using my definition of `\numberline' on input line 15.
+Package tocbasic Info: Using my definition of `\numberline' on input line 26.
+Package tocbasic Info: Using my definition of `\numberline' on input line 31.
 Package tocbasic Info: Using my definition of `\numberline' on input line 36.
 Package tocbasic Info: Using my definition of `\numberline' on input line 38.
+Package tocbasic Info: Using my definition of `\numberline' on input line 40.
 
 [3
 
 ]
-Package tocbasic Info: Using my definition of `\numberline' on input line 42.
+Package tocbasic Info: Using my definition of `\numberline' on input line 44.
 )
 \tf@toc=\write5
 \openout5 = `TFG.toc'.
@@ -1147,52 +1149,109 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 (sections/01_Introduccion.tex
 Cap\'{\i }tulo 1.
-
+) (sections/02_Estado_Del_Arte.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 \end{itemize}
-                   [1
+l.1 \chapter
+            {Estado del Arte}\label{cap:estadoDelArte} [1
 
 
-]) (sections/04_Planificación.tex
+]
+Cap\'{\i }tulo 2.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Planificación}\label{cap:planificación} [2]
-Cap\'{\i }tulo 2.
-) (sections/05_Análisis.tex [3
+l.21 
+      [2
 
 ]
+<figures/ciclo_vida_machine_learning.png, id=275, 2794.44pt x 1541.76pt>
+File: figures/ciclo_vida_machine_learning.png Graphic file (type png)
+<use figures/ciclo_vida_machine_learning.png>
+Package pdftex.def Info: figures/ciclo_vida_machine_learning.png  used on input
+ line 27.
+(pdftex.def)             Requested size: 396.91325pt x 218.9738pt.
+ [3 <./figures/ciclo_vida_machine_learning.png>]
+<figures/sobreajuste_subajuste.png, id=281, 1011.78pt x 361.35pt>
+File: figures/sobreajuste_subajuste.png Graphic file (type png)
+<use figures/sobreajuste_subajuste.png>
+Package pdftex.def Info: figures/sobreajuste_subajuste.png  used on input line 
+37.
+(pdftex.def)             Requested size: 396.91325pt x 141.7585pt.
+ [4 <./figures/sobreajuste_subajuste.png (PNG copy)>]
+<figures/random_forest.png, id=291, 2119.92pt x 1156.32pt>
+File: figures/random_forest.png Graphic file (type png)
+<use figures/random_forest.png>
+Package pdftex.def Info: figures/random_forest.png  used on input line 55.
+(pdftex.def)             Requested size: 396.91325pt x 216.49187pt.
+ [5 <./figures/random_forest.png>]
+<figures/decision_tree.png, id=299, 2071.74pt x 1156.32pt>
+File: figures/decision_tree.png Graphic file (type png)
+<use figures/decision_tree.png>
+Package pdftex.def Info: figures/decision_tree.png  used on input line 65.
+(pdftex.def)             Requested size: 396.91325pt x 221.52042pt.
+ [6 <./figures/decision_tree.png>]
+<figures/xgboost.png, id=307, 1044.90375pt x 605.26125pt>
+File: figures/xgboost.png Graphic file (type png)
+<use figures/xgboost.png>
+Package pdftex.def Info: figures/xgboost.png  used on input line 76.
+(pdftex.def)             Requested size: 396.91325pt x 229.9093pt.
+ [7 <./figures/xgboost.png>]
+<figures/redes_neuronales.png, id=320, 2826.56pt x 1541.76pt>
+File: figures/redes_neuronales.png Graphic file (type png)
+<use figures/redes_neuronales.png>
+Package pdftex.def Info: figures/redes_neuronales.png  used on input line 94.
+(pdftex.def)             Requested size: 396.91325pt x 216.4801pt.
+) (sections/03_Objetivos.tex
+[8 <./figures/redes_neuronales.png>] [9]
 Cap\'{\i }tulo 3.
-) (sections/06_Implementación.tex [4
+) (sections/04_Planificación.tex [10
 
 ]
 Cap\'{\i }tulo 4.
-) (sections/07_Resultados.tex [5
+) (sections/05_Análisis.tex [11
 
 ]
 Cap\'{\i }tulo 5.
-) (sections/08_Conclusiones.tex [6
+) (sections/06_Implementación.tex [12
 
 ]
 Cap\'{\i }tulo 6.
-) (sections/09_Anexos.tex [7
+) (sections/07_Resultados.tex [13
 
 ]
 Cap\'{\i }tulo 7.
-) (TFG.bbl [8
+) (sections/08_Conclusiones.tex [14
 
 ]
+Cap\'{\i }tulo 8.
+) (sections/09_Anexos.tex [15
 
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
+]
+Cap\'{\i }tulo 9.
+) (TFG.bbl [16
 
-) [9
+]
+LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 1
+2.
 
-] (TFG.aux
+(C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\ot1zi4.fd
+File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 12.0pt on input line 12.
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 12.
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 7.0pt on input line 12.
+) [17
+
+{C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ot
+1-0.enc}] (TFG.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1201,23 +1260,24 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 5726A12AB7088B9CAFD1C3287E0ADAA0;5418.
+(rerunfilecheck)             Checksum: B0A10D80E3FB147D16FD96012EECC8B3;5901.
  ) 
 Here is how much of TeX's memory you used:
- 28191 strings out of 467871
- 524126 string characters out of 5418376
+ 28341 strings out of 467871
+ 527692 string characters out of 5418376
  1021967 words of memory out of 5000000
- 56493 multiletter control sequences out of 15000+600000
- 642473 words of font info for 73 fonts, out of 8000000 for 9000
+ 56606 multiletter control sequences out of 15000+600000
+ 643085 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,5n,120p,1134b,885s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a
-.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/upl
-r8a.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/
-uplri8a.pfb>
-Output written on TFG.pdf (18 pages, 496983 bytes).
+ 104i,6n,120p,1389b,901s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/
+Inconsolata-zi4r.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/
+urw/palatino/uplb8a.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/urw/palatino/uplr8a.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/
+type1/urw/palatino/uplri8a.pfb>
+Output written on TFG.pdf (26 pages, 18894567 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 360 words of extra memory for PDF output out of 10000 (max. 10000000)
 
