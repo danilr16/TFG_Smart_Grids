@@ -11,45 +11,46 @@ Warning--empty year in aws-hiperparam
 Warning--empty year in ibm-bagging
 Warning--empty year in xgboost
 Warning--empty year in aws-red-neuro
-You've used 6 entries,
+Warning--empty booktitle in o-reilly-machine-learning
+You've used 7 entries,
             2481 wiz_defined-function locations,
-            573 strings with 5066 characters,
-and the built_in function-call counts, 1594 in all, are:
-= -- 130
-> -- 42
-< -- 6
-+ -- 26
-- -- 12
-* -- 80
-:= -- 243
-add.period$ -- 18
-call.type$ -- 6
-change.case$ -- 12
-chr.to.int$ -- 4
-cite$ -- 12
-duplicate$ -- 84
-empty$ -- 181
-format.name$ -- 18
-if$ -- 341
+            578 strings with 5193 characters,
+and the built_in function-call counts, 1880 in all, are:
+= -- 153
+> -- 49
+< -- 7
++ -- 30
+- -- 14
+* -- 92
+:= -- 286
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 14
+chr.to.int$ -- 5
+cite$ -- 14
+duplicate$ -- 105
+empty$ -- 217
+format.name$ -- 21
+if$ -- 405
 int.to.chr$ -- 3
-int.to.str$ -- 7
-missing$ -- 0
-newline$ -- 38
-num.names$ -- 18
-pop$ -- 68
+int.to.str$ -- 8
+missing$ -- 1
+newline$ -- 43
+num.names$ -- 21
+pop$ -- 81
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 7
 quote$ -- 0
-skip$ -- 73
+skip$ -- 84
 stack$ -- 0
-substring$ -- 12
-swap$ -- 16
+substring$ -- 14
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
-warning$ -- 6
-while$ -- 12
+type$ -- 49
+warning$ -- 7
+while$ -- 14
 width$ -- 0
-write$ -- 77
-(There were 6 warnings)
+write$ -- 89
+(There were 7 warnings)

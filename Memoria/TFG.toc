@@ -10,7 +10,7 @@
 \contentsline {subsubsection}{Random Forest}{5}{subsubsection*.9}%
 \contentsline {subsubsection}{XGBoost}{7}{subsubsection*.12}%
 \contentsline {subsubsection}{Redes Neuronales}{7}{subsubsection*.14}%
-\contentsline {subsubsection}{Otras Opciones}{8}{subsubsection*.16}%
+\contentsline {subsubsection}{Otras Opciones}{9}{subsubsection*.16}%
 \contentsline {chapter}{\numberline {3}Objetivos}{10}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Planificación}{11}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Planificación Temporal}{11}{section.4.1}%

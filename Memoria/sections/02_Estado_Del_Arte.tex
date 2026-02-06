@@ -85,7 +85,7 @@ La unidad mínima de procesamiento son neuronas o nodos, que están estructurada
 Una red neuronal básica consta de tres capas:
 \begin{itemize}
 	\item \textbf{Capa de entrada:} La información exterior entra en la red neuronal artificial por esta capa, donde se procesan los datos y se pasan a la siguiente capa.
-	\item \textbf{Capa oculta:} Toman su entrada de la capa de entrada o de otras capas ocultas. 
+	\item \textbf{Capa oculta:} Toman su entrada de la capa de entrada o de otras capas ocultas. Esta capa es la que realiza la tarea de aprendizaje.
 	\item \textbf{Capa de salida:} Proporciona el resultado final de todo el procesamiento de datos que realiza la red neuronal. Puede tener uno o varios nodos de salida.
 \end{itemize}
 
@@ -95,8 +95,20 @@ Una red neuronal básica consta de tres capas:
 	\caption{Estructura de una Red Neuronal. Fuente: Elaboración propia}
 \end{figure}
 
-Las redes neuronales profundas, tienen varias capas ocultas con millones de neuronas artificiales conectadas entre sí. En teoría, estas redes pueden asignar cualquier tipo de entrada a cualquier tipo de salida. Sin embargo, también necesitan mucho más entrenamiento en comparación a otros modelos y millones de ejemplos de datos de entrenamiento.
+Para entrenar una red neuronal, cada neurona calcula:
+\begin{equation}
+	a = \sigma(W^TX + b)
+\end{equation}
+Donde \textbf{X} es el vector de los argumentos, \textbf{W} es el vector de pesos asociados a los argumentos, \textbf{b} es el sesgo de activación, $\boldsymbol{\sigma}$ es la función de activación y \textbf{a} es el output \cite{o-reilly-machine-learning}. La función de activación y el sesgo tienen como objetivo determinar si la neurona debe o no activarse. Esta característica es la que permite a las redes neuronales aprender patrones complejos. Las redes neuronales profundas, tienen varias capas ocultas con millones de neuronas artificiales conectadas entre sí. En teoría, estas redes pueden asignar cualquier tipo de entrada a cualquier tipo de salida. Sin embargo, también necesitan mucho más entrenamiento en comparación a otros modelos y millones de ejemplos de datos de entrenamiento.
 
+El entrenamiento de una neurona artificial, como modelo de regresión, se realiza minimizando una función de pérdida o coste utilizando un método de optimización como el descenso por el gradiente. Para minimizar esta pérdida, el método estándar es el algoritmo de \textbf{Backpropagation o Retropropagación}. Este algoritmo aplica recursivamente la regla de la cadena para calcular las derivadas parciales de manera eficiente de la función de coste respecto a los pesos. 
+
+Las redes neuronales han evolucionado hacia arquitecturas especializadas adecuadas para diferentes dominios. Entre los diferentes tipos de arquitectura podemos destacar:
+\begin{itemize}
+	\item \textbf{Redes neuronales convulacionales:} Están diseñadas principalmente para el procesamiento de imágenes. Destacan en el reconocimiento de imágenes, la visión artificial y el reconocimiento facial gracias a filtros convulacionales.
+	\item \textbf{Redes neuronales recurrentes:} Incorporan bucles de feedback que permiten que la información persista a lo largo de los pasos temporales. Son adecuados para el reconocimiento de voz, la previsión de series temporales y los datos secuenciales.
+	\item \textbf{Transformadores:} Una arquitectura moderna, que aprovecha mecanismos de atención para capturar dependencias en el procesamiento del lenguaje natural y potencian modelos de última generación como GPT.
+\end{itemize}
 
 \subsubsection{Otras Opciones}
 Si bien en este trabajo se ha profundizado en los modelos secuenciales y Redes Neuronales debido a su robustez y su consolidación como el estándar en la industria. Algoritmos como las \textbf{Máquinas de Vectores de Soporte (SVM)} son eficaces en espacios de alta dimensionalidad, mientras que implementaciones modernas de boosting como \textbf{LightGBM} o \textbf{CatBoost} ofrecen mejoras en eficiencia computacional y manejo de variables categóricas.
