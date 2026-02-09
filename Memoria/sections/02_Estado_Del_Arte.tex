@@ -25,7 +25,7 @@ Existen múltiples algoritmos y modelos de aprendizaje automático supervisado y
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/ciclo_vida_machine_learning.png}
-	\caption{Principales Procesos del Aprendizaje Automático. Fuente: Elaboración propia}
+	\caption{Principales procesos del Aprendizaje Automático. Fuente: Elaboración propia}
 \end{figure}
 
 Para que el entrenamiento sea efectivo y el modelo alcance una capacidad de generalización satisfactoria, es necesario disponer de una gran cantidad de datos. La cantidad necesaria de datos varia en función de la complejidad del modelo y principalmente de la naturaleza del problema (no es lo mismo tratar de aprender un comportamiento no lineal, que uno lineal). Otro aspecto importante de los datos es la calidad de estos. Si el dataset de entrenamiento contiene errores o ruido, será más complicado para el modelo detectar patrones subyacentes. Además, los datos deberán ser representativos del dominio del problema que se pretende modelar, teniendo gran importancia la manera en que se trabajan estos datos para no incurrir en sesgos de muestreo.
@@ -53,7 +53,7 @@ El modelo Random Forest o Bosque Aleatorio es un algoritmo de aprendizaje superv
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/random_forest.png}
-	\caption{Esquema de Random Forest y Técnica de Bagging. Fuente: Elaboración propia}
+	\caption{Esquema de Random Forest y técnica de Bagging. Fuente: Elaboración propia}
 \end{figure}
 
 El enfoque de esta técnica se basa en la inteligencia colectiva. La agregación de múltiples modelos, que individualmente pueden tener un alto sesgo, tiende a compensar los errores individuales. En el caso de Random Forest, este ensamble se construye utilizando \textbf{Decision Trees o Árboles de Decisión} como estimadores débiles, aplicando un técnica conocida como \textit{Bagging} (Bootstrap Aggregating) \cite{ibm-bagging}. Esta técnica aplicada al Random Forest, consiste en generar múltiples subconjuntos de entrenamiento del mismo tamaño que el conjunto de datos original. Este proceso se realiza mediante un muestreo aleatorio, en el que una misma instancia puede estar presente varias veces en un subconjunto y quedar excluida en otro. Posteriormente se entrena un modelo de Árbol de Decisión para cada una de estas muestras con los mismos hiperparámetros establecidos. Los modelos resultantes, por tanto, diferirán en sus parámetros, en este caso, su estructura interna. Finalmente, en problemas de regresión, la predicción del modelo global se obtiene promediando las salidas de estos modelos débiles. Esta estrategia mitiga significativamente el sobreajuste y reduce la varianza, asumiendo a cambio un mayor coste computacional proporcional al número de estimadores utilizados.

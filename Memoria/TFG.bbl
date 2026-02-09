@@ -1,9 +1,15 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Forecasting()]{energias}
+AleaSoft~Energy Forecasting.
+\newblock Sistema eléctrico en evolución.
+\newblock URL
+  \url{https://aleasoft.com/es/evolucion-sistema-electrico-cambio-paradigma-energetico/}.
 
 \bibitem[Scikit-Learn()]{scikit-learn-over-under}
 Scikit-Learn.
@@ -15,6 +21,30 @@ Scikit-Learn.
 IBM.
 \newblock Explicación del algoritmo xgboost, {\natexlab{a}}.
 \newblock URL \url{https://www.ibm.com/es-es/think/topics/xgboost}.
+
+\bibitem[Iberdrola({\natexlab{a}})]{iberdrola-red-distribucion}
+Iberdrola.
+\newblock Tensiones en redes eléctricas, {\natexlab{a}}.
+\newblock URL
+  \url{https://www.iberdrola.com/conocenos/nuestra-actividad/smart-grids/diferencia-alta-media-baja-tension-electrica}.
+
+\bibitem[Regulator()]{fallo-electrico-australia}
+Australian~Energy Regulator.
+\newblock South australia blackout.
+\newblock URL
+  \url{https://www.aer.gov.au/publications/reports/compliance/investigation-report-south-australias-2016-state-wide-blackout}.
+
+\bibitem[de~España()]{fallo-electrico-españa}
+Gobierno de~España.
+\newblock Crisis eléctrica en españa.
+\newblock URL
+  \url{https://www.miteco.gob.es/es/prensa/ultimas-noticias/2025/junio/se-presenta-el-informe-del-comite-de-analisis-de-la-crisis-elect.html}.
+
+\bibitem[Iberdrola({\natexlab{b}})]{smart-grids-iberdrola}
+Iberdrola.
+\newblock Smart grids, {\natexlab{b}}.
+\newblock URL
+  \url{https://www.iberdrola.com/conocenos/nuestra-actividad/smart-grids}.
 
 \bibitem[Amazon({\natexlab{a}})]{aws-hiperparam}
 AWS Amazon.

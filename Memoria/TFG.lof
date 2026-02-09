@@ -1,12 +1,13 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Capacidad instalada eléctrica en la Unión Europea según datos de Eurostat. Fuente: \cite {energias}}}{2}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Principales Procesos del Aprendizaje Automático. Fuente: Elaboración propia}}{3}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Ejemplos de subajuste, buen ajuste y sobreajuste. Fuente: \cite {scikit-learn-over-under}}}{4}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Esquema de Random Forest y Técnica de Bagging. Fuente: Elaboración propia}}{5}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de Árbol de Decisión. Fuente: Elaboración propia}}{6}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de XGBoost. Fuente: \cite {xgboost_ibm}}}{7}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Estructura de una Red Neuronal. Fuente: Elaboración propia}}{8}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Principales procesos del Aprendizaje Automático. Fuente: Elaboración propia}}{5}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ejemplos de subajuste, buen ajuste y sobreajuste. Fuente: \cite {scikit-learn-over-under}}}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Esquema de Random Forest y técnica de Bagging. Fuente: Elaboración propia}}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de Árbol de Decisión. Fuente: Elaboración propia}}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de XGBoost. Fuente: \cite {xgboost_ibm}}}{9}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Estructura de una Red Neuronal. Fuente: Elaboración propia}}{10}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
