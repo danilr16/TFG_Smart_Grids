@@ -12,50 +12,52 @@ Warning--empty year in iberdrola-red-distribucion
 Warning--empty year in fallo-electrico-australia
 Warning--empty year in fallo-electrico-españa
 Warning--empty year in smart-grids-iberdrola
+Warning--empty year in tfm-manuel
+Warning--empty year in tfm-manuel
 Warning--empty year in aws-hiperparam
 Warning--empty year in ibm-bagging
 Warning--empty year in xgboost
 Warning--empty year in aws-red-neuro
 Warning--empty booktitle in o-reilly-machine-learning
-You've used 12 entries,
+You've used 13 entries,
             2481 wiz_defined-function locations,
-            597 strings with 6008 characters,
-and the built_in function-call counts, 3172 in all, are:
-= -- 260
-> -- 84
-< -- 12
-+ -- 51
-- -- 24
-* -- 153
-:= -- 478
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 24
-chr.to.int$ -- 9
-cite$ -- 24
-duplicate$ -- 175
-empty$ -- 367
-format.name$ -- 36
-if$ -- 687
+            602 strings with 6260 characters,
+and the built_in function-call counts, 3411 in all, are:
+= -- 282
+> -- 91
+< -- 13
++ -- 55
+- -- 26
+* -- 166
+:= -- 521
+add.period$ -- 39
+call.type$ -- 13
+change.case$ -- 27
+chr.to.int$ -- 10
+cite$ -- 27
+duplicate$ -- 189
+empty$ -- 387
+format.name$ -- 39
+if$ -- 733
 int.to.chr$ -- 4
-int.to.str$ -- 13
+int.to.str$ -- 14
 missing$ -- 1
-newline$ -- 68
-num.names$ -- 36
-pop$ -- 139
+newline$ -- 73
+num.names$ -- 39
+pop$ -- 149
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 13
 quote$ -- 0
-skip$ -- 146
+skip$ -- 153
 stack$ -- 0
-substring$ -- 24
-swap$ -- 30
+substring$ -- 26
+swap$ -- 31
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
-warning$ -- 12
-while$ -- 24
+type$ -- 91
+warning$ -- 14
+while$ -- 26
 width$ -- 0
-write$ -- 146
-(There were 12 warnings)
+write$ -- 158
+(There were 14 warnings)

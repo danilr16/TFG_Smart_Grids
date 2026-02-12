@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -45,6 +45,13 @@ Iberdrola.
 \newblock Smart grids, {\natexlab{b}}.
 \newblock URL
   \url{https://www.iberdrola.com/conocenos/nuestra-actividad/smart-grids}.
+
+\bibitem[Alba()]{tfm-manuel}
+Manuel~Vallejos Alba.
+\newblock Predicción de pérdidas y tensiones en redes activas de
+  distribución con técnicas de machine learning.
+\newblock Trabajo de fin de máster, Dpto. Ingeniería Eléctrica Escuela
+  Técnica Superior de Ingeniería, Universidad de Sevilla.
 
 \bibitem[Amazon({\natexlab{a}})]{aws-hiperparam}
 AWS Amazon.

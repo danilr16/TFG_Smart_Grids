@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.4)  8 FEB 2026 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.4)  12 FEB 2026 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1175,39 +1175,39 @@ Cap\'{\i }tulo 2.
 [4
 
 ]
-<figures/ciclo_vida_machine_learning.png, id=301, 2794.44pt x 1541.76pt>
+<figures/ciclo_vida_machine_learning.png, id=304, 2794.44pt x 1541.76pt>
 File: figures/ciclo_vida_machine_learning.png Graphic file (type png)
 <use figures/ciclo_vida_machine_learning.png>
 Package pdftex.def Info: figures/ciclo_vida_machine_learning.png  used on input
  line 27.
 (pdftex.def)             Requested size: 396.91325pt x 218.9738pt.
  [5 <./figures/ciclo_vida_machine_learning.png>]
-<figures/sobreajuste_subajuste.png, id=307, 1011.78pt x 361.35pt>
+<figures/sobreajuste_subajuste.png, id=310, 1011.78pt x 361.35pt>
 File: figures/sobreajuste_subajuste.png Graphic file (type png)
 <use figures/sobreajuste_subajuste.png>
 Package pdftex.def Info: figures/sobreajuste_subajuste.png  used on input line 
 37.
 (pdftex.def)             Requested size: 396.91325pt x 141.7585pt.
  [6 <./figures/sobreajuste_subajuste.png (PNG copy)>]
-<figures/random_forest.png, id=316, 2119.92pt x 1156.32pt>
+<figures/random_forest.png, id=319, 2119.92pt x 1156.32pt>
 File: figures/random_forest.png Graphic file (type png)
 <use figures/random_forest.png>
 Package pdftex.def Info: figures/random_forest.png  used on input line 55.
 (pdftex.def)             Requested size: 396.91325pt x 216.49187pt.
  [7 <./figures/random_forest.png>]
-<figures/decision_tree.png, id=324, 2071.74pt x 1156.32pt>
+<figures/decision_tree.png, id=327, 2071.74pt x 1156.32pt>
 File: figures/decision_tree.png Graphic file (type png)
 <use figures/decision_tree.png>
 Package pdftex.def Info: figures/decision_tree.png  used on input line 65.
 (pdftex.def)             Requested size: 396.91325pt x 221.52042pt.
  [8 <./figures/decision_tree.png>]
-<figures/xgboost.png, id=332, 1044.90375pt x 605.26125pt>
+<figures/xgboost.png, id=335, 1044.90375pt x 605.26125pt>
 File: figures/xgboost.png Graphic file (type png)
 <use figures/xgboost.png>
 Package pdftex.def Info: figures/xgboost.png  used on input line 76.
 (pdftex.def)             Requested size: 396.91325pt x 229.9093pt.
  [9 <./figures/xgboost.png>]
-<figures/redes_neuronales.png, id=345, 2119.92pt x 1156.32pt>
+<figures/redes_neuronales.png, id=348, 2119.92pt x 1156.32pt>
 File: figures/redes_neuronales.png Graphic file (type png)
 <use figures/redes_neuronales.png>
 Package pdftex.def Info: figures/redes_neuronales.png  used on input line 94.
@@ -1268,24 +1268,25 @@ Package rerunfilecheck Info: File `TFG.out' has not changed.
 (rerunfilecheck)             Checksum: D43F1E078BCA34A8B2FBA71176B17FBA;5901.
  ) 
 Here is how much of TeX's memory you used:
- 28403 strings out of 467871
- 528961 string characters out of 5418376
+ 28410 strings out of 467871
+ 529067 string characters out of 5418376
  1021967 words of memory out of 5000000
- 56649 multiletter control sequences out of 15000+600000
- 651846 words of font info for 98 fonts, out of 8000000 for 9000
+ 56654 multiletter control sequences out of 15000+600000
+ 652276 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,7n,120p,1389b,901s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,7n,120p,1416b,901s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/
 Inconsolata-zi4r.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmr10.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/font
 s/type1/public/mathpazo/fplmbi.pfb><C:/Users/danil/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/danil/AppData/Local/Programs
 /MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/danil/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/danil/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on TFG.pdf (28 pages, 19212314 bytes).
+ams/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/danil/AppData/Local/P
+rograms/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/danil/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on TFG.pdf (28 pages, 19234028 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
  365 words of extra memory for PDF output out of 10000 (max. 10000000)
 
