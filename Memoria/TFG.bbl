@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,6 +10,12 @@ AleaSoft~Energy Forecasting.
 \newblock Sistema eléctrico en evolución.
 \newblock URL
   \url{https://aleasoft.com/es/evolucion-sistema-electrico-cambio-paradigma-energetico/}.
+
+\bibitem[Wikipedia()]{red-distribucion}
+Wikipedia.
+\newblock Red de distribución eléctrica.
+\newblock URL
+  \url{https://es.wikipedia.org/wiki/Red_de_distribuci%C3%B3n_de_energ%C3%ADa_el%C3%A9ctrica}.
 
 \bibitem[Scikit-Learn()]{scikit-learn-over-under}
 Scikit-Learn.
@@ -52,6 +58,11 @@ Manuel~Vallejos Alba.
   distribución con técnicas de machine learning.
 \newblock Trabajo de fin de máster, Dpto. Ingeniería Eléctrica Escuela
   Técnica Superior de Ingeniería, Universidad de Sevilla.
+
+\bibitem[Iberdrola({\natexlab{c}})]{glosario-iberdrola}
+Grupo Iberdrola.
+\newblock Glosario de términos eléctricos, {\natexlab{c}}.
+\newblock URL \url{https://www.i-de.es/glosario/}.
 
 \bibitem[Amazon({\natexlab{a}})]{aws-hiperparam}
 AWS Amazon.

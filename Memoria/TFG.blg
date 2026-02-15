@@ -6,6 +6,7 @@ The style file: unsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliografia.bib
 Warning--empty year in energias
+Warning--empty year in red-distribucion
 Warning--empty year in scikit-learn-over-under
 Warning--empty year in xgboost_ibm
 Warning--empty year in iberdrola-red-distribucion
@@ -14,50 +15,51 @@ Warning--empty year in fallo-electrico-españa
 Warning--empty year in smart-grids-iberdrola
 Warning--empty year in tfm-manuel
 Warning--empty year in tfm-manuel
+Warning--empty year in glosario-iberdrola
 Warning--empty year in aws-hiperparam
 Warning--empty year in ibm-bagging
 Warning--empty year in xgboost
 Warning--empty year in aws-red-neuro
 Warning--empty booktitle in o-reilly-machine-learning
-You've used 13 entries,
+You've used 15 entries,
             2481 wiz_defined-function locations,
-            602 strings with 6260 characters,
-and the built_in function-call counts, 3411 in all, are:
-= -- 282
-> -- 91
-< -- 13
-+ -- 55
-- -- 26
-* -- 166
-:= -- 521
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 27
-chr.to.int$ -- 10
-cite$ -- 27
-duplicate$ -- 189
-empty$ -- 387
-format.name$ -- 39
-if$ -- 733
-int.to.chr$ -- 4
-int.to.str$ -- 14
+            610 strings with 6496 characters,
+and the built_in function-call counts, 3929 in all, are:
+= -- 325
+> -- 105
+< -- 15
++ -- 64
+- -- 30
+* -- 191
+:= -- 597
+add.period$ -- 45
+call.type$ -- 15
+change.case$ -- 31
+chr.to.int$ -- 11
+cite$ -- 31
+duplicate$ -- 217
+empty$ -- 447
+format.name$ -- 45
+if$ -- 846
+int.to.chr$ -- 5
+int.to.str$ -- 16
 missing$ -- 1
-newline$ -- 73
-num.names$ -- 39
-pop$ -- 149
+newline$ -- 83
+num.names$ -- 45
+pop$ -- 172
 preamble$ -- 1
-purify$ -- 13
+purify$ -- 15
 quote$ -- 0
-skip$ -- 153
+skip$ -- 178
 stack$ -- 0
-substring$ -- 26
-swap$ -- 31
+substring$ -- 30
+swap$ -- 36
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 91
-warning$ -- 14
-while$ -- 26
+type$ -- 105
+warning$ -- 16
+while$ -- 30
 width$ -- 0
-write$ -- 158
-(There were 14 warnings)
+write$ -- 181
+(There were 16 warnings)

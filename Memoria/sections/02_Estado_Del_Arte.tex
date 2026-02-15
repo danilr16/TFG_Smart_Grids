@@ -3,7 +3,24 @@
 En el presente apartado se ofrece una visión general del dominio del problema, abarcando tanto los fundamentos eléctricos como las técnicas de aprendizaje automático relevantes para la comprensión del objetivo del presente proyecto.
 
 \section{Redes de Distribución}
-% TODO: Red de Distribución, Potencia Activa, Potencia Reactiva, Pérdidas, Potencia Reactiva Inyectada, Nodo, Transformadores? Voltajes? Tensión? Set Points
+El \textbf{Sistema Eléctrico de Potencia (SEP)} se define como la infraestructura encargada de la generación, transporte, distribución y suministro de energía eléctrica. Su objetivo es garantizar que la demanda de los consumidores sea satisfecha en todo momento, bajo criterios de fiabilidad, seguridad, calidad y eficiencia económica. El SEP se divide tradicionalmente en tres grandes etapas funcionales: generación, transporte y distribución. Las redes de distribución son el eslabón final, cuya función principal es recibir la energía desde la red de transporte (que opera en muy alta tensión para minimizar pérdidas a largas distancias) y canalizarla hasta los puntos de consumo final. Sin embargo, como se ha planteado anteriormente, este planteamiento ha cambiado en las últimas décadas. El SEP es uno de los sistemas dinámicos más complejos, operando en un delicado equilibrio instantáneo entre la energía producida y la consumida.
+
+La red eléctrica puede modelarse matemáticamente como un grafo, donde los elementos físicos constituyen los vértices y las aristas. A continuación se exponen diferentes elementos eléctricos, que serán de interés para el desarrollo del presente proyecto \cite{glosario-iberdrola}:
+\begin{itemize}
+	\item \textbf{Nudos:} Son puntos de interconexión física donde convergen múltiples elementos de la red. En los nudos se realiza la inyección de potencia (generadores), la extracción (cargas) o simplemente la derivación de flujos hacia otras partes de la red.
+	\item \textbf{Líneas Eléctricas:} Son los conductores físicos que conectan dos nudos distintos, permitiendo el transporte de energía entre ellos.
+	\item \textbf{Transformadores:} Son dispositivos que permiten modificar los niveles de tensión y corriente entre dos partes de la red. Su función es vital para elevar la tensión para el transporte eficiente a largas distancias y reducirla para su distribución segura. 
+	\item \textbf{Generadores:} Son los dispositivos encargados de convertir una fuente de energía primaria en energía eléctrica. Tradicionalmente, la red se basaba en grandes generadores centralizados. Sin embargo, las redes modernas integran generación distribuida conectada directamente a nudos de media o baja tensión.
+	\item \textbf{Potencia Activa (\textit{P}):} Medida en vatios (\textit{W}), es la potencia eléctrica que se convierte en trabajo útil y representa la cantidad real de energía utilizada para tareas.
+	\item \textbf{Potencia Reactiva (\textit{Q}):} Medida en voltiamperios reactivos (\textit{var}), es la potencia absorbida por un receptor y que no produce trabajo útil. Es imprescindible para generar los campos electromagnéticos necesarios para el funcionamiento de máquinas y transformadores. El control de la potencia reactiva es crítico para el mantenimiento de los perfiles de tensión en los nudos de la red dentro de los límites seguros.
+	\item \textbf{Pérdidas de la Red:} Representan la diferencia entre la energía total generada y la energía total consumida por las cargas útiles. La mayor parte de estas pérdidas se disipan en forma de calor en la resistencia de los conductores de las líneas. La minimización de estas pérdidas es un objetivo clave en la optimización de la operación del sistema eléctrico.
+\end{itemize}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/red_distribucion.png}
+	\caption{Sistema de suministro eléctrico tradicional. Fuente: \cite{red-distribucion}}
+\end{figure}
 
 \section{Técnicas de Aprendizaje Automático}
 

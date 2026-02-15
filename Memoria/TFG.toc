@@ -4,41 +4,40 @@
 \contentsline {section}{\numberline {1.2}Motivación}{3}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Estado del Arte}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Redes de Distribución}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Técnicas de Aprendizaje Automático}{4}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Ciclo de Vida del Aprendizaje Automático}{5}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Modelos de Aprendizaje Automático}{7}{subsection.2.2.2}%
-\contentsline {subsubsection}{Random Forest}{7}{subsubsection*.10}%
-\contentsline {subsubsection}{XGBoost}{9}{subsubsection*.13}%
-\contentsline {subsubsection}{Redes Neuronales}{9}{subsubsection*.15}%
-\contentsline {subsubsection}{Otras Opciones}{11}{subsubsection*.17}%
-\contentsline {chapter}{\numberline {3}Objetivos}{12}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Planificación}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Planificación Temporal}{13}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Tareas de Investigación}{13}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Tareas de Análisis}{13}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Tareas de Desarrollo}{13}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Tareas de Evaluación}{13}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Tareas de Cierre}{13}{subsection.4.1.5}%
-\contentsline {section}{\numberline {4.2}Planificación Financiera}{13}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Tabla de Sueldos}{13}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Estimación de Tiempos y Costes}{13}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Costes Finales}{13}{subsection.4.2.3}%
-\contentsline {chapter}{\numberline {5}Análisis}{14}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Requisitos Generales}{14}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Requisitos de Información}{14}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Requisitos Funcionales}{14}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Requisitos No Funcionales}{14}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Implementación}{15}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Decisiones de Diseño}{15}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Arquitectura}{15}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Tecnologías y Herramientas}{15}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Desarrollo}{15}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Resultados}{16}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Informe de Evaluación}{16}{section.7.1}%
-\contentsline {chapter}{\numberline {8}Conclusiones}{17}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Trabajos futuros}{17}{section.8.1}%
-\contentsline {chapter}{\numberline {9}Anexos}{18}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Glosario de Términos}{18}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Manual de Instalación}{18}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Manual de Usuario}{18}{section.9.3}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{19}{chapter*.18}%
+\contentsline {section}{\numberline {2.2}Técnicas de Aprendizaje Automático}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Ciclo de Vida del Aprendizaje Automático}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Modelos de Aprendizaje Automático}{8}{subsection.2.2.2}%
+\contentsline {subsubsection}{Random Forest}{8}{subsubsection*.11}%
+\contentsline {subsubsection}{XGBoost}{10}{subsubsection*.14}%
+\contentsline {subsubsection}{Redes Neuronales}{10}{subsubsection*.16}%
+\contentsline {subsubsection}{Otras Opciones}{12}{subsubsection*.18}%
+\contentsline {chapter}{\numberline {3}Objetivos}{14}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Análisis}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Requisitos Generales}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Requisitos de Información}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Requisitos Funcionales}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Requisitos No Funcionales}{15}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Planificación Temporal}{15}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Tareas de Investigación}{15}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Tareas de Análisis}{15}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Tareas de Desarrollo}{15}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Tareas de Evaluación}{15}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Tareas de Cierre}{15}{subsection.4.5.5}%
+\contentsline {section}{\numberline {4.6}Planificación Financiera}{15}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Tabla de Sueldos}{15}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Estimación de Tiempos y Costes}{15}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Costes Finales}{15}{subsection.4.6.3}%
+\contentsline {chapter}{\numberline {5}Implementación}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Decisiones de Diseño}{16}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Arquitectura}{16}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Tecnologías y Herramientas}{16}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Desarrollo}{16}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Resultados}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Informe de Evaluación}{17}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{18}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Trabajos futuros}{18}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Anexos}{19}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Glosario de Términos}{19}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Manual de Instalación}{19}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Manual de Usuario}{19}{section.8.3}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{20}{chapter*.19}%
