@@ -32,12 +32,12 @@
 \contentsline {section}{\numberline {5.2}Arquitectura}{16}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Tecnologías y Herramientas}{16}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Desarrollo}{16}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Resultados}{17}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Informe de Evaluación}{17}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{18}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Trabajos futuros}{18}{section.7.1}%
-\contentsline {chapter}{\numberline {8}Anexos}{19}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Glosario de Términos}{19}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Manual de Instalación}{19}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Manual de Usuario}{19}{section.8.3}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{20}{chapter*.19}%
+\contentsline {chapter}{\numberline {6}Resultados}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Informe de Evaluación}{19}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{20}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Trabajos futuros}{20}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Anexos}{21}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Glosario de Términos}{21}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Manual de Instalación}{21}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Manual de Usuario}{21}{section.8.3}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{22}{chapter*.22}%

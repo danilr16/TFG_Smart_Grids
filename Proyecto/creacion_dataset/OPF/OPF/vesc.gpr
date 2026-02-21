@@ -274,6 +274,13 @@ RMIQCP=CONOPT
 4=r=minuto1143 --Num= min0003
 5=
 
+[OPENWINDOW_1]
+MAXIM=1
+TOP=49
+LEFT=50
+HEIGHT=486
+WIDTH=536
+
 [MRUFILES]
 1=C:\workspace\OPF\OPF\MinPerd_Base_perdidas.lst
 2=C:\workspace\OPF\OPF\MinPerd_Base_perdidas.gms
@@ -284,15 +291,3 @@ RMIQCP=CONOPT
 7=C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyectos\FlexOnGrid\simulaciones\OPFvsDL\OPF\read_data.gms
 8=C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas_Qopt.gms
 9=C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas_Qopt_v1.gms
-
-[OPENWINDOW_1]
-FILE0=C:\TFG\TFG_Smart_Set_Points\creacion_dataset\OPF\OPF\conv_data.gms
-FILE1=C:\TFG\TFG_Smart_Set_Points\creacion_dataset\OPF\OPF\conv_data.lst
-FILE2=C:\TFG\TFG_Smart_Set_Points\creacion_dataset\OPF\OPF\MinPerd_Base_perdidas_Qopt_v1.gms
-FILE3=C:\TFG\TFG_Smart_Set_Points\creacion_dataset\OPF\OPF\MinPerd_Base_perdidas_Qopt_v1.lst
-FILE4=C:\TFG\TFG_Smart_Set_Points\creacion_dataset\OPF\OPF\MinPerd_Base_perdidas_Qopt_v1.lst
-MAXIM=1
-TOP=49
-LEFT=50
-HEIGHT=486
-WIDTH=536
