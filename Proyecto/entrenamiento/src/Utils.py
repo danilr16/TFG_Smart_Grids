@@ -71,3 +71,34 @@ def plot_params_vs_mse(results, target_error_col, estimator_prefix, param_cols, 
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     plt.show()
+
+def plot_histograms(df, title, path):
+    sns.set_theme(style="whitegrid")
+
+    n_columnas = len(df.columns)
+    cols_grid = 5
+    rows_grid = math.ceil(n_columnas / cols_grid)
+
+    fig, axes = plt.subplots(rows_grid, cols_grid, figsize=(16, 4 * rows_grid))
+    fig.suptitle(title, fontsize=16, fontweight='bold', y=1.02)
+
+    axes = axes.flatten()
+
+    for i, col in enumerate(df.columns):
+        sns.histplot(data=df, x=col, kde=False, ax=axes[i], bins=30,
+                     color='blue', edgecolor='black', alpha=0.5, stat="density")
+
+        sns.kdeplot(data=df, x=col, ax=axes[i], color='red', linewidth=2)
+
+        axes[i].set_title(f'Distribución de {col}', color='black')
+        axes[i].set_xlabel('', color='black')
+        axes[i].set_ylabel('Densidad' if i % cols_grid == 0 else '', color='black')
+        axes[i].tick_params(axis='both', colors='black')
+
+    for j in range(i + 1, len(axes)):
+        fig.delaxes(axes[j])
+
+    plt.tight_layout()
+    plt.show()
+    if path is not None:
+        fig.savefig(path)
