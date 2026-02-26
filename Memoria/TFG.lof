@@ -15,10 +15,12 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Red objeto de estudio. Fuente: Recurso proporcionado por tutores}}{17}{figure.caption.19}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Dataframe del dataset de entrada. Fuente: Elaboración propia}}{18}{figure.caption.20}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Dataframe del dataset de salida. Fuente: Elaboración propia}}{18}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Histogramas de atributos de entrada. Fuente: Elaboración propia}}{20}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Histogramas de atributos de entrada. Fuente: Elaboración propia}}{19}{figure.caption.22}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Histogramas de atributos de salida. Fuente: Elaboración propia}}{21}{figure.caption.23}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Histogramas de atributos de entrada limpios. Fuente: Elaboración propia}}{23}{figure.caption.24}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Histogramas de atributos de salida limpios. Fuente: Elaboración propia}}{24}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Validación cruzada. Fuente: \cite {scikit-learn-validacion-cruzada}}}{26}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Time Series Split. Fuente: \cite {scikit-learn-validacion-cruzada}}}{26}{figure.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

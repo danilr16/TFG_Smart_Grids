@@ -55,14 +55,16 @@ Esta sección pretende adentrarse en la ingeniería de datos y abordar el tratam
 
 En la figura \ref{fig:hist_input}, podemos observar como las variables P2 y Q2 tienen un valor constante en todas las muestras. Esto es debido a que el nudo 2 es un nudo de tránsito. Un nudo de tránsito es un punto de la red eléctrica donde se unen dos o más líneas, pero no hay ninguna carga (consumidor) ni ningún generador conectado a él. Dado que estas variables son en realidad constantes, lo mejor es eliminar estas columnas del \textit{dataset} para el entrenamiento. Estos datos no presentan ningún patrón que aprender, por lo que solo ralentizan el proceso de aprendizaje en los modelos, al tener que ajustar igualmente el peso de estos, lo que conlleva a un mayor consumo de recursos innecesarios. 
 
-Analizando el rango de cada una de las variables de entrada, podemos observar como algunas presentan rangos muy amplios, como el nudo 12 (con potencia activa entre 0 y 30), mientas que otros presentan rangos más estrechos (entre 0 y 1). Si estos datos se introducen en crudo en los modelos, estos algoritmos matemáticos tenderán a otorgar un mayor peso a la variables con números mayores, opacando la influencia real en el resto de la red. Para mitigar este problema, es común realizar una \textbf{normalización o estandarización} de las variables. Este tratamiento se vuelve una estrategia necesaria, cuando el objetivo es entrenar y comparar diferentes modelos predictivos. Al escalar todas las entradas a un rango común, se garantiza un marco de evaluación equitativo, asegurando que las métricas de error resultantes reflejen la verdadera capacidad de aprendizaje de cada arquitectura y no su sensibilidad frente a datos sin procesar. Además, ciertos modelos como las Redes Neuronales o KNN requieren estrictamente de esta normalización para su correcto funcionamiento, a diferencia de modelos basados en partición del espacio como los Árboles de Decisión. 
-
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/hist_data_input.png}
 	\caption{Histogramas de atributos de entrada. Fuente: Elaboración propia}
 	\label{fig:hist_input}
 \end{figure}
+
+\clearpage
+
+Analizando el rango de cada una de las variables de entrada, podemos observar como algunas presentan rangos muy amplios, como el nudo 12 (con potencia activa entre 0 y 30), mientas que otros presentan rangos más estrechos (entre 0 y 1). Si estos datos se introducen en crudo en los modelos, estos algoritmos matemáticos tenderán a otorgar un mayor peso a la variables con números mayores, opacando la influencia real en el resto de la red. Para mitigar este problema, es común realizar una \textbf{normalización o estandarización} de las variables. Este tratamiento se vuelve una estrategia necesaria, cuando el objetivo es entrenar y comparar diferentes modelos predictivos. Al escalar todas las entradas a un rango común, se garantiza un marco de evaluación equitativo, asegurando que las métricas de error resultantes reflejen la verdadera capacidad de aprendizaje de cada arquitectura y no su sensibilidad frente a datos sin procesar. Además, ciertos modelos como las Redes Neuronales o KNN requieren estrictamente de esta normalización para su correcto funcionamiento, a diferencia de modelos basados en partición del espacio como los Árboles de Decisión. 
 
 En la figura \ref{fig:hist_output}, podemos observar el mismo comportamiento constante con la variable V1, por lo que esta columna también se descartará. En cuanto a las valores de las variables que representan las intensidades de corriente en cada línea, muchos de estos valores son nulos (I0\_1 son todos valores nulos) y presentan rangos muy estrechos. En este casos estas variables se descartarán y no se aprenderán por las siguientes razones:
 \begin{itemize}
@@ -72,10 +74,6 @@ En la figura \ref{fig:hist_output}, podemos observar el mismo comportamiento con
 	\item A partir de las potencias y las tensiones, ya es posible calcular fácilmente las intensidades.
 \end{itemize}
 
-Analizando la variable de pérdidas de la red, observamos que presenta valores negativos. Esto es un error debido a la no convergencia del problema de optimización en GAMS, por lo que se deben filtrar las muestras que no tengan estas pérdidas negativas como variable objetivo.
-
-La normalización de las variables de entrada es un proceso casi obligatorio en el \textit{Machine Learning}, sin embargo, este proceso no tiene porque aplicarse a las variables objetivo. Si bien hay ciertos modelos que requieren también de esta doble normalización (Redes Neuronales), a menos de que se intenten predecir diferentes variables con rangos muy distintos, esto proceso no es aconsejable. Las métricas de evaluación de estos modelos, de las que se indagará en futuras secciones, tratan de medir la diferencia entre el valor esperado y el predicho. Si se normalizan las variables estas diferencias pierden significado en el problema, mientras que si se mantienen, es posible hablar en unidades físicas reales. En este caso las tensiones tienen un rango aproximado entre 0 a 1 y las pérdidas positivas un rango entre 0 y 20, por lo que se tratará de preservar la distribución de estas variables.
-
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/hist_data_output.png}
@@ -83,8 +81,14 @@ La normalización de las variables de entrada es un proceso casi obligatorio en 
 	\label{fig:hist_output}
 \end{figure}
 
+\clearpage
+
+Analizando la variable de pérdidas de la red, observamos que presenta valores negativos. Esto es un error debido a la no convergencia del problema de optimización en GAMS, por lo que se deben filtrar las muestras que no tengan estas pérdidas negativas como variable objetivo.
+
+La normalización de las variables de entrada es un proceso casi obligatorio en el \textit{Machine Learning}, sin embargo, este proceso no tiene porque aplicarse a las variables objetivo. Si bien hay ciertos modelos que requieren también de esta doble normalización (Redes Neuronales), a menos de que se intenten predecir diferentes variables con rangos muy distintos, esto proceso no es aconsejable. Las métricas de evaluación de estos modelos, de las que se indagará en futuras secciones, tratan de medir la diferencia entre el valor esperado y el predicho. Si se normalizan las variables estas diferencias pierden significado en el problema, mientras que si se mantienen, es posible hablar en unidades físicas reales. En este caso las tensiones tienen un rango aproximado entre 0 a 1 y las pérdidas positivas un rango entre 0 y 20, por lo que se tratará de preservar la distribución de estas variables.
 
 En las figuras \ref{fig:hist_clean_input} y \ref{fig:hist_clean_output}, se pueden observar los histogramas de las variables finales una vez tratadas del \textit{dataset} que se usará en el entrenamiento de los diferentes modelos. En total, después de este tratamiento, el conjunto de entrenamiento se compone de 104.936 muestras. En el extracto de código \ref{cod:clean_dataset}, se expone el tratamiento que se ha realizado para la limpieza del conjunto de entrenamiento. 
+
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/hist_clean_data_input.png}
@@ -113,10 +117,74 @@ En las figuras \ref{fig:hist_clean_input} y \ref{fig:hist_clean_output}, se pued
 		columns=X.columns, index=X.index)
 \end{lstlisting}
 
-\subsection{Entrenamiento con Random Forest}
+\clearpage
+
+\subsection{Enfoque del Entrenamiento}
+Antes de entrar en el entrenamiento de cada modelo, definiremos diferentes decisiones que se han tomado y técnicas utilizadas para cada uno de estos entrenamientos.
+
+En anteriores secciones, se ha comentado la necesidad de realizar una partición del conjunto de datos en dos subconjuntos independientes. Hay una amplia variedad de técnicas que tienen como objetivo esta división, pero principalmente se pueden resumir en dos enfoques: 
+\begin{itemize}
+	\item \textbf{Validación por retención (\textit{holdout validation}):} Consiste en dividir el conjunto de datos en dos subconjuntos: un subconjunto de entrenamiento a partir del cual se construirá el modelo y un subconjunto de prueba del que se calcula el rendimiento del modelo. La separación de estos conjuntos se realiza generalmente de manera aleatoria, asignando un porcentaje mayoritario al entrenamiento (típicamente entre el 70\% y el 80\%).
+		\subitem \textbf{Ventajas:} Es un método computacionalmente muy eficiente y rápido de ejecutar, ya que el modelo solo necesita entrenarse una vez.
+		\subitem \textbf{Desventajas:} Los resultados dependen en gran medida de qué ejemplos concretos hayan caído aleatoriamente en el conjunto de prueba. Además, en conjuntos de datos pequeños, se sacrifica una cantidad valiosa de información que el modelo no podrá usar para aprender.
+	\item \textbf{Validación cruzada con k pliegues (\textit{k fold cross validation}):} Consiste en subdividir el conjunto de datos original en k subconjuntos o pliegues del mismo tamaño. El proceso se repite iterativamente k veces. En cada iteración, se utiliza un pliegue distinto como conjunto de prueba y los $k - 1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Finalmente, se calcula el rendimiento global del modelo como la media aritmética de las k estimaciones obtenidas.
+		\subitem \textbf{Ventajas:} Proporciona una estimación mucho más robusta, fiable y menos sesgada del rendimiento del modelo, garantizando que todos los ejemplos del \textit{dataset} original se hayan utilizado tanto para entrenar como para evaluar.
+		\subitem \textbf{Desventajas:} Su coste computacional es considerablemente mayor, ya que exige entrenar y evaluar el modelo k veces.
+\end{itemize}
+
+Para el desarrollo de este proyecto, se ha diseñado una estrategia de validación híbrida y robusta que combina las virtudes de ambos enfoques, adaptándolos a la naturaleza secuencial y temporal de los datos eléctricos. Es esta validación híbrida, aplicada a la serie temporal, la que se usará en cada uno de los experimentos siguientes.
+
+Una \textbf{serie temporal} se define como una secuencia de datos registrados en intervalos de tiempo sucesivos y generalmente regulares. A diferencia de los problemas tradicionales de modelado, donde las observaciones son independientes entre sí, en el contexto de una red de distribución eléctrica, las variables operativas presentan una fuerte dependencia cronológica. Por ello, el tratamiento de este conjunto de datos exige que su orden temporal sea preservado para evitar predecir el pasado utilizando información del futuro.
+
+El proceso definido consta en primer lugar de una validación por retención temporal. A diferencia del método tradicional aleatorio, la partición se ha realizado respetando estrictamente el orden cronológico del \textit{dataset}. De este modo, se asigna un 80\% inicial de los datos históricos para la fase de entrenamiento de los modelos, reservando el 20\% temporalmente más reciente como un conjunto de prueba completamente independiente. Este último subconjunto se mantiene aislado hasta el final del proyecto para la evaluación final.
+
+En segundo lugar, para llevar a cabo la selección del algoritmo óptimo y el ajuste de hiperparámetros, se aplica una validación cruzada sobre el subconjunto de entrenamiento (el 80\% inicial). Dado que la aplicación de un \textit{K-Fold} tradicional es incorrecto en este escenario temporal, se ha empleado la variante de Scikit-learn \textbf{Time Series Split} \cite{scikit-learn-time-series}. 
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/validacion_cruzada.png}
+	\caption{Validación cruzada. Fuente: \cite{scikit-learn-validacion-cruzada}}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/time_series_split.png}
+	\caption{Time Series Split. Fuente: \cite{scikit-learn-validacion-cruzada}}
+\end{figure}
+
+Esta técnica preserva la integridad temporal mediante un enfoque de avance progresivo, donde se entrena iterativamente con una ventana de datos históricos y valida su rendimiento en el bloque temporal inmediatamente posterior.
+
+Finalmente una vez seleccionado y entrenado el mejor modelo encontrado, se realiza una evaluación final sobre el 20\% de los datos retenidos inicialmente. Esta última prueba sobre datos jamás vistos por el algoritmo durante ninguna etapa de su desarrollo es la que garantiza que las métricas de error obtenidas sean completamente realistas y representativas de la capacidad de generalización del sistema en un entorno real de producción.
+
+Dado que la estimación del estado de una red de distribución eléctrica es un problema de regresión múltiple, es fundamental establecer \textbf{métricas objetivas} que permitan cuantificar la diferencia entre las predicciones del modelo y los valores reales calculados. En este proyecto, se ha establecido una clara distinción entre la métrica utilizada para la optimización interna del algoritmo durante su entrenamiento y las métricas orientadas a la evaluación e interpretabilidad humana.
+
+Para guiar el aprendizaje de los modelos durante la fase de entrenamiento, se ha seleccionado el \textbf{Error Cuadrático Medio (MSE)} como función de pérdida. Matemáticamente, se define como el promedio de los cuadrados de las diferencias entre los valores reales ($y_i$) y los valores predichos ($\hat{y}_i$). Siendo \textit{n} el número total de observaciones evaluados:
+\begin{equation}
+	MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+La elección del MSE para el entrenamiento radica en dos motivos fundamentales. En primer lugar, al elevar el error al cuadrado, el algoritmo penaliza mucho más las grandes desviaciones. En un contexto eléctrico, predecir una tensión con un error grave es operativamente mucho más peligroso que cometer varios errores minúsculos. En segundo lugar, su superficie matemática es derivable y presenta un gradiente suave, lo que es un requisito indispensable para que algoritmos de optimización como el Descenso del Gradiente o \textit{Backpropagation} puedan actualizar los pesos de los modelos de manera eficiente y estable.
+
+Aunque el MSE es excelente para el aprendizaje, su interpretabilidad humana es compleja. Por ello, para evaluar el rendimiento final de los modelos se han empleado tres métricas complementarias:
+\begin{itemize}
+	\item \textbf{Error Absoluto Medio (MAE):} Calcula el promedio de las diferencias absolutas entre las predicciones y los valores reales.
+	\begin{equation}
+		MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+	\end{equation}
+	El MAE proporciona una medida del error promedio en la misma unidad física que la variable objetivo. Representa la desviación lineal esperada de cualquier predicción, ofreciendo una interpretación directa y realista del margen de error del sistema.
+	\item \textbf{Error Porcentual Absoluto Medio (MAPE):} Mide el tamaño del error en términos porcentuales respecto al valor real.
+	\begin{equation}
+		MAPE = \frac{1}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right|
+	\end{equation}
+	Dado que el \textit{dataset} incluye variables objetivo con magnitudes diferentes, el MAE no permite una comparación directa entre ellas. El MAPE soluciona este problema estandarizando el error a un porcentaje.
+	\item \textbf{Coeficiente de Determinación ($R^2$):} Es una medida estadística que indica la proporción de la varianza (\textit{Var}) en la variable dependiente que es predecible a partir de las variables independientes. Es decir, un modelo con coeficiente de determinación 0 es un modelo igual de bueno que uno que solo predice la media y un modelo con coeficiente de determinación 1 indica que ha sido capaz de ajustarse a la perfección al comportamiento de estudio.
+	\begin{equation}
+		R^2 = 1 - \frac{MSE}{\textit{Var}(y)} = 1 - \frac{\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2}
+	\end{equation}
+	Mientras que las métricas anteriores miden la 'cantidad' de error, $R^2$ evalúa la 'bondad de ajuste' del modelo frente a un modelo base que solo predice la media de la población ($\bar{y}$). 
+\end{itemize}
+
+\subsection{Entrenamiento de los Modelos}
+%TODO: concatenacion de modelos (Clases propias) 
 
 
-\subsection{Entrenamiento con XGBoost}
-
-
-\subsection{Entrenamiento con Redes Neuronales}
+\subsection{Optimización de Hiperparámetros}
+%TODO: busqueda de hiperparametros

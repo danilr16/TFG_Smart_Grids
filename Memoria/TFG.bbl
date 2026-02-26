@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -17,9 +17,9 @@ Wikipedia.
 \newblock URL
   \url{https://es.wikipedia.org/wiki/Red_de_distribuci%C3%B3n_de_energ%C3%ADa_el%C3%A9ctrica}.
 
-\bibitem[Scikit-Learn()]{scikit-learn-over-under}
+\bibitem[Scikit-Learn({\natexlab{a}})]{scikit-learn-over-under}
 Scikit-Learn.
-\newblock Explicación de underfitting y overfitting.
+\newblock Explicación de underfitting y overfitting, {\natexlab{a}}.
 \newblock URL
   \url{https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html}.
 
@@ -27,6 +27,12 @@ Scikit-Learn.
 IBM.
 \newblock Explicación del algoritmo xgboost, {\natexlab{a}}.
 \newblock URL \url{https://www.ibm.com/es-es/think/topics/xgboost}.
+
+\bibitem[Scikit-Learn({\natexlab{b}})]{scikit-learn-validacion-cruzada}
+Scikit-Learn.
+\newblock Explicación validación cruzada, {\natexlab{b}}.
+\newblock URL
+  \url{https://scikit-learn.org/stable/modules/cross_validation.html}.
 
 \bibitem[Iberdrola({\natexlab{a}})]{iberdrola-red-distribucion}
 Iberdrola.
@@ -88,5 +94,11 @@ AWS Amazon.
 Aurélien Géron.
 \newblock Hands-on machine learning with scikit-learn, keras, and tensorflow.
 \newblock O’Reilly Media, 2022.
+
+\bibitem[Scikit-Learn({\natexlab{c}})]{scikit-learn-time-series}
+Scikit-Learn.
+\newblock Explicación time series split, {\natexlab{c}}.
+\newblock URL
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html}.
 
 \end{thebibliography}
