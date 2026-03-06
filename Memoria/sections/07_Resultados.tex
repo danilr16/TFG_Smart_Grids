@@ -1,5 +1,62 @@
 \chapter{Resultados}\label{cap:resultados}
+En este capítulo se exponen los resultados obtenidos tras el entrenamiento de los diferentes modelos propuestos anteriormente. Además, se realizará un análisis exhaustivo del rendimiento de dichos modelos, mediante uso de las métricas de evaluación anteriormente definidas y la visualización gráfica de los resultados.
+
+Para estructurar de forma clara este análisis, el capítulo se divide en dos secciones principales:
+\begin{itemize}
+	\item En la primera sección se presentan y analizan los resultados base iniciales, estableciendo una comparativa general entre los diferentes enfoques algorítmicos.
+	\item En la segunda sección se profundiza en la exploración y validación de los mejores modelos encontrados.
+\end{itemize}
+
+Para la visualización gráfica de estos resultados, se emplearán principalmente dos tipos de gráficas:
+\begin{itemize}
+	\item Gráfica de dispersión: Permite evaluar visualmente la desviación de las estimaciones del modelo frente a los valores reales. Para establecer una referencia clara, el escenario de predicción perfecta estará representado por una línea diagonal continua en color rojo. Cuanto más se agrupen los puntos en torno a esta línea, mayor será la precisión del modelo.
+	\item Histograma de error: Representa la distribución estadística de los errores relativos cometidos por las predicciones sobre el conjunto de datos de prueba. Esta visualización será clave para identificar la dispersión del error, posibles asimetrías o la tendencia del modelo a cometer fallos atípicos.
+\end{itemize}
 
 \section{Informe de Evaluación Inicial}
+
+\subsection{Espacio de Búsqueda}
+En esta sección, se exponen los \textbf{espacios de búsqueda definidos} para la optimización de los hiperparámetros de los diferentes modelos planteados en esta primera evaluación. Como se puede apreciar en la parametrización de las diferentes arquitecturas, los estimadores (o capas en el caso de la Red Neuronal) encargados de predecir las tensiones nodales y las pérdidas exploran rangos que dotan al modelo de una mayor complejidad estructural, respecto a la primera fase del modelo. Esta diferencia en los espacios de búsqueda se debe al propio comportamiento físico de la red eléctrica. Por un lado, las pérdidas de energía tienen un comportamiento no lineal (ya que crece con el cuadrado de la corriente). Por otro lado, las tensiones de cada punto dependen de cómo interactúa toda la red en su conjunto. Por este motivo, la parte de los modelos encargada de predecir estas variables necesita tener una mayor capacidad de aprendizaje. Si se usara una configuración demasiado sencilla, el algoritmo no podría capturar estas relaciones tan complejas y sufriría de subajuste.
+
+A continuación, se detalla la nomenclatura empleada para referenciar cada uno de los modelos predictivos evaluados:
+\begin{itemize}
+	\item \textbf{RandomForest}: Uso del modelo RandomForestRegressor \cite{scikit-learn-random-forest} para la predicción de todas las variables a la vez.
+	\item \textbf{XGBoost}: Uso del modelo XGBRegressor \cite{xgboost-xgbregressor} para la predicción de todas las variables a la vez.
+	\item \textbf{ESR\_RandomForest}: Uso del modelo ElectricSequentialRegressor con estimadores RandomForestRegressor para la predicción en cascada de las variables.
+	\item \textbf{ESR\_XGBoost}: Uso del modelo ElectricSequentialRegressor con estimadores XGBRegressor para la predicción en cascada de las variables.
+	\item \textbf{Red Neuronal}: Uso de las capas de Keras \cite{keras-layers} para la predicción de todas las variables con la topología especificada en \ref{cod:red_neuronal}.
+\end{itemize}
+
+\input{tables/rf_hiperparam}
+
+\input{tables/xgb_hiperparam}
+
+\input{tables/esr_rf_hiperparam}
+
+\input{tables/esr_xgb_hiperparam}
+
+\input{tables/nn_hiperparam}
+
+\clearpage
+
+\subsection{Resultados de las Métricas de Evaluación}
+En esta sección se exponen los resultados finales obtenidos por las diferentes arquitecturas predictivas tras concluir el proceso de optimización de hiperparámetros. El rendimiento de cada modelo ha sido evaluado de forma rigurosa aplicando la metodología de validación descrita en apartados anteriores y utilizando las métricas de evaluación de error y ajuste previamente definidas (MAE, MAPE y $R^2$).
+
+Para facilitar el entendimiento y la comparación entre los resultados obtenidos por los modelos, estos se han recogido en una tabla donde las métricas están coloreadas por columnas (los colores verdosos indican los mejores resultados y los rojizos los peores). Como hay muchos puntos de tensión, los valores que se muestran en la categoría ``Voltajes'' no corresponden a un solo nodo. En su lugar, representan la media de todos los errores calculados en toda la red.
+
+En la tabla \ref{fig:resultados-iniciales-not-shifted} podemos notar que el error MAPE de la variable ``QGEN7'' da valores desproporcionados (del orden de $10^{13}$). Esto ocurre porque la potencia reactiva en numerosas ocasiones es cero o tiene valores muy cercanos a cero. Como la fórmula del MAPE exige dividir el error entre el valor real, dividir entre una cifra casi nula hace que el resultado se dispare hacia el infinito. Para solucionarlo y poder obtener algo de información relevante de esta métrica, aplicamos un pequeño truco. En el cálculo de esta métrica le sumamos 1 tanto al valor real como a la predicción, es decir, desplazamos ligeramente todos los valores. Al sumar 1 en ambas variables, la diferencia (error en la parte del numerador de la fracción) sigue siendo exactamente el mismo. Sin embargo, el valor real (el denominador) ahora es mucho más grande. Así evitamos el problema de dividir entre valores cercanos a cero, estabilizando el porcentaje sin alterar el orden de qué modelo es mejor. Como consecuencia de este desplazamiento, el valor resultante del \textbf{MAPE se vuelve más optimista} (arroja un porcentaje de error menor al real). Por este motivo, esta métrica pierde gran parte de su significado y pasa a usarse únicamente como una referencia aproximada y relativa para comparar qué modelo rinde mejor que otro. La tabla \ref{fig:resultados-iniciales-shifted} muestra los mismos resultados que la anterior, pero con el desplazamiento realizado en el cálculo del MAPE. 
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/resultados_sin_desplazamiento.png}
+	\caption{Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}
+	\label{fig:resultados-iniciales-not-shifted}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/resultados_con_desplazamiento.png}
+	\caption{Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}
+	\label{fig:resultados-iniciales-shifted}
+\end{figure}
 
 \section{Informe de Evaluación Avanzada}

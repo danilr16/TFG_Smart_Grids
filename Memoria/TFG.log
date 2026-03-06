@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.4)  1 MAR 2026 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.4)  6 MAR 2026 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,7 +908,7 @@ Package csquotes Info: ... configuration file loaded successfully.
 
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
-)))
+))
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.st
 y
 Package: tocbasic 2025/09/09 v3.48 KOMA-Script package (handling toc-files)
@@ -935,9 +935,27 @@ Already applied: [0000/00/00] Usage of raw or classic option list on input line
 )
 \scr@dte@tocline@numberwidth=\skip70
 \scr@dte@tocline@numbox=\box118
-) (etc/style.tex
-\scr@dte@chapter@maxnumwidth=\skip71
-\scr@dte@part@maxnumwidth=\skip72
+))
+(C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+
+(C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen309
+\ar@mcellbox=\box119
+\extrarowheight=\dimen310
+\NC@list=\toks46
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box120
+)
+\everycr=\toks47
+\minrowclearance=\skip73
+\rownum=\count374
+)
+(etc/style.tex
+\scr@dte@chapter@maxnumwidth=\skip74
+\scr@dte@part@maxnumwidth=\skip75
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -952,7 +970,7 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count374
+\l__color_backend_stack_int=\count375
 ) (TFG.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -983,17 +1001,17 @@ LaTeX Font Info:    ... okay on input line 35.
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count375
-\scratchdimen=\dimen309
-\scratchbox=\box119
-\nofMPsegments=\count376
-\nofMParguments=\count377
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count378
-\MPscratchDim=\dimen310
-\MPnumerator=\count379
-\makeMPintoPDFobject=\count380
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count376
+\scratchdimen=\dimen311
+\scratchbox=\box121
+\nofMPsegments=\count377
+\nofMParguments=\count378
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count379
+\MPscratchDim=\dimen312
+\MPnumerator=\count380
+\makeMPintoPDFobject=\count381
+\everyMPtoPDFconversion=\toks49
 )
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1012,7 +1030,7 @@ Package hyperref Info: Link coloring ON on input line 35.
 \@outlinefile=\write4
 \openout4 = `TFG.out'.
 
-\c@lstlisting=\count381
+\c@lstlisting=\count382
 Package tocbasic Info: setting babel extension for `lol' on input line 35.
 
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
@@ -1059,7 +1077,7 @@ Package caption Info: End \AtBeginDocument code.
 Couldn't patch \ttl@straight@ii
 Couldn't patch \ttl@straight@ii
 (sections/00_portada.tex
-<figures/etsii_us.png, id=182, 1463.4675pt x 282.3348pt>
+<figures/etsii_us.png, id=190, 1463.4675pt x 282.3348pt>
 File: figures/etsii_us.png Graphic file (type png)
 <use figures/etsii_us.png>
 Package pdftex.def Info: figures/etsii_us.png  used on input line 6.
@@ -1111,9 +1129,9 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 40.
 [3
 
 ]
-Package tocbasic Info: Using my definition of `\numberline' on input line 43.
 Package tocbasic Info: Using my definition of `\numberline' on input line 45.
-Package tocbasic Info: Using my definition of `\numberline' on input line 49.
+Package tocbasic Info: Using my definition of `\numberline' on input line 47.
+Package tocbasic Info: Using my definition of `\numberline' on input line 51.
 )
 \tf@toc=\write5
 \openout5 = `TFG.toc'.
@@ -1148,7 +1166,7 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 (sections/01_Introduccion.tex
 Cap\'{\i }tulo 1.
-<figures/energias_europa.png, id=347, 986.4855pt x 385.44pt>
+<figures/energias_europa.png, id=380, 986.4855pt x 385.44pt>
 File: figures/energias_europa.png Graphic file (type png)
 <use figures/energias_europa.png>
 Package pdftex.def Info: figures/energias_europa.png  used on input line 15.
@@ -1174,20 +1192,20 @@ Cap\'{\i }tulo 2.
 [4
 
 ]
-<figures/red_distribucion.png, id=378, 577.15625pt x 282.05376pt>
+<figures/red_distribucion.png, id=411, 577.15625pt x 282.05376pt>
 File: figures/red_distribucion.png Graphic file (type png)
 <use figures/red_distribucion.png>
 Package pdftex.def Info: figures/red_distribucion.png  used on input line 21.
 (pdftex.def)             Requested size: 396.91325pt x 193.97603pt.
  [5 <./figures/red_distribucion.png>]
-<figures/ciclo_vida_machine_learning.png, id=385, 2794.44pt x 1541.76pt>
+<figures/ciclo_vida_machine_learning.png, id=418, 2794.44pt x 1541.76pt>
 File: figures/ciclo_vida_machine_learning.png Graphic file (type png)
 <use figures/ciclo_vida_machine_learning.png>
 Package pdftex.def Info: figures/ciclo_vida_machine_learning.png  used on input
  line 44.
 (pdftex.def)             Requested size: 396.91325pt x 218.9738pt.
  [6]
-<figures/sobreajuste_subajuste.png, id=390, 1011.78pt x 361.35pt>
+<figures/sobreajuste_subajuste.png, id=423, 1011.78pt x 361.35pt>
 File: figures/sobreajuste_subajuste.png Graphic file (type png)
 <use figures/sobreajuste_subajuste.png>
 Package pdftex.def Info: figures/sobreajuste_subajuste.png  used on input line 
@@ -1195,25 +1213,25 @@ Package pdftex.def Info: figures/sobreajuste_subajuste.png  used on input line
 (pdftex.def)             Requested size: 396.91325pt x 141.7585pt.
  [7 <./figures/ciclo_vida_machine_learning.png> <./figures/sobreajuste_subajust
 e.png (PNG copy)>]
-<figures/random_forest.png, id=399, 2119.92pt x 1156.32pt>
+<figures/random_forest.png, id=432, 2119.92pt x 1156.32pt>
 File: figures/random_forest.png Graphic file (type png)
 <use figures/random_forest.png>
 Package pdftex.def Info: figures/random_forest.png  used on input line 72.
 (pdftex.def)             Requested size: 396.91325pt x 216.49187pt.
  [8]
-<figures/decision_tree.png, id=407, 2071.74pt x 1156.32pt>
+<figures/decision_tree.png, id=440, 2071.74pt x 1156.32pt>
 File: figures/decision_tree.png Graphic file (type png)
 <use figures/decision_tree.png>
 Package pdftex.def Info: figures/decision_tree.png  used on input line 82.
 (pdftex.def)             Requested size: 396.91325pt x 221.52042pt.
  [9 <./figures/random_forest.png>]
-<figures/xgboost.png, id=415, 1044.90375pt x 605.26125pt>
+<figures/xgboost.png, id=448, 1044.90375pt x 605.26125pt>
 File: figures/xgboost.png Graphic file (type png)
 <use figures/xgboost.png>
 Package pdftex.def Info: figures/xgboost.png  used on input line 93.
 (pdftex.def)             Requested size: 396.91325pt x 229.9093pt.
  [10 <./figures/decision_tree.png>]
-<figures/redes_neuronales.png, id=429, 2119.92pt x 1156.32pt>
+<figures/redes_neuronales.png, id=462, 2119.92pt x 1156.32pt>
 File: figures/redes_neuronales.png Graphic file (type png)
 <use figures/redes_neuronales.png>
 Package pdftex.def Info: figures/redes_neuronales.png  used on input line 111.
@@ -1230,7 +1248,7 @@ Cap\'{\i }tulo 4.
 
 ]
 Cap\'{\i }tulo 5.
-<figures/red_tfg.png, id=460, 331.2375pt x 240.39813pt>
+<figures/red_tfg.png, id=493, 331.2375pt x 240.39813pt>
 File: figures/red_tfg.png Graphic file (type png)
 <use figures/red_tfg.png>
 Package pdftex.def Info: figures/red_tfg.png  used on input line 19.
@@ -1238,25 +1256,25 @@ Package pdftex.def Info: figures/red_tfg.png  used on input line 19.
 [16
 
  <./figures/red_tfg.png>]
-<figures/dataset_entrada.png, id=468, 954.56625pt x 195.73125pt>
+<figures/dataset_entrada.png, id=501, 954.56625pt x 195.73125pt>
 File: figures/dataset_entrada.png Graphic file (type png)
 <use figures/dataset_entrada.png>
 Package pdftex.def Info: figures/dataset_entrada.png  used on input line 40.
 (pdftex.def)             Requested size: 396.91325pt x 81.38524pt.
-<figures/dataset_salida.png, id=470, 718.685pt x 196.735pt>
+<figures/dataset_salida.png, id=503, 718.685pt x 196.735pt>
 File: figures/dataset_salida.png Graphic file (type png)
 <use figures/dataset_salida.png>
 Package pdftex.def Info: figures/dataset_salida.png  used on input line 48.
 (pdftex.def)             Requested size: 396.91325pt x 108.65486pt.
  [17]
-<figures/hist_data_input.png, id=478, 1156.32pt x 1734.48pt>
+<figures/hist_data_input.png, id=511, 1156.32pt x 1734.48pt>
 File: figures/hist_data_input.png Graphic file (type png)
 <use figures/hist_data_input.png>
 Package pdftex.def Info: figures/hist_data_input.png  used on input line 60.
 (pdftex.def)             Requested size: 396.91325pt x 595.35266pt.
  [18 <./figures/dataset_entrada.png> <./figures/dataset_salida.png>] [19 <./fig
 ures/hist_data_input.png>]
-<figures/hist_data_output.png, id=491, 1156.32pt x 1734.48pt>
+<figures/hist_data_output.png, id=524, 1156.32pt x 1734.48pt>
 File: figures/hist_data_output.png Graphic file (type png)
 <use figures/hist_data_output.png>
 Package pdftex.def Info: figures/hist_data_output.png  used on input line 79.
@@ -1264,13 +1282,13 @@ Package pdftex.def Info: figures/hist_data_output.png  used on input line 79.
  [20
 
 ] [21 <./figures/hist_data_output.png>]
-<figures/hist_clean_data_input.png, id=504, 1156.32pt x 1734.48pt>
+<figures/hist_clean_data_input.png, id=537, 1156.32pt x 1734.48pt>
 File: figures/hist_clean_data_input.png Graphic file (type png)
 <use figures/hist_clean_data_input.png>
 Package pdftex.def Info: figures/hist_clean_data_input.png  used on input line 
 94.
 (pdftex.def)             Requested size: 396.91325pt x 595.35266pt.
-<figures/hist_clean_data_output.png, id=505, 1156.32pt x 867.24pt>
+<figures/hist_clean_data_output.png, id=538, 1156.32pt x 867.24pt>
 File: figures/hist_clean_data_output.png Graphic file (type png)
 <use figures/hist_clean_data_output.png>
 Package pdftex.def Info: figures/hist_clean_data_output.png  used on input line
@@ -1298,13 +1316,13 @@ LaTeX Font Info:    Font shape `OT1/zi4/b/n' will be
 data_output.png>] [25
 
 ]
-<figures/validacion_cruzada.png, id=542, 888.31876pt x 615.29875pt>
+<figures/validacion_cruzada.png, id=575, 888.31876pt x 615.29875pt>
 File: figures/validacion_cruzada.png Graphic file (type png)
 <use figures/validacion_cruzada.png>
 Package pdftex.def Info: figures/validacion_cruzada.png  used on input line 151
 .
 (pdftex.def)             Requested size: 264.61333pt x 183.28601pt.
-<figures/time_series_split.png, id=545, 433.62pt x 216.81pt>
+<figures/time_series_split.png, id=578, 433.62pt x 216.81pt>
 File: figures/time_series_split.png Graphic file (type png)
 <use figures/time_series_split.png>
 Package pdftex.def Info: figures/time_series_split.png  used on input line 156.
@@ -1312,7 +1330,7 @@ Package pdftex.def Info: figures/time_series_split.png  used on input line 156.
 (pdftex.def)             Requested size: 352.81552pt x 176.41573pt.
  [26 <./figures/validacion_cruzada.png>] [27 <./figures/time_series_split.png (
 PNG copy)>] [28]
-<figures/modelo_propio.png, id=573, 2505.36pt x 963.6pt>
+<figures/modelo_propio.png, id=606, 2505.36pt x 963.6pt>
 File: figures/modelo_propio.png Graphic file (type png)
 <use figures/modelo_propio.png>
 Package pdftex.def Info: figures/modelo_propio.png  used on input line 201.
@@ -1320,24 +1338,49 @@ Package pdftex.def Info: figures/modelo_propio.png  used on input line 201.
  [29 <./figures/modelo_propio.png>]
 [30] [31] [32] [33] [34] [35] [36]) (sections/07_Resultados.tex [37]
 Cap\'{\i }tulo 6.
-) (sections/08_Conclusiones.tex [38
+[38
 
-]
+] (tables/rf_hiperparam.tex) (tables/xgb_hiperparam.tex)
+(tables/esr_rf_hiperparam.tex) (tables/esr_xgb_hiperparam.tex)
+(tables/nn_hiperparam.tex
+Overfull \hbox (7.86351pt too wide) in paragraph at lines 3--33
+ [][] 
+ []
+
+) [39] [40]
+<figures/resultados_sin_desplazamiento.png, id=940, 1629.08624pt x 448.67625pt>
+
+File: figures/resultados_sin_desplazamiento.png Graphic file (type png)
+<use figures/resultados_sin_desplazamiento.png>
+Package pdftex.def Info: figures/resultados_sin_desplazamiento.png  used on inp
+ut line 51.
+(pdftex.def)             Requested size: 441.01773pt x 121.45912pt.
+<figures/resultados_con_desplazamiento.png, id=941, 1629.08624pt x 443.40656pt>
+
+File: figures/resultados_con_desplazamiento.png Graphic file (type png)
+<use figures/resultados_con_desplazamiento.png>
+Package pdftex.def Info: figures/resultados_con_desplazamiento.png  used on inp
+ut line 57.
+(pdftex.def)             Requested size: 441.01773pt x 120.0326pt.
+) (sections/08_Conclusiones.tex [41
+
+ <./figures/resultados_sin_desplazamiento.png>] [42 <./figures/resultados_con_d
+esplazamiento.png>]
 Cap\'{\i }tulo 7.
-) (sections/09_Anexos.tex [39
+) (sections/09_Anexos.tex [43
 
 ]
 Cap\'{\i }tulo 8.
-) (TFG.bbl [40
+) (TFG.bbl [44
 
 ]
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
 (Font)              scaled to size 9.0pt on input line 18.
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
 (Font)              scaled to size 7.0pt on input line 18.
- [41
+ [45
 
-]) [42] (TFG.aux
+]) [46] (TFG.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1346,16 +1389,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: C9D622539C916302DE1CA0392CECC9DE;7008.
+(rerunfilecheck)             Checksum: BF853D088B32E48CA1386DDC45A5F6B9;7457.
  ) 
 Here is how much of TeX's memory you used:
- 29463 strings out of 467871
- 543711 string characters out of 5418376
- 1486258 words of memory out of 5000000
- 57361 multiletter control sequences out of 15000+600000
+ 29729 strings out of 467871
+ 549247 string characters out of 5418376
+ 1498041 words of memory out of 5000000
+ 57579 multiletter control sequences out of 15000+600000
  656116 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,7n,120p,1416b,2162s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,10n,120p,1603b,2162s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/
 Inconsolata-zi4b.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/danil/AppData/Local/Programs/
@@ -1370,9 +1413,9 @@ pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb
 plbi8a.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palati
 no/uplr8a.pfb><C:/Users/danil/AppData/Local/Programs/MiKTeX/fonts/type1/urw/pal
 atino/uplri8a.pfb>
-Output written on TFG.pdf (51 pages, 24904098 bytes).
+Output written on TFG.pdf (55 pages, 25135832 bytes).
 PDF statistics:
- 1077 PDF objects out of 1200 (max. 8388607)
- 434 named destinations out of 1000 (max. 500000)
- 460 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1157 PDF objects out of 1200 (max. 8388607)
+ 459 named destinations out of 1000 (max. 500000)
+ 486 words of extra memory for PDF output out of 10000 (max. 10000000)
 

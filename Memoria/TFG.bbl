@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -80,9 +80,9 @@ IBM.
 \newblock Bagging o bootstrap aggregating, {\natexlab{b}}.
 \newblock URL \url{https://www.ibm.com/es-es/think/topics/bagging}.
 
-\bibitem[XGBoost()]{xgboost}
+\bibitem[XGBoost({\natexlab{a}})]{xgboost}
 XGBoost.
-\newblock Documentación de xgboost.
+\newblock Documentación de xgboost, {\natexlab{a}}.
 \newblock URL \url{https://xgboost.readthedocs.io/en/stable/}.
 
 \bibitem[Amazon({\natexlab{b}})]{aws-red-neuro}
@@ -100,5 +100,21 @@ Scikit-Learn.
 \newblock Explicación time series split, {\natexlab{c}}.
 \newblock URL
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html}.
+
+\bibitem[Keras()]{keras-layers}
+Keras.
+\newblock Tipos de capas de las redes neuronales.
+
+\bibitem[Scikit-Learn({\natexlab{d}})]{scikit-learn-random-forest}
+Scikit-Learn.
+\newblock Randomforestregressor, {\natexlab{d}}.
+\newblock URL
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html}.
+
+\bibitem[XGBoost({\natexlab{b}})]{xgboost-xgbregressor}
+XGBoost.
+\newblock Xgbregressor, {\natexlab{b}}.
+\newblock URL
+  \url{https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor}.
 
 \end{thebibliography}

@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import math
@@ -38,6 +39,56 @@ def plot_performance_analysis(y_true, y_pred, variable_name, unit_label, path=No
     plt.show()
     if path is not None:
         fig.savefig(path)
+
+def plot_all_models_for_variable(y_true_df, dict_preds, variable_name, unit_label, path=None):
+    with plt.style.context('default'):
+        num_models = len(dict_preds)
+        fig, axes = plt.subplots(nrows=num_models, ncols=2, figsize=(16, 5 * num_models))
+        fig.patch.set_facecolor('white')
+
+        y_true = y_true_df[variable_name].values
+        idx_column = y_true_df.columns.get_loc(variable_name)
+
+        epsilon = 1e-10
+
+        for i, (nombre_modelo, preds) in enumerate(dict_preds.items()):
+            if isinstance(preds, pd.DataFrame):
+                y_pred = preds[variable_name].values
+            else:
+                y_pred = preds[:, idx_column]
+
+            pct_error = ((y_true - y_pred) / (y_true + epsilon)) * 100
+
+            ax_hist = axes[i, 0]
+            ax_hist.set_facecolor('white')
+            ax_hist.hist(pct_error, bins=100, range=(-40, 40), color='#1f77b4', edgecolor='none')
+            ax_hist.set_xlabel('Error (%)', color='black')
+            ax_hist.set_ylabel('Frecuencia', color='black')
+            ax_hist.set_title(f'{nombre_modelo} - Distribución del Error ({variable_name})', color='black')
+            ax_hist.tick_params(colors='black')
+            ax_hist.grid(True, alpha=0.3, color='gray')
+
+            ax_scat = axes[i, 1]
+            ax_scat.set_facecolor('white')
+            ax_scat.scatter(y_true, y_pred, alpha=0.6, color='blue', s=20, label='Predicciones')
+
+            min_val = min(y_true.min(), y_pred.min())
+            max_val = max(y_true.max(), y_pred.max())
+            ax_scat.plot([min_val, max_val], [min_val, max_val], 'r-', lw=2, label='Ideal')
+
+            ax_scat.set_xlabel(f'Valores reales ({unit_label})', color='black')
+            ax_scat.set_ylabel(f'Predicciones ({unit_label})', color='black')
+            ax_scat.set_title(f'{nombre_modelo} - Dispersión ({variable_name})', color='black')
+            ax_scat.tick_params(colors='black')
+            ax_scat.legend(facecolor='white', edgecolor='black', labelcolor='black')
+            ax_scat.grid(True, alpha=0.3, which='both', color='gray')
+
+        plt.tight_layout()
+
+        if path is not None:
+            fig.savefig(path, facecolor='white', edgecolor='none', bbox_inches='tight', dpi=300)
+
+        plt.show()
 
 def mse_column_score(y_true, y_pred, col_idx):
     y_true = np.array(y_true)

@@ -23,5 +23,7 @@
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Time Series Split. Fuente: \cite {scikit-learn-validacion-cruzada}}}{27}{figure.caption.27}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}}{29}{figure.caption.28}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}}{42}{figure.caption.35}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

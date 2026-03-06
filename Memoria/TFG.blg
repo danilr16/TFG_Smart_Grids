@@ -5,6 +5,10 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliografia.bib
+"{" immediately follows a field name---line 22 of file bibliografia.bib
+ :  url
+ :     {https://keras.io/api/layers/}
+I'm skipping whatever remains of this entry
 Warning--empty year in energias
 Warning--empty year in red-distribucion
 Warning--empty year in scikit-learn-over-under
@@ -23,45 +27,48 @@ Warning--empty year in xgboost
 Warning--empty year in aws-red-neuro
 Warning--empty booktitle in o-reilly-machine-learning
 Warning--empty year in scikit-learn-time-series
-You've used 17 entries,
+Warning--empty year in keras-layers
+Warning--empty year in scikit-learn-random-forest
+Warning--empty year in xgboost-xgbregressor
+You've used 20 entries,
             2481 wiz_defined-function locations,
-            616 strings with 6768 characters,
-and the built_in function-call counts, 4459 in all, are:
-= -- 370
-> -- 119
-< -- 17
-+ -- 74
-- -- 34
-* -- 222
-:= -- 675
-add.period$ -- 51
-call.type$ -- 17
-change.case$ -- 35
-chr.to.int$ -- 11
-cite$ -- 35
-duplicate$ -- 245
-empty$ -- 507
-format.name$ -- 51
-if$ -- 961
-int.to.chr$ -- 7
-int.to.str$ -- 18
+            625 strings with 7079 characters,
+and the built_in function-call counts, 5231 in all, are:
+= -- 433
+> -- 140
+< -- 20
++ -- 88
+- -- 40
+* -- 262
+:= -- 788
+add.period$ -- 59
+call.type$ -- 20
+change.case$ -- 41
+chr.to.int$ -- 12
+cite$ -- 41
+duplicate$ -- 287
+empty$ -- 597
+format.name$ -- 60
+if$ -- 1129
+int.to.chr$ -- 9
+int.to.str$ -- 21
 missing$ -- 1
-newline$ -- 93
-num.names$ -- 51
-pop$ -- 193
+newline$ -- 107
+num.names$ -- 60
+pop$ -- 227
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 20
 quote$ -- 0
-skip$ -- 200
+skip$ -- 235
 stack$ -- 0
-substring$ -- 34
-swap$ -- 43
+substring$ -- 40
+swap$ -- 52
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 119
-warning$ -- 18
-while$ -- 34
+type$ -- 140
+warning$ -- 21
+while$ -- 40
 width$ -- 0
-write$ -- 206
-(There were 18 warnings)
+write$ -- 240
+(There was 1 error message)

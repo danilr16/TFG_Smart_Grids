@@ -273,6 +273,16 @@ A nivel de software, la clase garantiza la paralelización del entrenamiento med
 		predictions[:, mask] = predictions2
 		return predictions
 \end{lstlisting}
+\begin{lstlisting}[language=Python, caption={Ejemplo de uso del modelo ESR}, label={cod:esr_use}, captionpos=b]
+	model = ElectricSequentialRegressor(
+		estimator1=RandomForestRegressor(n_jobs=1, random_state=42), 
+		estimator2=RandomForestRegressor(n_jobs=1, random_state=42), 
+		pivot_col_index=-1, 
+		n_jobs=1
+	)
+	model.fit(x_train, y_train)
+	predictions = model.predict(x_test)
+\end{lstlisting}
 
 Para complementar y expandir el enfoque del ESR utilizando algoritmos de \textit{Deep Learning}, se ha diseñado una arquitectura de Red Neuronal Profunda basándose en la topología jerárquica de este. Utilizando las librerías \textbf{TensorFlow y Keras}, se ha construido un modelo que no se limita a procesar las entradas en una única capa de salida masiva, sino que ramifica su aprendizaje respetando la naturaleza del problema eléctrico descrito anteriormente.
 
@@ -436,7 +446,7 @@ Para la exploración de estos conjuntos, se utilizó la implementación \textbf{
 	random_search.fit(x_train, y_train)
 \end{lstlisting}
 
-Por último, para la Red Neuronal Profunda, para la topología estructural, se permitió buscar de forma independiente el número de capas ocultas y la cantidad de neuronas para cada una de las tres ramas predictivas (potencia reactiva, tensiones y pérdidas). Este enfoque permite que la red asigne dinámicamente mayor capacidad matemática a las variables de mayor complejidad física. Asimismo, se exploraron técnicas de regularización como la tasa de \textit{Dropout} y la inclusión de \textit{Batch Normalization}, junto con la selección de la función de activación (ReLU o ELU). Para el algoritmo de entrenamiento, se evaluaron los optimizadores Adam y SGD. 
+Por último, para la Red Neuronal Profunda, para la topología estructural, se permitió buscar de forma independiente el número de capas ocultas y la cantidad de neuronas para cada una de las tres ramas predictivas (potencia reactiva, tensiones y pérdidas). Este enfoque permite que la red asigne dinámicamente mayor capacidad matemática a las variables de mayor complejidad física. Asimismo, se exploraron técnicas de regularización como la tasa de \textit{Dropout} y la inclusión de \textit{Batch Normalization}, junto con la selección de la función de activación (ReLU o ELU). Para el algoritmo de entrenamiento, se evaluaron los optimizadores Adam y SGD \cite{keras-layers}. 
 
 Para evaluar estas combinaciones de forma rigurosa, se programó una clase a medida denominada \textbf{TimeSeriesRandomSearch}, basada en la librería \textit{Keras Tuner}. Esta implementación realiza una búsqueda aleatoria de hiperparámetros utilizando validación cruzada temporal (\textit{TimeSeriesSplit}), asegurando que siempre se respete el orden cronológico de los datos. Además, previene la fuga de información al escalar las variables (\textit{MinMaxScaler}) de forma aislada dentro de cada iteración del pliegue, evitando que el modelo ``vea'' la estadística de datos futuros durante su entrenamiento.
 \begin{lstlisting}[language=Python, caption={Código de exploración de hiperparámetros con Redes Neuronales}, label={cod:red_neuronal_random}, captionpos=b]
