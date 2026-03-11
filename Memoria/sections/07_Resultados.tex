@@ -59,4 +59,60 @@ En la tabla \ref{fig:resultados-iniciales-not-shifted} podemos notar que el erro
 	\label{fig:resultados-iniciales-shifted}
 \end{figure}
 
+\subsection{Análisis de las Métricas de Evaluación}
+\subsubsection{Estimación de Variables de Estado}
+Tanto las tensiones nodales como las pérdidas representan el estado físico continuo de la red y comparten una fuerte dependencia de la topología del sistema. En este bloque, la superioridad de las arquitecturas profundas y de optimización por gradiente es evidente:
+\begin{itemize}
+	\item \textbf{Hegemonía de la Red Neuronal:} La arquitectura profunda resulta ser el estimador más riguroso para las variables puramente físicas. En la estimación de tensiones, logra el menor MAE con un valor de 0,001693 p.u. y un $R^2$ de 0,973. En la estimación de las pérdidas, alcanza un $R^2$ sobresaliente a pesar de su complejidad, con un valor de 0,9815 y minimiza el MAE hasta 0,198 kW.
+	\item \textbf{Rendimiento de los modelos de ensamble:} Dentro de las arquitecturas basadas en árboles, las variantes de XGBoost (XGBoost y ESR\_XGBoost) demuestran una capacidad predictiva excelente, cercanas a la de la Red Neuronal. Por el contrario, los modelos basados en Random Forest (RandomForest y ESR\_RandomForest) presentan limitaciones notables, estancándose en un $R^2$ en torno al 0,9 en tensiones y 0,94 en pérdidas y duplicando el MAE de sus competidores.
+	\item \textbf{Resultados del enfoque jerárquico (ESR):} El uso de la estructura propia (ESR) demuestra su eficacia en variables no lineales como las pérdidas, aunque la diferencia respecto al resto de modelos no es algo sustancial de momento.
+\end{itemize}
+
+\subsubsection{Estimación de la Variable de Control}
+A diferencia de las variables anteriores, la inyección de potenica reactiva presenta una dinámica operativa discreta. Esta naturaleza altera por completo la jerarquía de rendimiento de los algoritmos:
+\begin{itemize}
+	\item \textbf{Hegemonía de la partición espacial:} En este escenario, los ensamblados de árboles superan a la aproximación profunda. El algoritmo XGBoost original logra el mejor coeficiente de determinación en 0,885, mientras que la variante ESR\_RandomForest obtiene los mejores márgenes de error absoluto en 0,0065. Las divisiones ortogonales de los árboles de decisión han resultado mucho más aptas para modelar estos saltos escalonados en al inyección de reactiva.
+	\item \textbf{Resultados del enfoque jerárquico (ESR):} El impacto de la metodología ESR se observa perfectamente en los resultados del algoritmo RandomForest. El modelo estándar fracasa de forma contundente al intentar modelar la inyección de reactiva ($R^2 = 0,544$). Sin embargo, al implementar la arquitectura propuesta (ESR\_RandomForest), se corrige esta deficiencia drásticamente, elevando el $R^2$ hasta 0,883 y posicionándolo como el estimador más preciso para esta variable.
+\end{itemize}
+
+\subsection{Resultados de las Gráficas de Predicción}
+A continuación, se presentan las representaciones gráficas de dispersión y las distribuciones del error porcentual generadas para cada modelo y variable. Estos gráficos permitirán corroborar las métricas numéricas obtenidas y ofrecen una comprensión más profunda del comportamiento interno de cada algoritmo.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_PERD.png}
+	\caption{Histogramas y gráficos de dispersión de las pérdidas (todos los modelos iniciales). Fuente: Elaboración propia}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_V2.png}
+	\caption{Histogramas y gráficos de dispersión de las tensiones del nudo 2 (todos los modelos iniciales). Fuente: Elaboración propia}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_V13.png}
+	\caption{Histogramas y gráficos de dispersión de las tensiones del nudo 13 (todos los modelos iniciales). Fuente: Elaboración propia}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_QGEN7.png}
+	\caption{Histogramas y gráficos de dispersión de las inyecciones reactivas (todos los modelos iniciales). Fuente: Elaboración propia}
+\end{figure}
+
+\subsection{Análisis de las Gráficas de Predicción}
+\subsubsection{Estimación de Variables de Estado}
+Al observar las gráficas de dispersión para las tensiones nodales (en este caso V2 y V13) y las pérdidas del sistema, se contrasta visualmente la superioridad de la Red Neuronal y los algoritmos basados en \textit{boosting}. 
+
+En los histogramas de las pérdidas y tensiones de estos modelos, se puede observar como la gran mayoría de los errores porcentuales se encuentran centrados en cero y comprendidos entre $\pm10\%$ y $\pm0,5\%$. En contraste, los modelos RandomForest y ESR\_RandomForest presentan campanas mucho más dispersas y anchas. 
+
+Las gráficas de dispersión refuerzan esta posición de superioridad. Las nubes de puntos en las pérdidas sugieren un buen ajuste a la diagonal en general. Por otra parte, en las tensiones, los modelos basados en Random Forest tienen cierto sesgo en los extremos, tendiendo a sobreestimar en tensiones por debajo de 0,95 p.u. y a subestimar a partir de 0,99 p.u.
+
+\subsubsection{Estimación de la Variable de Control}
+En los histogramas de la variable QGEN7, todos los modelos exhiben una distribución centrada en cero, a excepción del modelo RandomForest que muestra una distribución del error fuertemente irregular y descentrada.
+
+En sus gráficas de dispersión, la distribución de la nube de puntos revela agrupaciones y columnas verticales muy marcadas. La visualización de estas franjas son el resultado gráfico de enfrentar valores reales discretos contra estimaciones continuas. En el eje de abscisas, la variable QGEN7 presenta saltos fijos y escalonados (impuestos por la resolución numérica de GAMS), lo que obliga a que todos los puntos se sitúen en coordenadas horizontales fijas. Sin embargo, en el eje de ordenadas, los modelos operan mediante algoritmos de regresión y arrojan resultados numéricos continuos. Por lo tanto, para un único valor real discreto, el modelo genera multitud de predicciones decimales que oscilan por encima y por debajo de ese punto, creando visualmente una dispersión vertical en forma de columna.
+
+Los modelos ESR\_XGBoost, ESR\_RandomForest son los que mejor logran concentrar estas columnas verticales más cerca de la línea ideal. Aun así, todos los algoritmos manifiestan una mayor dispersión en los valores extremos de inyección. En estas regiones límite, la altura de las franjas verticales aumenta, indicando que a los modelos les cuesta mayor esfuerzo encajar el valor decimal exacto sobre el escalón de potencia correspondiente.
+
 \section{Informe de Evaluación Avanzada}
+Con el objetivo de enriquecer aún más el contenido del presente proyecto, se exploraron nuevas arquitecturas derivadas del conocimiento adquirido con los resultados iniciales. Estas nuevas arquitecturas intentan explorar el límite de aprendizaje del problema planteado, encontrando los mejores modelos posibles. 

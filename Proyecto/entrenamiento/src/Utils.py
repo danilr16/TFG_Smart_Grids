@@ -51,6 +51,13 @@ def plot_all_models_for_variable(y_true_df, dict_preds, variable_name, unit_labe
 
         epsilon = 1e-10
 
+        if variable_name.startswith('V'):
+            hist_range = (-1.5, 1.5)
+            num_bins = 200
+        else:
+            hist_range = (-40, 40)
+            num_bins = 100
+
         for i, (nombre_modelo, preds) in enumerate(dict_preds.items()):
             if isinstance(preds, pd.DataFrame):
                 y_pred = preds[variable_name].values
@@ -61,7 +68,7 @@ def plot_all_models_for_variable(y_true_df, dict_preds, variable_name, unit_labe
 
             ax_hist = axes[i, 0]
             ax_hist.set_facecolor('white')
-            ax_hist.hist(pct_error, bins=100, range=(-40, 40), color='#1f77b4', edgecolor='none')
+            ax_hist.hist(pct_error, bins=num_bins, range=hist_range, color='#1f77b4', edgecolor='none')
             ax_hist.set_xlabel('Error (%)', color='black')
             ax_hist.set_ylabel('Frecuencia', color='black')
             ax_hist.set_title(f'{nombre_modelo} - Distribución del Error ({variable_name})', color='black')
