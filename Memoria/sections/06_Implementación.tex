@@ -1,13 +1,42 @@
 \chapter{Implementación}\label{cap:implementacion}
 
 \section{Decisiones de Diseño}
-%TODO
+Al tratarse de un proyecto centrado en la investigación y la inteligencia artificial y no en el desarrollo de una aplicación clásica, el diseño se enfoca en la robustez del tratamiento de los datos, la causalidad física de los modelos y la estructuración de un \textit{pipeline} analítico reproducible.
 
-\section{Arquitectura}
-%TODO
+\subsection{Arquitectura}
+A diferencia de las arquitecturas de \textit{software} tradicionales, los sistemas de \textit{Machine Learning} modernos orientados a la investigación se diseñan habitualmente como \textbf{pipelines de datos estructurados}. Para este proyecto, la arquitectura se ha materializado en un ecosistema de \textbf{cuadernos de experimentación interactivos (Jupyter Notebooks)} apoyados por scripts modulares de utilidades.
 
-\section{Tecnologías y Herramientas}
-%TODO
+Esta decisión arquitectónica de tratar cada experimento como un ``módulo'' independiente dentro del sistema se justifica por las siguientes ventajas técnicas:
+\begin{itemize}
+	\item \textbf{Aislamiento de entornos de ejecución:} El entrenamiento de modelos como XGBoost o arquitecturas profundas en TensorFlow requiere un manejo intensivo de la memoria RAM. Al separar cada enfoque predictivo en un cuaderno distinto, se aísla el estado de las variables y se previenen desbordamientos de memoria o conflictos entre librerías.
+	\item \textbf{Interactividad y trazabilidad computacional:} La naturaleza de celda a celda de los cuadernos permite ejecutar, visualizar y validar el progreso de los experimentos. Esto resulta vital para la ingeniería de datos y la detección visual de anomalías antes de someter los datos a entrenamientos computacionalmente costosos.
+	\item \textbf{Documentación integrada:} Los cuadernos permiten entrelazar la lógica de programación en Python con bloques explicativos en \textit{Markdown} y salidas gráficas. Cada cuaderno actúa, por tanto, como un módulo de ejecución y como el propio reporte de resultados.
+\end{itemize}
+
+\subsection{Tecnologías y Herramientas}
+Para la implementación de los requisitos recogidos y la construcción de los cuadernos, se ha seleccionado un conjunto de herramientas pertenecientes al ecosistema estándar de la ciencia de datos en Python:
+\begin{itemize}
+	\item \textbf{Lenguaje de programación:} Seleccionado \textbf{Python 3} \cite{descarga-python} como lenguaje principal por su hegemonía en el desarrollo de algoritmos de inteligencia artificial y su extensa comunidad de soporte.
+	\item \textbf{Entorno de desarrollo (IDE):}
+		\subitem \textbf{Jupyter Notebooks:} \cite{descarga-jupyter} Plataforma de computación interactiva que permite la creación de los móduloos de experimentación, combinando código, texto y visualizaciones.
+		\subitem \textbf{PyCharm:} \cite{descarga-pycharm} Es un entorno de desarrollo integrado (IDE) diseñado por la compañía JetBrains 
+		específicamente para el lenguaje de programación Python. Posee herramientas de análisis y depuración de código, además de integración con sistemas de control de versiones.
+	\item \textbf{Librerías de datos y álgebra:}
+		\subitem \textbf{Numpy:} Numpy \cite{documentacion-numpy} es una librería de Python que le agrega mayor soporte para vectores y matrices, constituyendo una biblioteca de funciones matemáticas de alto nivel.
+		\subitem \textbf{Pandas:} \cite{documentacion-pandas} Es una biblioteca de software escrita como extensión de Numpy para manipulación y análisis de datos. Ofrece estructuras de datos y operaciones para manipular tablas numéricas y series temporales.
+	\item \textbf{Visualización de datos:}
+		\subitem \textbf{Matplotlib:} \cite{documentacion-matplotlib} Librería de graficación bidimensional, capaz de generar representaciones gráficas estáticas, animadas e interactivas.
+		\subitem \textbf{Seaborn:} \cite{documentacion-seaborn} Construida sobre Matplotlib, proporciona una interfaz de alto nivel para trazar gráficos estadísticos atractivos e informativos.
+	\item \textbf{Librerías de modelos predictivos:}
+		\subitem \textbf{Scikit-Learn:} \cite{documentacion-scikit-learn} Es una librería que incluye varios algoritmos de clasificación, regresión y clustering. Además, implementa gran parte de lógica necesaria para la normalización, creación de particiones y cálculo de métricas.
+	\item \textbf{Deep Learning:}
+		\subitem \textbf{TensorFlow y Keras:} TensorFlow \cite{documentacion-tensor-flow} y Keras \cite{documentacion-keras} son Frameworks desarrollados por Google utilizados para construir, compilar y entrenar Redes Neuronales mediante su API funcional.
+	\item \textbf{Optimización y búsqueda de hiperparámetros:}
+		\subitem \textbf{Keras Tuner:} Keras Tuner \cite{documentacion-keras-tuner} es una librería específica de optimización para modelos de \textit{Deep Learning}.
+		\subitem \textbf{MetaGen:} \cite{github-metagen} Framework de optimización herística y metaheurística.
+	\item \textbf{Persistencia de modelos:}
+		\subitem \textbf{Joblib:} \cite{documentacion-joblib} Es una biblioteca que proporciona herramientas para facilitar y optimizar la ejecución de código. Además, permite la persistencia de modelos.
+\end{itemize}
 
 \section{Desarrollo}
 
@@ -64,7 +93,7 @@ En la figura \ref{fig:hist_input}, podemos observar como las variables P2 y Q2 t
 
 \clearpage
 
-Analizando el rango de cada una de las variables de entrada, podemos observar como algunas presentan rangos muy amplios, como el nudo 12 (con potencia activa entre 0 y 30), mientas que otros presentan rangos más estrechos (entre 0 y 1). Si estos datos se introducen en crudo en los modelos, estos algoritmos matemáticos tenderán a otorgar un mayor peso a la variables con números mayores, opacando la influencia real en el resto de la red. Para mitigar este problema, es común realizar una \textbf{normalización o estandarización} de las variables. Este tratamiento se vuelve una estrategia necesaria, cuando el objetivo es entrenar y comparar diferentes modelos predictivos. Al escalar todas las entradas a un rango común, se garantiza un marco de evaluación equitativo, asegurando que las métricas de error resultantes reflejen la verdadera capacidad de aprendizaje de cada arquitectura y no su sensibilidad frente a datos sin procesar. Además, ciertos modelos como las Redes Neuronales o KNN requieren estrictamente de esta normalización para su correcto funcionamiento, a diferencia de modelos basados en partición del espacio como los Árboles de Decisión. 
+Analizando el rango de cada una de las variables de entrada, podemos observar como algunas presentan rangos muy amplios, como el nudo 12 (con potencia activa entre 0 y 30), mientas que otros presentan rangos más estrechos (entre 0 y 1). Si estos datos se introducen en crudo, ciertos algoritmos matemáticos basados en el descenso de gradiente o cálculo de distancias (como las Redes Neuronales) tenderán a otorgar un mayor peso a la variables con números mayores, opacando la influencia real en el resto de la red. Para mitigar este problema, es común realizar una \textbf{normalización o estandarización} de las variables. Al escalar todas las entradas a un rango común, se garantiza un marco de evaluación equitativo, asegurando que las métricas de error resultantes reflejen la verdadera capacidad de aprendizaje de cada arquitectura y no su sensibilidad frente a datos sin procesar. Por el contrario, los modelos de ensamblaje basados en árboles de decisión son matemáticamente invariantes a la escala monótona, por lo que son capaces de procesar las magnitudes físicas en bruto sin sufrir este sesgo. Siguiendo este criterio, finalmente se decidió normalizar solo las entradas y las salidas en el entrenamiento con modelos de Redes Neuronales y dejar los datos en bruto para el resto de algoritmos.
 
 En la figura \ref{fig:hist_output}, podemos observar el mismo comportamiento constante con la variable V1, por lo que esta columna también se descartará. En cuanto a las valores de las variables que representan las intensidades de corriente en cada línea, muchos de estos valores son nulos (I0\_1 son todos valores nulos) y presentan rangos muy estrechos. En este casos estas variables se descartarán y no se aprenderán por las siguientes razones:
 \begin{itemize}
@@ -113,10 +142,6 @@ En las figuras \ref{fig:hist_clean_input} y \ref{fig:hist_clean_output}, se pued
 	mask = Y['PERD'] >= 0
 	X = X[mask]
 	Y = Y[mask]
-
-	normalizer_X = MinMaxScaler(feature_range=(0, 1))
-	X = pd.DataFrame(normalizer_X.fit_transform(X), 
-		columns=X.columns, index=X.index)
 \end{lstlisting}
 
 \clearpage
@@ -290,10 +315,10 @@ Para complementar y expandir el enfoque del ESR utilizando algoritmos de \textit
 
 Tras numerosas pruebas con esta arquitectura se llegó a la conclusión de que era necesario implementar dos variaciones que no se implementaron en el resto de modelos. Dado que el modelo estima tres salidas de naturaleza y magnitud drásticamente diferentes, el algoritmo por su propia naturaleza, ignoraba las variables más complejas y tendía a minimizar el error de las más simples. Para solucionar esto, se asignó unos pesos específicos a la función de error de cada una de las variables (1 a las variables de las tensiones y la potencia inyectada y 2 a las pérdidas) y se normalizaron las variables objetivo entre 0 y 1 antes de realizar el entrenamiento del modelo (las predicciones por tanto estarán también normalizadas). 
 \begin{lstlisting}[language=Python, caption={Código del método que crea la red neuronal}, label={cod:red_neuronal}, captionpos=b]
-	def make_build_model(input_dim, num_voltages, norm_layer=None):
+	def make_build_model(input_dim, num_voltages):
 		def build_model(hp):
 			inputs = tf.keras.Input(shape=(input_dim,), name='input_x')
-			x_norm = norm_layer(inputs) if norm_layer is not None else inputs
+			x_norm = inputs
 			
 			activation = hp.Choice('activation', ['relu', 'elu'])
 			dropout_rate = hp.Float('dropout', 0.0, 0.3, step=0.1)
@@ -469,6 +494,10 @@ Para evaluar estas combinaciones de forma rigurosa, se programó una clase a med
 				else:
 					x_train_fold, x_test_fold = x[train_index],
 						x[test_index]
+						
+				scaler_x = MinMaxScaler()
+				x_train_fold = scaler_x.fit_transform(x_train_fold)
+				x_test_fold = scaler_x.transform(x_test_fold)
 				
 				y_train_fold = {}
 				y_test_fold = {}

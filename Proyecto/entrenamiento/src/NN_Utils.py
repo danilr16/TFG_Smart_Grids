@@ -16,6 +16,10 @@ class TimeSeriesRandomSearch(kt.RandomSearch):
             else:
                 x_train_fold, x_test_fold = x[train_index], x[test_index]
 
+            scaler_x = MinMaxScaler()
+            x_train_fold = scaler_x.fit_transform(x_train_fold)
+            x_test_fold = scaler_x.transform(x_test_fold)
+
             y_train_fold = {}
             y_test_fold = {}
             for key, data in y.items():
@@ -51,10 +55,10 @@ class TimeSeriesRandomSearch(kt.RandomSearch):
         self.oracle.update_trial(trial.trial_id, avg_metrics)
 
 
-def make_build_model(input_dim, num_voltages, norm_layer=None):
+def make_build_model(input_dim, num_voltages):
     def build_model(hp):
         inputs = tf.keras.Input(shape=(input_dim,), name='input_x')
-        x_norm = norm_layer(inputs) if norm_layer is not None else inputs
+        x_norm = inputs
 
         activation = hp.Choice('activation', ['relu', 'elu'])
         dropout_rate = hp.Float('dropout', 0.0, 0.3, step=0.1)

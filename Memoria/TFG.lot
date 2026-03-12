@@ -3,12 +3,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Requisitos generales del sistema}}{15}{table.caption.19}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Requisitos de información del sistema}}{16}{table.caption.20}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Requisitos de información del sistema}}{17}{table.caption.21}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Requisitos de información del sistema}}{18}{table.caption.22}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Espacio de búsqueda de hiperparámetros (RandomForest). Fuente: Elaboración propia}}{39}{table.caption.29}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Espacio de búsqueda de hiperparámetros (XGBoost). Fuente: Elaboración propia}}{39}{table.caption.30}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_RandomForest). Fuente: Elaboración propia}}{40}{table.caption.31}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_XGBoost). Fuente: Elaboración propia}}{40}{table.caption.32}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal). Fuente: Elaboración propia}}{40}{table.caption.33}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Espacio de búsqueda de hiperparámetros (RandomForest). Fuente: Elaboración propia}}{44}{table.caption.33}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Espacio de búsqueda de hiperparámetros (XGBoost). Fuente: Elaboración propia}}{44}{table.caption.34}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_RandomForest). Fuente: Elaboración propia}}{45}{table.caption.35}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_XGBoost). Fuente: Elaboración propia}}{45}{table.caption.36}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal). Fuente: Elaboración propia}}{45}{table.caption.37}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,0 +1,31 @@
+\begin{table}[htp]
+	\centering
+		\begin{tabular}{ | p{7cm} | p{8cm} | }
+			\hline
+			\rowcolor[HTML]{90D5FF} 
+			\textbf{Requisito de Información} & \textbf{Descripción}\\
+			\hline
+			
+			RF-01: Procesado y Filtrado de Datos & El sistema debe cargar los datos provenientes del \textit{dataset} e identificar y descartar aquellos registros físicamente inconsistentes \\
+			\hline
+			RF-02: Transformación y Escalado & El sistema debe aplicar técnicas de normalización cuando sea necesario sobre las variables. Esta transformación debe ajustarse única y estrictamente sobre los conjuntos de datos de entrenamiento para prevenir el filtrado de información de los conjuntos de evaluación \\
+			\hline
+			RF-03: Entrenamiento de algoritmos estáticos & El sistema debe permitir instanciar, configurar y entrenar modelos basados en árboles de decisión, concretamente \textit{Random Forest} y \textit{XGBoost}, capaces de predecir simultáneamente variables con naturalezas distintas \\
+			\hline 
+			RF-04: Implementación de Redes Neuronales multipropósito & El sistema debe ser capaz de construir arquitecturas de \textit{Deep Learning} con múltiples salidas independientes, permitiendo predecir simultáneamente variables con naturalezas distintas \\
+			\hline
+			RF-05: Arquitecturas jerárquicas & El sistema debe soportar topologías de red secuenciales que respeten la causalidad física \\
+			\hline
+			RF-06: Búsqueda de Hiperparámetros & El sistema debe integrar módulos de optimización para explorar combinaciones de hiperparámetros que minimicen la función de pérdida seleccionada \\
+			\hline
+			RF-07: Validación metodológica & El sistema debe dividir los datos empleando técnicas de retención para aislar un conjunto de validación final completamente ciego \\
+			\hline
+			RF-08: Cálculo de Métricas y Evaluación & El sistema debe calcular métricas de error absolutas y relativas directamente sobre las magnitudes reales para mostrar de forma objetiva y representativa la eficiencia de los modelos \\
+			\hline
+			RF-09: Visualización de Resultados & El sistema debe generar las gráficas pertinente para la contrastación de los resultados obtenidos por los modelos con el conjunto de validación final \\
+			\hline
+			
+		\end{tabular} 
+		
+		\caption{Requisitos de información del sistema}
+	\end{table}

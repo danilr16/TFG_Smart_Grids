@@ -5,7 +5,7 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliografia.bib
-"{" immediately follows a field name---line 22 of file bibliografia.bib
+"{" immediately follows a field name---line 90 of file bibliografia.bib
  :  url
  :     {https://keras.io/api/layers/}
 I'm skipping whatever remains of this entry
@@ -26,49 +26,62 @@ Warning--empty year in ibm-bagging
 Warning--empty year in xgboost
 Warning--empty year in aws-red-neuro
 Warning--empty booktitle in o-reilly-machine-learning
+Warning--empty year in descarga-python
+Warning--empty year in descarga-jupyter
+Warning--empty year in descarga-pycharm
+Warning--empty year in documentacion-numpy
+Warning--empty year in documentacion-pandas
+Warning--empty year in documentacion-matplotlib
+Warning--empty year in documentacion-seaborn
+Warning--empty year in documentacion-scikit-learn
+Warning--empty year in documentacion-tensor-flow
+Warning--empty year in documentacion-keras
+Warning--empty year in documentacion-keras-tuner
+Warning--empty year in github-metagen
+Warning--empty year in documentacion-joblib
 Warning--empty year in scikit-learn-time-series
 Warning--empty year in keras-layers
 Warning--empty year in scikit-learn-random-forest
 Warning--empty year in xgboost-xgbregressor
-You've used 20 entries,
+You've used 33 entries,
             2481 wiz_defined-function locations,
-            625 strings with 7079 characters,
-and the built_in function-call counts, 5231 in all, are:
-= -- 433
-> -- 140
-< -- 20
-+ -- 88
-- -- 40
-* -- 262
-:= -- 788
-add.period$ -- 59
-call.type$ -- 20
-change.case$ -- 41
-chr.to.int$ -- 12
-cite$ -- 41
-duplicate$ -- 287
-empty$ -- 597
-format.name$ -- 60
-if$ -- 1129
-int.to.chr$ -- 9
-int.to.str$ -- 21
+            666 strings with 8059 characters,
+and the built_in function-call counts, 8205 in all, are:
+= -- 697
+> -- 161
+< -- 23
++ -- 128
+- -- 46
+* -- 448
+:= -- 1108
+add.period$ -- 88
+call.type$ -- 33
+change.case$ -- 67
+chr.to.int$ -- 17
+cite$ -- 77
+duplicate$ -- 469
+empty$ -- 1007
+format.name$ -- 69
+if$ -- 1828
+int.to.chr$ -- 17
+int.to.str$ -- 34
 missing$ -- 1
-newline$ -- 107
-num.names$ -- 60
-pop$ -- 227
+newline$ -- 162
+num.names$ -- 69
+pop$ -- 382
 preamble$ -- 1
-purify$ -- 20
+purify$ -- 33
 quote$ -- 0
-skip$ -- 235
+skip$ -- 390
 stack$ -- 0
-substring$ -- 40
-swap$ -- 52
+substring$ -- 76
+swap$ -- 89
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 140
-warning$ -- 21
-while$ -- 40
+type$ -- 231
+warning$ -- 34
+while$ -- 46
 width$ -- 0
-write$ -- 240
+write$ -- 374
 (There was 1 error message)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -94,6 +94,63 @@ AWS Amazon.
 Aurélien Géron.
 \newblock Hands-on machine learning with scikit-learn, keras, and tensorflow.
 \newblock O’Reilly Media, 2022.
+
+\bibitem[des({\natexlab{a}})]{descarga-python}
+Descarga de python, {\natexlab{a}}.
+\newblock URL \url{https://www.python.org/downloads/}.
+
+\bibitem[des({\natexlab{b}})]{descarga-jupyter}
+Página de jupyter notebook, {\natexlab{b}}.
+\newblock URL \url{https://jupyter.org/}.
+
+\bibitem[JetBrains()]{descarga-pycharm}
+JetBrains.
+\newblock Descarga de pycharm.
+\newblock URL
+  \url{https://www.jetbrains.com/pycharm/download/?section=windows}.
+
+\bibitem[doc({\natexlab{a}})]{documentacion-numpy}
+Documentación numpy, {\natexlab{a}}.
+\newblock URL \url{https://numpy.org/}.
+
+\bibitem[doc({\natexlab{b}})]{documentacion-pandas}
+Documentación pandas, {\natexlab{b}}.
+\newblock URL \url{https://pandas.pydata.org/}.
+
+\bibitem[doc({\natexlab{c}})]{documentacion-matplotlib}
+Documentación matplotlib, {\natexlab{c}}.
+\newblock URL \url{https://matplotlib.org/}.
+
+\bibitem[doc({\natexlab{d}})]{documentacion-seaborn}
+Documentación seaborn, {\natexlab{d}}.
+\newblock URL \url{https://seaborn.pydata.org/}.
+
+\bibitem[doc({\natexlab{e}})]{documentacion-scikit-learn}
+Documentación scikit-learn, {\natexlab{e}}.
+\newblock URL \url{https://sklearn.org/stable/}.
+
+\bibitem[Google({\natexlab{a}})]{documentacion-tensor-flow}
+Google.
+\newblock Documentación tensorflow, {\natexlab{a}}.
+\newblock URL \url{https://www.tensorflow.org/?hl=es-419}.
+
+\bibitem[Google({\natexlab{b}})]{documentacion-keras}
+Google.
+\newblock Documentación keras, {\natexlab{b}}.
+\newblock URL \url{https://keras.io/}.
+
+\bibitem[doc({\natexlab{f}})]{documentacion-keras-tuner}
+Documentación keras tuner, {\natexlab{f}}.
+\newblock URL \url{https://keras.io/keras_tuner/}.
+
+\bibitem[git()]{github-metagen}
+Github metagen.
+\newblock URL
+  \url{https://github.com/Data-Science-Big-Data-Research-Lab/MetaGen}.
+
+\bibitem[doc({\natexlab{g}})]{documentacion-joblib}
+Documentación de joblib, {\natexlab{g}}.
+\newblock URL \url{https://joblib.readthedocs.io/en/stable/}.
 
 \bibitem[Scikit-Learn({\natexlab{c}})]{scikit-learn-time-series}
 Scikit-Learn.
