@@ -63,7 +63,7 @@ En la tabla \ref{fig:resultados-iniciales-not-shifted} podemos notar que el erro
 \subsubsection{Estimación de Variables de Estado}
 Tanto las tensiones nodales como las pérdidas representan el estado físico continuo de la red y comparten una fuerte dependencia de la topología del sistema. En este bloque, la superioridad de las arquitecturas profundas y de optimización por gradiente es evidente:
 \begin{itemize}
-	\item \textbf{Hegemonía de la Red Neuronal:} La arquitectura profunda resulta ser el estimador más riguroso para las variables puramente físicas. En la estimación de tensiones, logra el menor MAE con un valor de 0,001693 p.u. y un $R^2$ de 0,973. En la estimación de las pérdidas, alcanza un $R^2$ sobresaliente a pesar de su complejidad, con un valor de 0,9815 y minimiza el MAE hasta 0,198 kW.
+	\item \textbf{Hegemonía de la Red Neuronal:} La arquitectura profunda resulta ser el estimador más riguroso para las variables puramente físicas. En la estimación de tensiones, logra el menor MAE con un valor de 0,001718 p.u. y un $R^2$ de 0,973. En la estimación de las pérdidas, alcanza un $R^2$ sobresaliente a pesar de su complejidad, con un valor de 0,983 y minimiza el MAE hasta 0,128734 kW.
 	\item \textbf{Rendimiento de los modelos de ensamble:} Dentro de las arquitecturas basadas en árboles, las variantes de XGBoost (XGBoost y ESR\_XGBoost) demuestran una capacidad predictiva excelente, cercanas a la de la Red Neuronal. Por el contrario, los modelos basados en Random Forest (RandomForest y ESR\_RandomForest) presentan limitaciones notables, estancándose en un $R^2$ en torno al 0,9 en tensiones y 0,94 en pérdidas y duplicando el MAE de sus competidores.
 	\item \textbf{Resultados del enfoque jerárquico (ESR):} El uso de la estructura propia (ESR) demuestra su eficacia en variables no lineales como las pérdidas, aunque la diferencia respecto al resto de modelos no es algo sustancial de momento.
 \end{itemize}
@@ -71,8 +71,8 @@ Tanto las tensiones nodales como las pérdidas representan el estado físico con
 \subsubsection{Estimación de la Variable de Control}
 A diferencia de las variables anteriores, la inyección de potenica reactiva presenta una dinámica operativa discreta. Esta naturaleza altera por completo la jerarquía de rendimiento de los algoritmos:
 \begin{itemize}
-	\item \textbf{Hegemonía de la partición espacial:} En este escenario, los ensamblados de árboles superan a la aproximación profunda. El algoritmo XGBoost original logra el mejor coeficiente de determinación en 0,885, mientras que la variante ESR\_RandomForest obtiene los mejores márgenes de error absoluto en 0,0065. Las divisiones ortogonales de los árboles de decisión han resultado mucho más aptas para modelar estos saltos escalonados en al inyección de reactiva.
-	\item \textbf{Resultados del enfoque jerárquico (ESR):} El impacto de la metodología ESR se observa perfectamente en los resultados del algoritmo RandomForest. El modelo estándar fracasa de forma contundente al intentar modelar la inyección de reactiva ($R^2 = 0,544$). Sin embargo, al implementar la arquitectura propuesta (ESR\_RandomForest), se corrige esta deficiencia drásticamente, elevando el $R^2$ hasta 0,883 y posicionándolo como el estimador más preciso para esta variable.
+	\item \textbf{Hegemonía de la partición espacial:} En este escenario, los ensamblados de árboles superan a la aproximación profunda. El algoritmo XGBoost original logra el mejor coeficiente de determinación en 0,884, mientras que la variante ESR\_RandomForest obtiene los mejores márgenes de error absoluto en 0,006523. Las divisiones ortogonales de los árboles de decisión han resultado mucho más aptas para modelar estos saltos escalonados en al inyección de reactiva.
+	\item \textbf{Resultados del enfoque jerárquico (ESR):} El impacto de la metodología ESR se observa perfectamente en los resultados del algoritmo RandomForest. El modelo estándar fracasa de forma contundente al intentar modelar la inyección de reactiva ($R^2 = 0,544$). Sin embargo, al implementar la arquitectura propuesta (ESR\_RandomForest), se corrige esta deficiencia drásticamente, elevando el $R^2$ hasta 0,883 y posicionándolo como el estimador más preciso para esta variable. Lo mismo ocurre para el modelo XGBoost y ESR\_XGBoost, mejorando su capacidad de predicción de las variables de estado.
 \end{itemize}
 
 \subsection{Resultados de las Gráficas de Predicción}
@@ -116,3 +116,85 @@ Los modelos ESR\_XGBoost, ESR\_RandomForest son los que mejor logran concentrar 
 
 \section{Informe de Evaluación Avanzada}
 Con el objetivo de enriquecer aún más el contenido del presente proyecto, se exploraron nuevas arquitecturas derivadas del conocimiento adquirido con los resultados iniciales. Estas nuevas arquitecturas intentan explorar el límite de aprendizaje del problema planteado, encontrando los mejores modelos posibles. 
+
+\subsection{Espacio de Búsqueda}
+Para alcanzar el máximo rendimiento predictivo del sistema, la fase final de experimentación se centró en la exploración y optimización profunda de tres nuevos enfoques avanzados. 
+
+En primer lugar, se implementó el modelo \textbf{ESR\_Best\_Model}, el cual hace uso de la clase diseñada a medida ESR para buscar la mejor arquitectura secuencial posible. Esta estrategia integra dos algoritmos predictivos distintos, seleccionados estratégicamente a partir de los modelos clásicos que demostraron mejores resultados en la fase de evaluación inicial. Como se puede observar en el extracto de código \ref{cod:esr_best_model}, se usa el algoritmo RandomForestRegressor para la predicción de la potencia reactiva inyectada y el modelo XGBRegressor para la predicción de tensiones y pérdidas. Para la exploración de hiperparámetros se hizo uso del \textit{framework} MetaGen.
+\begin{lstlisting}[language=Python, caption={Código de definición del modelo ESR\_Best\_Model}, label={cod:esr_best_model}, captionpos=b]
+	model = ElectricSequentialRegressor(
+		RandomForestRegressor(
+			n_estimators=solution["estimator1__n_estimators"],
+			max_depth=solution["estimator1__max_depth"],
+			min_samples_split=solution["estimator1__min_samples_split"],
+			max_features=solution["estimator1__max_features"], 
+			n_jobs=1, 
+			random_state=42),
+		XGBRegressor(
+			n_estimators=solution["estimator2__n_estimators"],
+			max_depth=solution["estimator2__max_depth"],
+			learning_rate=solution["estimator2__learning_rate"],
+			colsample_bytree=solution["estimator2__colsample_bytree"],
+			objective='reg:squarederror', 
+			n_jobs=1, 
+			random_state=42),
+		n_jobs=1)
+\end{lstlisting}
+
+En segundo lugar, se entrenó el modelo \textbf{Red Neuronal MetaGen}. Para este modelo de \textit{Deep Learning}, se vuelve a hacer uso de la herramienta MetaGen para optimizar la topología de red neuronal profunda definida en la fase inicial. Finalmente, se construyó el modelo \textbf{Red Neuronal Híbrida}, con la selección de los valores de los hiperparámetros que dieron mejores resultados para las anteriores arquitecturas.
+
+A continuación se expone el espacio de búsqueda utilizado con cada uno de estos modelos:
+
+\input{tables/esr_best_hiperparam}
+
+\input{tables/nn_metagen_hiperparam}
+
+\subsection{Resultados de las Métricas de Evaluación}
+De la misma forma que en la sección de evaluación inicial, se recogieron los resultados de las métricas en dos tablas comparativas (sin desplazamiento en el MAPE y con desplazamiento). Para facilitar la comparación de los nuevos modelos propuestos, se añadieron los resultados obtenidos por los modelos de la fase inicial.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/resultados_avanzados_sin_desplazamiento.png}
+	\caption{Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}
+	\label{fig:resultados-avanzados-not-shifted}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/resultados_avanzados_con_desplazamiento.png}
+	\caption{Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}
+	\label{fig:resultados-avanzados-shifted}
+\end{figure}
+
+\subsection{Análisis de las Métricas de Evaluación}
+Las métricas de evaluación muestran el éxito del modelo \textbf{ESR\_Best\_Model}. La arquitectura ESR ha demostrado una potencia y eficacia sobresalientes frente a los enfoques tradicionales. Al integrar algoritmos predictivos de distinta naturaleza en un mismo flujo, asignando a cada variable objetivo el modelo que mejor rendimiento demostró en la fase inicial, el sistema es capaz de explotar las fortalezas de cada paradigma. Como resultado, esta arquitectura ha reportado \textbf{los mejores resultados globales del estudio}, minimizando el error residual y ofreciendo las métricas más robustas en la predicción en general del estado del sistema.
+
+Por otro lado, dentro del paradigma del \textit{Deep Learning}, si bien el modelo explorado íntegramente por MetaGen demostró una excelente capacidad de predicción de las tensiones y una mejoría en la predicción de potencia reactiva, su rendimiento se vio penalizado por una menor precisión en la estimación de las pérdidas.
+
+En consecuencia, los mejores resultados dentro del ecosistema de redes neuronales recaen sobre la \textbf{Red Neuronal Base} y la \textbf{Red Neuronal Híbrida}. Al someter ambos enfoques a una comparativa de estabilidad, la Red Neuronal Híbrida se consolida como la arquitectura más estable y homogénea en la predicción de todas las variables. Mientras que la red base presenta un rendimiento ligeramente asimétrico, la estrategia de hibridación ha logrado unificar la precisión en el control de potencia reactiva inyectada y las variables de estado.
+
+\subsection{Resultados de las Gráficas de Predicción}
+A continuación, se presentan las representaciones gráficas de dispersión y las distribuciones del error porcentual generadas para cada modelo y variable. Para reducir el tamaño de la gráfica generada, solo se añadieron los resultados de los mejores modelos de la fase anterior (ESR\_XGBoost y Red Neuronal).
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_avanzados_PERD.png}
+	\caption{Histogramas y gráficos de dispersión de las pérdidas (modelos avanzados). Fuente: Elaboración propia}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_avanzados_V2.png}
+	\caption{Histogramas y gráficos de dispersión de las tensiones del nudo 2 (modelos avanzados). Fuente: Elaboración propia}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_avanzados_V13.png}
+	\caption{Histogramas y gráficos de dispersión de las tensiones del nudo 13 (modelos avanzados). Fuente: Elaboración propia}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/resultados_modelos_avanzados_QGEN7.png}
+	\caption{Histogramas y gráficos de dispersión de las inyecciones reactivas (modelos avanzados). Fuente: Elaboración propia}
+\end{figure}
+
+\subsection{Análisis de las Gráficas de Predicción}
+%TODO

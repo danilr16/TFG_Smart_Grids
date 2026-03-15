@@ -125,3 +125,56 @@ def make_build_model(input_dim, num_voltages):
         )
         return model
     return build_model
+
+def build_meta_neural_network(solution, input_dim, num_voltages):
+    inputs = tf.keras.Input(shape=(input_dim,), name='input_x')
+    x_norm = inputs
+
+    activation = solution["activation"]
+    dropout_rate = solution["dropout"]
+    use_batch_norm = solution["use_batch_norm"]
+
+    if solution["optimizer"] == 'sgd':
+        optimizer = tf.keras.optimizers.SGD(learning_rate=solution["learning_rate"])
+    else:
+        optimizer = tf.keras.optimizers.Adam(learning_rate=solution["learning_rate"])
+
+    x1 = x_norm
+    for _ in range(solution["n_hidden_q"]):
+        x1 = tf.keras.layers.Dense(solution["n_neurons_q"])(x1)
+        if use_batch_norm: x1 = tf.keras.layers.BatchNormalization()(x1)
+        x1 = tf.keras.layers.Activation(activation)(x1)
+        if dropout_rate > 0: x1 = tf.keras.layers.Dropout(dropout_rate)(x1)
+
+    out_qgen = tf.keras.layers.Dense(1, activation='linear', name='out_qgen7')(x1)
+    merged = tf.keras.layers.Concatenate()([x_norm, out_qgen])
+
+    x2 = merged
+    for _ in range(solution["n_hidden_v"]):
+        x2 = tf.keras.layers.Dense(solution["n_neurons_v"])(x2)
+        if use_batch_norm: x2 = tf.keras.layers.BatchNormalization()(x2)
+        x2 = tf.keras.layers.Activation(activation)(x2)
+        if dropout_rate > 0: x2 = tf.keras.layers.Dropout(dropout_rate)(x2)
+
+    out_v = tf.keras.layers.Dense(num_voltages, activation='linear', name='out_volt')(x2)
+
+    x3 = merged
+    for _ in range(solution["n_hidden_p"]):
+        x3 = tf.keras.layers.Dense(solution["n_neurons_p"])(x3)
+        if use_batch_norm: x3 = tf.keras.layers.BatchNormalization()(x3)
+        x3 = tf.keras.layers.Activation(activation)(x3)
+        if dropout_rate > 0: x3 = tf.keras.layers.Dropout(dropout_rate)(x3)
+
+    out_perd = tf.keras.layers.Dense(1, activation='linear', name='out_perd')(x3)
+
+    model = tf.keras.Model(inputs=inputs, outputs=[out_v, out_perd, out_qgen])
+
+    model.compile(
+        optimizer=optimizer,
+        loss_weights={'out_qgen7': 2.0, 'out_volt': 1.0, 'out_perd': 2.0},
+        loss={'out_qgen7': 'mse', 'out_volt': 'mse', 'out_perd': 'mse'},
+        metrics={'out_qgen7': ['mae', 'mape', tf.keras.metrics.R2Score(name='r2_score')],
+            'out_volt': ['mae', 'mape', tf.keras.metrics.R2Score(name='r2_score')],
+            'out_perd': ['mae', 'mape', tf.keras.metrics.R2Score(name='r2_score')]},
+    )
+    return model
