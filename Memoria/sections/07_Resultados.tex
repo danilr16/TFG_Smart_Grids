@@ -197,4 +197,10 @@ A continuación, se presentan las representaciones gráficas de dispersión y la
 \end{figure}
 
 \subsection{Análisis de las Gráficas de Predicción}
-%TODO
+El análisis gráfico de las predicciones corrobora visualmente de forma clara las conclusiones obtenidas a través de las métricas.
+
+Al observar las gráficas, el modelo ESR\_Best\_Model muestra un muy buen ajuste y estabilidad en la predicción de todas las variables analizadas, corroborando así su posición de superioridad y robustez. Aún así, observando únicamente la variable de pérdidas (PERD), se sigue apreciando un leve mejor ajuste en la predicción de esta variable por parte de los modelos neuronales (a excepción de la Red Neuronal Metagen).
+
+Por su parte, las representaciones de la Red Neuronal MetaGen evidencian la pérdida de capacidad de predicción de la variable PERD. A cambio, logra un mejor ajuste en la variable de potencia reactiva, aunque tiende a subestimar esta variable, tal y como muestra el desplazamiento del centro de la campana en el histograma del error.
+
+Finalmente, las gráficas correspondientes a la Red Neuronal Híbrida demuestran cómo la arquitectura consigue corregir la deficiencia de MetaGen en la predicción de las pérdidas. Al mismo tiempo, mantiene una alta fidelidad en la estimación de las tensiones y la potencia reactiva.

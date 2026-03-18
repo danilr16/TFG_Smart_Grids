@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -94,6 +94,16 @@ AWS Amazon.
 Aurélien Géron.
 \newblock Hands-on machine learning with scikit-learn, keras, and tensorflow.
 \newblock O’Reilly Media, 2022.
+
+\bibitem[Tributaria()]{amortizacion}
+Agencia Tributaria.
+\newblock Coeficientes de amortización lineal.
+\newblock URL
+  \url{https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2023/c07-rendimientos-actividades-economicas-estimacion-directa/fase-1-determinacion-rendimiento-neto/amortizaciones-dotaciones-ejercicio-fiscalmente-deducibles/requisitos-generales/coeficientes-amortizacion-lineal.html}.
+
+\bibitem[pre()]{precio-perfiles}
+Plataforma de trabajos de fin de grado de la etsii.
+\newblock URL \url{https://tfc.eii.us.es/TFG/}.
 
 \bibitem[des({\natexlab{a}})]{descarga-python}
 Descarga de python, {\natexlab{a}}.

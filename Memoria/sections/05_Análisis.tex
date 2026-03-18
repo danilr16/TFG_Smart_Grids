@@ -1,41 +1,76 @@
 \chapter{Análisis}\label{cap:analisis}
-Este capítulo tiene como propósito fundamental traducir los objetivos generales y técnicos del proyecto en especificaciones formales que guíen el diseño y la posterior implementación del sistema. A continuación, se detallan los requisitos del sistema clasificados en generales, de información, funcionales y no funcionales.
+Este capítulo tiene como propósito fundamental traducir los objetivos generales y técnicos del proyecto en especificaciones formales que guíen el diseño y la posterior implementación del sistema. 
 
-\section{Requisitos Generales}
+\section{Catálogo de Requisitos}
+A continuación, se detallan los requisitos del sistema clasificados en generales, de información, funcionales y no funcionales.
+
+\subsection{Requisitos Generales}
 \input{tables/requisitos_generales}
 \clearpage
 
-\section{Requisitos de Información}
+\subsection{Requisitos de Información}
 \input{tables/requisitos_informacion}
 
-\section{Requisitos Funcionales}
+\subsection{Requisitos Funcionales}
 \input{tables/requisitos_funcionales}
 \clearpage
 
-\section{Requisitos No Funcionales}
+\subsection{Requisitos No Funcionales}
 \input{tables/requisitos_no_funcionales}
 
-\section{Matriz de Trazabilidad}
-%\input{tables/matriz_trazabilidad}
+\subsection{Matriz de Trazabilidad}
+\input{tables/matriz_trazabilidad}
+\clearpage
 
-\section{Planificación Temporal}
-%TODO Planificación
+\section{Planificación}
 
-\subsection{Tareas de Investigación}
+\subsection{Planificación Temporal}
+%TODO
 
-\subsection{Tareas de Análisis}
+\subsubsection{Tareas de Investigación}
+%TODO
 
-\subsection{Tareas de Desarrollo}
+\subsubsection{Tareas de Análisis}
+%TODO
 
-\subsection{Tareas de Evaluación}
+\subsubsection{Tareas de Desarrollo}
+%TODO
 
-\subsection{Tareas de Cierre}
+\subsubsection{Tareas de Evaluación}
+%TODO
 
-\section{Planificación Financiera}
+\subsubsection{Tareas de Cierre}
+%TODO
 
-\subsection{Tabla de Sueldos}
-%\input{tables/tabla_sueldos}
+\subsection{Planificación Financiera}
+Para determinar el coste real y la viabilidad económica del proyecto, se ha calculado el \textbf{Coste Total de Propiedad (TCO)}, estructurando el presupuesto en dos grandes bloques: los costes de capital (CAPEX) y los costes operativos (OPEX).
 
-\subsection{Estimación de Tiempos y Costes}
+Para la estimación temporal, se ha considerado una duración aproximada del proyecto de 8 meses.
 
-\subsection{Costes Finales}
+\subsubsection{CAPEX}
+Los costes de capital engloban las inversiones en activos fijos necesarios para el desarrollo del proyecto:
+\begin{itemize}
+	\item \textbf{Costes de hardware:} El proyecto se ha desarrollado utilizando el portátil HP OmniBook 7. En lugar de utilizar el precio total de compra del equipo, se ha aplicado el coeficiente de amortización lineal máximo establecido por las tablas de la Agencia Tributaria \cite{amortizacion} para ``Equipos electrónicos e informáticos'', fijado en un 25\% anual. Asumimos un valor de mercado aproximado del equipo de 1.300,00 €.
+	\item \textbf{Costes de infraestructura:} Cabe destacar que los gastos indirectos derivados del uso de instalaciones físicas, no han sido incluidos en este presupuesto debido a la imposibilidad de disponer de datos concretos y aislados del consumo exclusivo de este proyecto.
+\end{itemize}
+
+\begin{equation}
+	\begin{split}
+		CAPEX &= \text{Costes hardware} + \text{Costes de infraestructura} \\
+		&= 1300,00 \cdot \frac{25}{100} \cdot \frac{8}{12} + 0,00 = \textbf{216,67 €}
+	\end{split}
+\end{equation}
+
+\subsubsection{OPEX}
+Los costes operativos recogen los gastos derivados de la ejecución y el trabajo diario:
+\begin{itemize}
+	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se hecho uso exclusivo de tecnologías libres y herramientas \textit{Open Source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 €}.
+	\item \textbf{Costes de personal:} Para el cálculo de estos costes se han tomado los datos obtenidos sobre el informe de precios para perfiles profesionales en el ámbito de las tecnologías de la información, proporcionados en la documentación del TFG \cite{precio-perfiles}. Se aplicaron en este caso los perfiles junior para cada uno de los roles del proyecto. El perfil de Científico de Datos no se contempla en dicha documentación, por lo que se ha seleccionado el perfil Consultor/a especializado en Business Inteligent para la selección de la tarifa por hora, por ser el perfil que más se asemeja al rol.
+\end{itemize}
+
+\input{tables/roles_horas}
+
+\subsubsection{Presupuesto Total}
+A partir de la suma de los costes CAPEX y OPEX, se calcula el \textbf{coste base} del proyecto. Para elaborar el presupuesto total, se ha incluido un margen de contingencia estándar en la ingeniería del software del 10\% para cubrir posibles riesgos o desviaciones imprevistas y un porcentaje adicional en concepto de beneficio del 15\%. Finalmente se le debe aplicar un IVA del 21\%.
+
+\input{tables/presupuesto_total}

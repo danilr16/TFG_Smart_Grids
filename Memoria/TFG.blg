@@ -5,7 +5,7 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliografia.bib
-"{" immediately follows a field name---line 90 of file bibliografia.bib
+"{" immediately follows a field name---line 101 of file bibliografia.bib
  :  url
  :     {https://keras.io/api/layers/}
 I'm skipping whatever remains of this entry
@@ -26,6 +26,8 @@ Warning--empty year in ibm-bagging
 Warning--empty year in xgboost
 Warning--empty year in aws-red-neuro
 Warning--empty booktitle in o-reilly-machine-learning
+Warning--empty year in amortizacion
+Warning--empty year in precio-perfiles
 Warning--empty year in descarga-python
 Warning--empty year in descarga-jupyter
 Warning--empty year in descarga-pycharm
@@ -43,45 +45,45 @@ Warning--empty year in scikit-learn-time-series
 Warning--empty year in keras-layers
 Warning--empty year in scikit-learn-random-forest
 Warning--empty year in xgboost-xgbregressor
-You've used 33 entries,
+You've used 35 entries,
             2481 wiz_defined-function locations,
-            666 strings with 8059 characters,
-and the built_in function-call counts, 8205 in all, are:
-= -- 697
-> -- 161
-< -- 23
-+ -- 128
-- -- 46
-* -- 448
-:= -- 1108
-add.period$ -- 88
-call.type$ -- 33
-change.case$ -- 67
-chr.to.int$ -- 17
-cite$ -- 77
-duplicate$ -- 469
-empty$ -- 1007
-format.name$ -- 69
-if$ -- 1828
+            673 strings with 8533 characters,
+and the built_in function-call counts, 8675 in all, are:
+= -- 737
+> -- 168
+< -- 24
++ -- 134
+- -- 48
+* -- 471
+:= -- 1166
+add.period$ -- 93
+call.type$ -- 35
+change.case$ -- 71
+chr.to.int$ -- 19
+cite$ -- 82
+duplicate$ -- 497
+empty$ -- 1069
+format.name$ -- 72
+if$ -- 1936
 int.to.chr$ -- 17
-int.to.str$ -- 34
+int.to.str$ -- 36
 missing$ -- 1
-newline$ -- 162
-num.names$ -- 69
-pop$ -- 382
+newline$ -- 171
+num.names$ -- 72
+pop$ -- 407
 preamble$ -- 1
-purify$ -- 33
+purify$ -- 35
 quote$ -- 0
-skip$ -- 390
+skip$ -- 416
 stack$ -- 0
-substring$ -- 76
-swap$ -- 89
+substring$ -- 81
+swap$ -- 93
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 231
-warning$ -- 34
-while$ -- 46
+type$ -- 245
+warning$ -- 36
+while$ -- 48
 width$ -- 0
-write$ -- 374
+write$ -- 394
 (There was 1 error message)

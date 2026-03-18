@@ -1,13 +1,13 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {lstlisting}{\numberline {5.1}{\ignorespaces Código de preprocesamiento del dataset}}{28}{lstlisting.5.1}%
-\contentsline {lstlisting}{\numberline {5.2}{\ignorespaces Código de validación por retención}}{32}{lstlisting.5.2}%
-\contentsline {lstlisting}{\numberline {5.3}{\ignorespaces Código del constructor del ESR}}{35}{lstlisting.5.3}%
-\contentsline {lstlisting}{\numberline {5.4}{\ignorespaces Código del método de entrenamiento del ESR}}{35}{lstlisting.5.4}%
-\contentsline {lstlisting}{\numberline {5.5}{\ignorespaces Código del método de predicciones del ESR}}{36}{lstlisting.5.5}%
-\contentsline {lstlisting}{\numberline {5.6}{\ignorespaces Ejemplo de uso del modelo ESR}}{37}{lstlisting.5.6}%
-\contentsline {lstlisting}{\numberline {5.7}{\ignorespaces Código del método que crea la red neuronal}}{37}{lstlisting.5.7}%
-\contentsline {lstlisting}{\numberline {5.8}{\ignorespaces Código de exploración de hiperparámetros con ESR\_RandomForest}}{40}{lstlisting.5.8}%
-\contentsline {lstlisting}{\numberline {5.9}{\ignorespaces Código de exploración de hiperparámetros con ESR\_XGBoost}}{40}{lstlisting.5.9}%
-\contentsline {lstlisting}{\numberline {5.10}{\ignorespaces Código de exploración de hiperparámetros con Redes Neuronales}}{42}{lstlisting.5.10}%
-\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces Código de definición del modelo ESR\_Best\_Model}}{54}{lstlisting.6.1}%
+\contentsline {lstlisting}{\numberline {5.1}{\ignorespaces Código de preprocesamiento del dataset}}{30}{lstlisting.5.1}%
+\contentsline {lstlisting}{\numberline {5.2}{\ignorespaces Código de validación por retención}}{34}{lstlisting.5.2}%
+\contentsline {lstlisting}{\numberline {5.3}{\ignorespaces Código del constructor del ESR}}{37}{lstlisting.5.3}%
+\contentsline {lstlisting}{\numberline {5.4}{\ignorespaces Código del método de entrenamiento del ESR}}{37}{lstlisting.5.4}%
+\contentsline {lstlisting}{\numberline {5.5}{\ignorespaces Código del método de predicciones del ESR}}{38}{lstlisting.5.5}%
+\contentsline {lstlisting}{\numberline {5.6}{\ignorespaces Ejemplo de uso del modelo ESR}}{39}{lstlisting.5.6}%
+\contentsline {lstlisting}{\numberline {5.7}{\ignorespaces Código del método que crea la red neuronal}}{39}{lstlisting.5.7}%
+\contentsline {lstlisting}{\numberline {5.8}{\ignorespaces Código de exploración de hiperparámetros con ESR\_RandomForest}}{42}{lstlisting.5.8}%
+\contentsline {lstlisting}{\numberline {5.9}{\ignorespaces Código de exploración de hiperparámetros con ESR\_XGBoost}}{42}{lstlisting.5.9}%
+\contentsline {lstlisting}{\numberline {5.10}{\ignorespaces Código de exploración de hiperparámetros con Redes Neuronales}}{44}{lstlisting.5.10}%
+\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces Código de definición del modelo ESR\_Best\_Model}}{56}{lstlisting.6.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
