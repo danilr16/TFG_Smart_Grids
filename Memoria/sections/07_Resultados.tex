@@ -16,7 +16,7 @@ Para la visualización gráfica de estos resultados, se emplearán principalment
 \section{Informe de Evaluación Inicial}
 
 \subsection{Espacio de Búsqueda}
-En esta sección, se exponen los \textbf{espacios de búsqueda definidos} para la optimización de los hiperparámetros de los diferentes modelos planteados en esta primera evaluación. Como se puede apreciar en la parametrización de las diferentes arquitecturas, los estimadores (o capas en el caso de la Red Neuronal) encargados de predecir las tensiones nodales y las pérdidas exploran rangos que dotan al modelo de una mayor complejidad estructural, respecto a la primera fase del modelo. Esta diferencia en los espacios de búsqueda se debe al propio comportamiento físico de la red eléctrica. Por un lado, las pérdidas de energía tienen un comportamiento no lineal (ya que crece con el cuadrado de la corriente). Por otro lado, las tensiones de cada punto dependen de cómo interactúa toda la red en su conjunto. Por este motivo, la parte de los modelos encargada de predecir estas variables necesita tener una mayor capacidad de aprendizaje. Si se usara una configuración demasiado sencilla, el algoritmo no podría capturar estas relaciones tan complejas y sufriría de subajuste.
+En esta sección, se exponen los \textbf{espacios de búsqueda definidos} para la optimización de los hiperparámetros de los diferentes modelos planteados en esta primera evaluación. Como se puede apreciar en la parametrización de las diferentes arquitecturas, los estimadores (o capas en el caso de la Red Neuronal) encargados de predecir las tensiones nodales y las pérdidas exploran rangos que dotan al modelo de una mayor complejidad estructural, respecto a la primera fase del modelo. Esta diferencia en los espacios de búsqueda se debe al propio comportamiento físico de la red eléctrica. Por un lado, las pérdidas de energía tienen un comportamiento no lineal (ya que crecen con el cuadrado de la corriente). Por otro lado, las tensiones de cada punto dependen de cómo interactúa toda la red en su conjunto. Por este motivo, la parte de los modelos encargada de predecir estas variables necesita tener una mayor capacidad de aprendizaje. Si se usara una configuración demasiado sencilla, el algoritmo no podría capturar estas relaciones tan complejas y sufriría de subajuste.
 
 A continuación, se detalla la nomenclatura empleada para referenciar cada uno de los modelos predictivos evaluados:
 \begin{itemize}
@@ -49,13 +49,13 @@ En la tabla \ref{fig:resultados-iniciales-not-shifted} podemos notar que el erro
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_sin_desplazamiento.png}
-	\caption{Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}
+	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}
 	\label{fig:resultados-iniciales-not-shifted}
 \end{figure}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_con_desplazamiento.png}
-	\caption{Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}
+	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}
 	\label{fig:resultados-iniciales-shifted}
 \end{figure}
 
@@ -69,9 +69,9 @@ Tanto las tensiones nodales como las pérdidas representan el estado físico con
 \end{itemize}
 
 \subsubsection{Estimación de la Variable de Control}
-A diferencia de las variables anteriores, la inyección de potenica reactiva presenta una dinámica operativa discreta. Esta naturaleza altera por completo la jerarquía de rendimiento de los algoritmos:
+A diferencia de las variables anteriores, la inyección de potencia reactiva presenta una dinámica operativa discreta. Esta naturaleza altera por completo la jerarquía de rendimiento de los algoritmos:
 \begin{itemize}
-	\item \textbf{Hegemonía de la partición espacial:} En este escenario, los ensamblados de árboles superan a la aproximación profunda. El algoritmo XGBoost original logra el mejor coeficiente de determinación en 0,884, mientras que la variante ESR\_RandomForest obtiene los mejores márgenes de error absoluto en 0,006523. Las divisiones ortogonales de los árboles de decisión han resultado mucho más aptas para modelar estos saltos escalonados en al inyección de reactiva.
+	\item \textbf{Hegemonía de la partición espacial:} En este escenario, los ensamblados de árboles superan a la aproximación profunda. El algoritmo XGBoost original logra el mejor coeficiente de determinación en 0,884, mientras que la variante ESR\_RandomForest obtiene los mejores márgenes de error absoluto en 0,006523. Las divisiones ortogonales de los árboles de decisión han resultado mucho más aptas para modelar estos saltos escalonados en la inyección de reactiva.
 	\item \textbf{Resultados del enfoque jerárquico (ESR):} El impacto de la metodología ESR se observa perfectamente en los resultados del algoritmo RandomForest. El modelo estándar fracasa de forma contundente al intentar modelar la inyección de reactiva ($R^2 = 0,544$). Sin embargo, al implementar la arquitectura propuesta (ESR\_RandomForest), se corrige esta deficiencia drásticamente, elevando el $R^2$ hasta 0,883 y posicionándolo como el estimador más preciso para esta variable. Lo mismo ocurre para el modelo XGBoost y ESR\_XGBoost, mejorando su capacidad de predicción de las variables de estado.
 \end{itemize}
 
@@ -103,7 +103,7 @@ A continuación, se presentan las representaciones gráficas de dispersión y la
 \subsubsection{Estimación de Variables de Estado}
 Al observar las gráficas de dispersión para las tensiones nodales (en este caso V2 y V13) y las pérdidas del sistema, se contrasta visualmente la superioridad de la Red Neuronal y los algoritmos basados en \textit{boosting}. 
 
-En los histogramas de las pérdidas y tensiones de estos modelos, se puede observar como la gran mayoría de los errores porcentuales se encuentran centrados en cero y comprendidos entre $\pm10\%$ y $\pm0,5\%$. En contraste, los modelos RandomForest y ESR\_RandomForest presentan campanas mucho más dispersas y anchas. 
+En los histogramas de las pérdidas y tensiones de estos modelos, se puede observar cómo la gran mayoría de los errores porcentuales se encuentran centrados en cero y comprendidos entre $\pm10\%$ y $\pm0,5\%$. En contraste, los modelos RandomForest y ESR\_RandomForest presentan campanas mucho más dispersas y anchas. 
 
 Las gráficas de dispersión refuerzan esta posición de superioridad. Las nubes de puntos en las pérdidas sugieren un buen ajuste a la diagonal en general. Por otra parte, en las tensiones, los modelos basados en Random Forest tienen cierto sesgo en los extremos, tendiendo a sobreestimar en tensiones por debajo de 0,95 p.u. y a subestimar a partir de 0,99 p.u.
 
@@ -155,13 +155,13 @@ De la misma forma que en la sección de evaluación inicial, se recogieron los r
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_avanzados_sin_desplazamiento.png}
-	\caption{Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}
+	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos avanzados. Fuente: Elaboración propia}
 	\label{fig:resultados-avanzados-not-shifted}
 \end{figure}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_avanzados_con_desplazamiento.png}
-	\caption{Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}
+	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos avanzados (MAPE desplazado). Fuente: Elaboración propia}
 	\label{fig:resultados-avanzados-shifted}
 \end{figure}
 

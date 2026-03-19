@@ -5,19 +5,24 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Requisitos generales del sistema}}{15}{table.caption.19}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Requisitos de información del sistema}}{16}{table.caption.20}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Requisitos de información del sistema}}{17}{table.caption.21}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Requisitos de información del sistema}}{18}{table.caption.22}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Requisitos funcionales del sistema}}{17}{table.caption.21}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Requisitos no funcionales del sistema}}{18}{table.caption.22}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces Matriz de trazabilidad de requisitos del sistema frente a los objetivos del proyecto}}{19}{table.caption.23}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Tabla de coste estimado por rol en el proyecto}}{21}{table.caption.31}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Tabla del presupuesto total estimado del proyecto}}{21}{table.caption.33}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Tabla de tareas de la fase de investigación}}{20}{table.caption.25}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Tabla de coste estimado por rol en el proyecto}}{22}{table.caption.32}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Tabla del presupuesto total estimado del proyecto}}{22}{table.caption.34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Espacio de búsqueda de hiperparámetros (RandomForest). Fuente: Elaboración propia}}{47}{table.caption.44}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Espacio de búsqueda de hiperparámetros (XGBoost). Fuente: Elaboración propia}}{47}{table.caption.45}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_RandomForest). Fuente: Elaboración propia}}{48}{table.caption.46}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_XGBoost). Fuente: Elaboración propia}}{48}{table.caption.47}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal). Fuente: Elaboración propia}}{48}{table.caption.48}%
-\contentsline {table}{\numberline {6.6}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_Best\_Model). Fuente: Elaboración propia}}{57}{table.caption.59}%
-\contentsline {table}{\numberline {6.7}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal MetaGen). Fuente: Elaboración propia}}{58}{table.caption.60}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Espacio de búsqueda de hiperparámetros (RandomForest). Fuente: Elaboración propia}}{48}{table.caption.45}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Espacio de búsqueda de hiperparámetros (XGBoost). Fuente: Elaboración propia}}{48}{table.caption.46}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_RandomForest). Fuente: Elaboración propia}}{49}{table.caption.47}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_XGBoost). Fuente: Elaboración propia}}{49}{table.caption.48}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal). Fuente: Elaboración propia}}{49}{table.caption.49}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}}{50}{figure.caption.50}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}}{51}{figure.caption.51}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_Best\_Model). Fuente: Elaboración propia}}{58}{table.caption.60}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal MetaGen). Fuente: Elaboración propia}}{59}{table.caption.61}%
+\contentsline {table}{\numberline {6.10}{\ignorespaces Tabla de comparación de métricas de evaluación entre modelos avanzados. Fuente: Elaboración propia}}{59}{figure.caption.62}%
+\contentsline {table}{\numberline {6.11}{\ignorespaces Tabla de comparación de métricas de evaluación entre modelos avanzados (MAPE desplazado). Fuente: Elaboración propia}}{59}{figure.caption.63}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
