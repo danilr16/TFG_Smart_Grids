@@ -24,38 +24,83 @@ A continuación, se detallan los requisitos del sistema clasificados en generale
 
 \section{Planificación}
 En esta sección se define la planificación temporal y financiera del proyecto. Esta definición del análisis estimado de tiempo y coste es vital para evitar realizar las entregas fuera de plazo o exceder el presupuesto establecido. 
-%TODO MEJORAR
 
 \subsection{Planificación Temporal}
-La planificación temporal de este proyecto sigue un enfoque iterativo, dividido en cinco fases con diferentes tareas asignadas a cada una de ellas. 
+La planificación temporal de este proyecto sigue un enfoque iterativo e incremental, organizando el ciclo de vida del desarrollo en cinco fases con diferentes tareas asignadas a cada una de ellas. 
 
-Se estima como comienzo operativo de este proyecto el 20 de septiembre de 2025 y como fin de este el 20 de mayo de 2026.
-%TODO MEJORAR
+Se estima como comienzo operativo del proyecto el 20 de septiembre de 2025 y como fin de este el 20 de mayo de 2026.
+
+A continuación, se detalla el propósito de cada fase y se describen las tareas que las componen:
 
 \subsubsection{Fase de Investigación}
-El objetivo de esta fase es la comprensión del estado del arte tanto de la parte eléctrica, como de los diferentes algoritmos y tratamientos de inteligencia artificial. Además, es necesario en esta fase de un estudio de las diferentes librerías de estos algoritmos.
-%TODO MEJORAR
+El objetivo fundamental de esta fase es asentar la base teórica del proyecto. Se centra en la comprensión del estado del arte, abarcando tanto el comportamiento y topología de las redes eléctricas de distribución, como el estudio de diferentes algoritmos de aprendizaje automático y las librerías necesarias para su implementación.
 
 \input{tables/tareas_investigacion}
+\clearpage
 
 \subsubsection{Fase de Análisis}
-Esta fase se centra en el análisis exhaustivo del dominio del problema con tareas como la elicitación de requisitos, selección de modelos y técnicas de inteligencia artificial.
-%TODO MEJORAR
+Esta fase persigue traducir la investigación teórica en especificaciones formales. Su objetivo es realizar un análisis exhaustivo del dominio del problema para definir los requisitos del sistema, seleccionar los modelos matemáticos y metodologías de evaluación más adecuadas.
 
 \input{tables/tareas_analisis}
+\clearpage
 
 \subsubsection{Fase de Desarrollo}
-Esta fase engloba las tareas de implementación, entrenamiento de modelos y optimización de estos.
-%TODO MEJORAR
+El propósito de esta fase es la materialización del sistema predictivo. Engloba las tareas en lo referente a ingeniería de datos y el entrenamiento y la optimización de los modelos seleccionados.
 
 \input{tables/tareas_desarrollo}
+\clearpage
 
 \subsubsection{Fase de Evaluación}
-Evaluación de los modelos entrenados mediante métricas estadísticas y visualización de resultados.
-%TODO MEJORAR
+Esta fase tiene como objetivo validar la eficacia de los modelos desarrollados frente a datos no observados previamente. Se busca cuantificar el rendimiento, realizar un análisis comparativo y justificar la elección del mejor sistema.
+
+\input{tables/tareas_evaluacion}
+\clearpage
 
 \subsubsection{Fase de Cierre}
-%TODO
+El propósito de esta fase final es la recopilación, documentación y presentación de todo el trabajo realizado, garantizando que el proyecto cumpla con los estándares académicos exigidos para su defensa.
+
+\input{tables/tareas_cierre}
+\clearpage
+
+\clearpage
+
+\subsubsection{Diagrama Temporal}
+\begin{figure}[htp]
+	\centering
+	\definecolor{azulGantt}{HTML}{5B9BD5}
+	\begin{ganttchart}[
+		vgrid,
+		hgrid,
+		x unit=1.1cm,
+		y unit title=0.7cm,
+		y unit chart=0.7cm,
+		title label font=\bfseries\footnotesize,
+		title/.style={fill=azulGantt, draw=black, line width=0.6pt},
+		title height=1,
+		title top shift=0,
+		bar/.style={fill=azulGantt, draw=black, line width=0.6pt}
+		]{1}{9}
+		\gantttitle{2025}{4} \gantttitle{2026}{5} \\
+		
+		\gantttitle{Sep}{1}
+		\gantttitle{Oct}{1}
+		\gantttitle{Nov}{1}
+		\gantttitle{Dic}{1}
+		\gantttitle{Ene}{1}
+		\gantttitle{Feb}{1}
+		\gantttitle{Mar}{1}
+		\gantttitle{Abr}{1}
+		\gantttitle{May}{1} \\
+		
+		\ganttbar{Fase de Investigación}{1}{2} \\
+		\ganttbar{Fase de An\'alisis}{2}{3} \\
+		\ganttbar{Fase de Desarrollo}{4}{5} \\
+		\ganttbar{Fase de Evaluaci\'on}{6}{7} \\
+		\ganttbar{Fase de Cierre}{8}{9}
+	\end{ganttchart}
+	
+	\caption{Diagrama de la planificación temporal prevista del proyecto}
+\end{figure}
 
 \subsection{Planificación Financiera}
 Para determinar el coste real y la viabilidad económica del proyecto, se ha calculado el \textbf{Coste Total de Propiedad (TCO)}, estructurando el presupuesto en dos grandes bloques: los costes de capital (CAPEX) y los costes operativos (OPEX).
@@ -79,7 +124,7 @@ Los costes de capital engloban las inversiones en activos fijos necesarios para 
 \subsubsection{OPEX}
 Los costes operativos recogen los gastos derivados de la ejecución y el trabajo diario:
 \begin{itemize}
-	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se hecho uso exclusivo de tecnologías libres y herramientas \textit{Open Source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 €}.
+	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se ha hecho un uso exclusivo de tecnologías libres y herramientas \textit{Open Source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 €}.
 	\item \textbf{Costes de personal:} Para el cálculo de estos costes se han tomado los datos obtenidos sobre el informe de precios para perfiles profesionales en el ámbito de las tecnologías de la información, proporcionados en la documentación del TFG \cite{precio-perfiles}. Se aplicaron en este caso los perfiles junior para cada uno de los roles del proyecto. El perfil de Científico de Datos no se contempla en dicha documentación, por lo que se ha seleccionado el perfil Consultor/a especializado en Business Intelligence para la selección de la tarifa por hora, por ser el perfil que más se asemeja al rol.
 \end{itemize}
 

@@ -99,6 +99,8 @@ A continuación, se presentan las representaciones gráficas de dispersión y la
 	\caption{Histogramas y gráficos de dispersión de las inyecciones reactivas (todos los modelos iniciales). Fuente: Elaboración propia}
 \end{figure}
 
+\clearpage
+
 \subsection{Análisis de las Gráficas de Predicción}
 \subsubsection{Estimación de Variables de Estado}
 Al observar las gráficas de dispersión para las tensiones nodales (en este caso V2 y V13) y las pérdidas del sistema, se contrasta visualmente la superioridad de la Red Neuronal y los algoritmos basados en \textit{boosting}. 
@@ -165,6 +167,8 @@ De la misma forma que en la sección de evaluación inicial, se recogieron los r
 	\label{fig:resultados-avanzados-shifted}
 \end{figure}
 
+\clearpage
+
 \subsection{Análisis de las Métricas de Evaluación}
 Las métricas de evaluación muestran el éxito del modelo \textbf{ESR\_Best\_Model}. La arquitectura ESR ha demostrado una potencia y eficacia sobresalientes frente a los enfoques tradicionales. Al integrar algoritmos predictivos de distinta naturaleza en un mismo flujo, asignando a cada variable objetivo el modelo que mejor rendimiento demostró en la fase inicial, el sistema es capaz de explotar las fortalezas de cada paradigma. Como resultado, esta arquitectura ha reportado \textbf{los mejores resultados globales del estudio}, minimizando el error residual y ofreciendo las métricas más robustas en la predicción en general del estado del sistema.
 
@@ -196,6 +200,8 @@ A continuación, se presentan las representaciones gráficas de dispersión y la
 	\caption{Histogramas y gráficos de dispersión de las inyecciones reactivas (modelos avanzados). Fuente: Elaboración propia}
 \end{figure}
 
+\clearpage
+
 \subsection{Análisis de las Gráficas de Predicción}
 El análisis gráfico de las predicciones corrobora visualmente de forma clara las conclusiones obtenidas a través de las métricas.
 
@@ -204,3 +210,14 @@ Al observar las gráficas, el modelo ESR\_Best\_Model muestra un muy buen ajuste
 Por su parte, las representaciones de la Red Neuronal MetaGen evidencian la pérdida de capacidad de predicción de la variable PERD. A cambio, logra un mejor ajuste en la variable de potencia reactiva, aunque tiende a subestimar esta variable, tal y como muestra el desplazamiento del centro de la campana en el histograma del error.
 
 Finalmente, las gráficas correspondientes a la Red Neuronal Híbrida demuestran cómo la arquitectura consigue corregir la deficiencia de MetaGen en la predicción de las pérdidas. Al mismo tiempo, mantiene una alta fidelidad en la estimación de las tensiones y la potencia reactiva.
+
+\subsection{Exploración de Otras Arquitecturas Avanzadas}
+Como parte del proceso de investigación, se exploró adicionalmente la implementación de redes neuronales recurrentes, en concreto la arquitectura \textbf{LSTM (Long Short-Term Memory)}. Dado que los datos de generación y consumo eléctrico conforman una serie temporal (con registros cada cinco minutos), la premisa teórica sugería que una red LSTM podría capturar dependencias, tendencias y dinámicas a lo largo del tiempo que los modelos puramente estáticos no pueden contemplar.
+
+Sin embargo, tras diversas iteraciones y fases de entrenamiento, los resultados obtenidos con esta arquitectura resultaron ser insatisfactorios, llevando finalmente a descartar este enfoque. El fracaso de esta implementación se fundamenta principalmente en dos factores limitantes:
+
+En primer lugar, la complejidad de las puertas lógicas y celdas de memoria de la arquitectura LSTM incrementó de forma exponencial el coste computacional y los tiempos de entrenamiento. Este aumento drástico en el uso de recursos hizo inviable realizar una buena búsqueda de hiperparámetros con el \textit{hardware} disponible, limitando la capacidad de la red para converger hacia configuraciones óptimas.
+
+En segundo lugar, el bajo rendimiento se explica por la propia naturaleza del \textit{dataset} sintético empleado. Al estar generado mediante resoluciones aisladas del OPF en GAMS a partir de perfiles limitados, los datos carecen de la continuidad cronológica y de las transiciones dinámicas reales que una red recurrente necesita para extraer patrones temporales válidos.
+
+En consecuencia, y a la vista de estas dos limitaciones fundamentales, se tomó la decisión de descartar las redes recurrentes para este caso de estudio. Por ello, la arquitectura LSTM no fue incluida en la fase de análisis avanzado ni en la comparativa final de resultados del presente proyecto.
