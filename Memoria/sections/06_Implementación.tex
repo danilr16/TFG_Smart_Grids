@@ -52,7 +52,7 @@ Como se ha expuesto anteriormente, para resolver el problema propuesto es necesa
 
 La red de distribución objeto de estudio está compuesta por dos subsistemas y 14 nudos (N1 a N14). Entre sus componentes destacan los generadores distribuidos, identificados mediante iconos representativos de su fuente de energía primaria.
 
-Dado que los datos de un único día son insuficientes para entrenar modelos de inteligencia artificial y obtener resultados satisfactorios, se ha recurrido a  \textit{scripts} de Python heredados que generan datos de consumo y generación para un año completo. El proceso de generación consiste en aplicar a los datos de \textit{P} y \textit{Q} ya disponibles, variaciones aleatorias proporcionales a la potencia máxima de la carga o la generación. 
+Dado que los datos de un único día son insuficientes para entrenar modelos de inteligencia artificial y obtener resultados satisfactorios, se ha recurrido a  \textit{scripts} de Python heredados que generan datos de consumo y generación para un año completo. El proceso de generación consiste en aplicar a los datos de \textit{P} y \textit{Q} ya disponibles, variaciones aleatorias proporcionales a la potencia máxima de la carga o la generación. Mediante la iteración de estas variaciones de las muestras del primer día, se generan datos de un año completo a intervalos de 5 minutos. El número de muestras recogidas para un día es de $\frac{1440 \text{ minutos/día}}{5 \text{ minutos/muestra}} = 288 \text{ muestras/día}$. Por lo tanto, el total de muestras del \textit{dataset} es de $288 \text{ muestras/día} \cdot 365 \text{ días/año} = \textbf{105120 \text{ muestras}}$.
 
 A continuación, estos datos se procesan mediante la herramienta de modelado y optimización GAMS. Es fundamental destacar que los \textit{scripts} heredados en GAMS no se limitan a resolver un flujo de cargas estándar para obtener el estado de la red. Por el contrario, ejecutan un \textbf{Flujo de Cargas Óptimo (OPF)}. El objetivo de esta optimización es encontrar la configuración óptima que minimice las pérdidas totales del sistema. De este proceso se extraen los atributos de entrada para los modelos (las potencias en los nudos) y las variables objetivo que se pretenden predecir (las tensiones óptimas de los nudos y las pérdidas mínimas resultantes).
 
@@ -62,22 +62,13 @@ La estrategia de control se basa en la inyección estratégica de potencia react
 
 En los \textit{scripts} de resolución del OPF en GAMS, por simplicidad y limitación de la herramienta, solo se tiene en cuenta la optimización de inyección de potencia reactiva por el generador de energía eólica (icono en verde). Por tanto, las pérdidas del sistema y tensiones calculadas por este método, se corresponden con los valores óptimos obtenidos al inyectar la potencia reactiva correspondiente en el sistema por ese generador.
 
-De esta forma en la figura \ref{fig:dataset-1}, se puede observar la forma del \textit{dataset} con los atributos de entrada. Se ha recortado el contenido de este para mostrar la información de los primeros 7 nudos. La primera columna llamada ``Column1'' muestra solo la indexación de cada muestra con el formato $dayX\_minY$, siendo \textit{X} el día e \textit{Y} el minuto del instante recogido. Cada columna $PZ$ y $QZ$ corresponden a la potencia activa y potencia reactiva del nudo \textit{Z}.
+De esta forma en la tabla \ref{table:dataset-1}, se puede observar la forma del \textit{dataset} con los atributos de entrada. Se ha recortado el contenido de este para mostrar la información de los primeros 5 nudos. La primera columna llamada ``Index'' muestra solo la indexación de cada muestra con el formato $dayX\_minY$, siendo \textit{X} el día e \textit{Y} el minuto del instante recogido. Cada columna $PZ$ y $QZ$ corresponden a la potencia activa y potencia reactiva del nudo \textit{Z}.
 
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=0.9\textwidth]{figures/dataset_entrada.png}
-	\caption{Dataframe del dataset de entrada. Fuente: Elaboración propia}
-	\label{fig:dataset-1}
-\end{figure}
+\input{tables/dataframe_entradas}
 
-En la figura \ref{fig:dataset-2} se puede observar la forma del \textit{dataset} con los atributos de salida. Presenta de nuevo la misma indexación. La columna QGEN7 corresponde con la cantidad de potencia reactiva inyectada. Las columnas con el formato $VX$ muestran la tensión del nudo \textit{X} y la columna PERD las pérdidas del sistema, correspondientes tras inyectar dicha potencia reactiva. Además de las columnas que se observan, también se disponen de las intensidades de corrientes en las líneas entre cada nudo. Sin embargo, como se explicará en siguientes secciones, estas columnas no se utilizarán.
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=0.9\textwidth]{figures/dataset_salida.png}
-	\caption{Dataframe del dataset de salida. Fuente: Elaboración propia}
-	\label{fig:dataset-2}
-\end{figure}
+En la tabla \ref{table:dataset-2} se puede observar la forma del \textit{dataset} con los atributos de salida. Se ha recortado el contenido de este para mostrar la información de las tensiones de los primeros 5 nudos. Presenta de nuevo la misma indexación. La columna QGEN7 corresponde con la cantidad de potencia reactiva inyectada. Las columnas con el formato $VX$ muestran la tensión del nudo \textit{X} y la columna PERD las pérdidas del sistema, correspondientes tras inyectar dicha potencia reactiva. Además de las columnas que se observan, también se disponen de las intensidades de corrientes en las líneas entre cada nudo. Sin embargo, como se explicará en siguientes secciones, estas columnas no se utilizarán.
+
+\input{tables/dataframe_salidas}
 
 \subsection{Procesamiento de Datos}
 Esta sección pretende adentrarse en la ingeniería de datos y abordar el tratamiento de esta información para el entrenamiento de los diferentes modelos. Para ello, primero se debe tener una visión general de los datos que se dispone. En la figura \ref{fig:hist_input} se encuentran los histogramas de todas las columnas de los atributos de entrada y en la figura \ref{fig:hist_output} los histogramas de los atributos de salida.
@@ -118,7 +109,7 @@ Por otro lado, la variable correspondiente a la inyección de potencia reactiva 
 
 La normalización de las variables de entrada es un proceso casi obligatorio en el \textit{Machine Learning}, sin embargo, este proceso no tiene por qué aplicarse a las variables objetivo. Si bien hay ciertos modelos que requieren también de esta doble normalización (Redes Neuronales), a menos que se intenten predecir diferentes variables con rangos muy distintos, este proceso no es aconsejable. Las métricas de evaluación de estos modelos, sobre las que se profundizará en futuras secciones, tratan de medir la diferencia entre el valor esperado y el predicho. Si se normalizan las variables estas diferencias pierden significado en el problema, mientras que si se mantienen, es posible hablar en unidades físicas reales. En este caso las tensiones tienen un rango aproximado entre 0 a 1 y las pérdidas positivas un rango entre 0 y 20, por lo que se tratará de preservar la distribución de estas variables.
 
-En las figuras \ref{fig:hist_clean_input} y \ref{fig:hist_clean_output}, se pueden observar los histogramas de las variables del \textit{dataset} una vez tratadas. Estos valores son los que se usarán en el entrenamiento de los diferentes modelos. En total, después de este tratamiento, el conjunto de entrenamiento se compone de 104.936 muestras. En el extracto de código \ref{cod:clean_dataset}, se expone el tratamiento que se ha realizado para la limpieza del conjunto de datos. 
+En las figuras \ref{fig:hist_clean_input} y \ref{fig:hist_clean_output}, se pueden observar los histogramas de las variables del \textit{dataset} una vez tratadas. Estos valores son los que se usarán en el entrenamiento de los diferentes modelos. En total, después de este tratamiento (en el que se han descartado 184 muestras por presentar pérdidas negativas), el conjunto de entrenamiento final se compone de 104.936 muestras, frente a las 105.120 originales. En el extracto de código \ref{cod:clean_dataset}, se expone el tratamiento que se ha realizado para la limpieza del conjunto de datos. 
 
 \begin{figure}[htp]
 	\centering
@@ -171,7 +162,7 @@ El proceso definido consta en primer lugar de una validación por retención tem
 	x_test, y_test = X[train_size:], Y[train_size:]
 \end{lstlisting}
 
-En segundo lugar, para llevar a cabo la selección del algoritmo óptimo y el ajuste de hiperparámetros, se aplica una validación cruzada sobre el subconjunto de entrenamiento (el 80\% inicial). Dado que la aplicación de un \textit{K-Fold} tradicional es incorrecto en este escenario temporal, se ha empleado la variante de Scikit-learn \textbf{Time Series Split} \cite{scikit-learn-time-series}. 
+En segundo lugar, para llevar a cabo la selección del algoritmo óptimo y el ajuste de hiperparámetros, se aplica una validación cruzada sobre el subconjunto de entrenamiento (el 80\% inicial). Dado que la aplicación de un \textit{K-Fold} tradicional es incorrecto en este escenario temporal, se ha empleado la variante de Scikit-learn \textbf{Time Series Split} \cite{scikit-learn-time-series}. A lo largo de los experimentos, se emplean configuraciones de 3 o 5 pliegues, dependiendo del coste computacional requerido por cada modelo.
 
 \begin{figure}[htp]
 	\centering

@@ -4,33 +4,31 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Sistema de suministro eléctrico tradicional. Fuente: \cite {red-distribucion}}}{5}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Principales procesos del Aprendizaje Automático. Fuente: Elaboración propia}}{7}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplos de subajuste, buen ajuste y sobreajuste. Fuente: \cite {scikit-learn-over-under}}}{7}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplos de subajuste, buen ajuste y sobreajuste. Fuente: \cite {scikit-learn-over-under}}}{8}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de Random Forest y técnica de Bagging. Fuente: Elaboración propia}}{9}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de Árbol de Decisión. Fuente: Elaboración propia}}{10}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Esquema de XGBoost. Fuente: \cite {xgboost_ibm}}}{10}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Estructura de una Red Neuronal. Fuente: Elaboración propia}}{11}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Esquema de XGBoost. Fuente: \cite {xgboost_ibm}}}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Estructura de una Red Neuronal. Fuente: Elaboración propia}}{12}{figure.caption.17}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de la planificación temporal prevista del proyecto}}{24}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de la planificación temporal prevista del proyecto}}{25}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Red objeto de estudio. Fuente: Recurso proporcionado por tutores}}{28}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Dataframe del dataset de entrada. Fuente: Elaboración propia}}{29}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Dataframe del dataset de salida. Fuente: Elaboración propia}}{30}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Histogramas de atributos de entrada. Fuente: Elaboración propia}}{31}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Histogramas de atributos de salida. Fuente: Elaboración propia}}{33}{figure.caption.45}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Histogramas de atributos de entrada limpios. Fuente: Elaboración propia}}{35}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Histogramas de atributos de salida limpios. Fuente: Elaboración propia}}{36}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Validación cruzada. Fuente: \cite {scikit-learn-validacion-cruzada}}}{38}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Time Series Split. Fuente: \cite {scikit-learn-validacion-cruzada}}}{39}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}}{41}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Red objeto de estudio. Fuente: Recurso proporcionado por tutores}}{29}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Histogramas de atributos de entrada. Fuente: Elaboración propia}}{33}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Histogramas de atributos de salida. Fuente: Elaboración propia}}{35}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Histogramas de atributos de entrada limpios. Fuente: Elaboración propia}}{37}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Histogramas de atributos de salida limpios. Fuente: Elaboración propia}}{38}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Validación cruzada. Fuente: \cite {scikit-learn-validacion-cruzada}}}{40}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Time Series Split. Fuente: \cite {scikit-learn-validacion-cruzada}}}{41}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}}{43}{figure.caption.50}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Histogramas y gráficos de dispersión de las pérdidas (todos los modelos iniciales). Fuente: Elaboración propia}}{56}{figure.caption.60}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 2 (todos los modelos iniciales). Fuente: Elaboración propia}}{57}{figure.caption.61}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 13 (todos los modelos iniciales). Fuente: Elaboración propia}}{58}{figure.caption.62}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Histogramas y gráficos de dispersión de las inyecciones reactivas (todos los modelos iniciales). Fuente: Elaboración propia}}{59}{figure.caption.63}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Histogramas y gráficos de dispersión de las pérdidas (modelos avanzados). Fuente: Elaboración propia}}{65}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 2 (modelos avanzados). Fuente: Elaboración propia}}{66}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 13 (modelos avanzados). Fuente: Elaboración propia}}{67}{figure.caption.72}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Histogramas y gráficos de dispersión de las inyecciones reactivas (modelos avanzados). Fuente: Elaboración propia}}{68}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Histogramas y gráficos de dispersión de las pérdidas (todos los modelos iniciales). Fuente: Elaboración propia}}{58}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 2 (todos los modelos iniciales). Fuente: Elaboración propia}}{59}{figure.caption.61}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 13 (todos los modelos iniciales). Fuente: Elaboración propia}}{60}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Histogramas y gráficos de dispersión de las inyecciones reactivas (todos los modelos iniciales). Fuente: Elaboración propia}}{61}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Histogramas y gráficos de dispersión de las pérdidas (modelos avanzados). Fuente: Elaboración propia}}{68}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 2 (modelos avanzados). Fuente: Elaboración propia}}{69}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 13 (modelos avanzados). Fuente: Elaboración propia}}{70}{figure.caption.72}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Histogramas y gráficos de dispersión de las inyecciones reactivas (modelos avanzados). Fuente: Elaboración propia}}{71}{figure.caption.73}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

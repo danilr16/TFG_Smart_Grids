@@ -27,6 +27,8 @@ A continuación, se detalla la nomenclatura empleada para referenciar cada uno d
 	\item \textbf{Red Neuronal}: Uso de las capas de Keras \cite{keras-layers} para la predicción de todas las variables con la topología especificada en \ref{cod:red_neuronal}.
 \end{itemize}
 
+Cabe destacar que, aunque las arquitecturas propuestas que usan ESR permiten utilizar modelos de distinta naturaleza para cada una de las fases predictivas, en esta primera fase, ambos estimadores comparten el mismo algoritmo base. Esta decisión permite establecer una línea base de rendimiento y evaluar el impacto puramente estructural de la topología secuencial frente al enfoque estático, reservando la exploración de combinaciones híbridas para la evaluación avanzada.
+
 \input{tables/rf_hiperparam}
 
 \input{tables/xgb_hiperparam}
@@ -49,13 +51,13 @@ En la tabla \ref{fig:resultados-iniciales-not-shifted} se puede notar que el err
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_sin_desplazamiento.png}
-	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos. Fuente: Elaboración propia}
+	\captionof{table}{Comparación de métricas de evaluación entre modelos}
 	\label{fig:resultados-iniciales-not-shifted}
 \end{figure}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_con_desplazamiento.png}
-	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos (MAPE desplazado). Fuente: Elaboración propia}
+	\captionof{table}{Comparación de métricas de evaluación entre modelos (MAPE desplazado)}
 	\label{fig:resultados-iniciales-shifted}
 \end{figure}
 
@@ -122,7 +124,9 @@ Con el objetivo de enriquecer aún más el contenido del presente proyecto, se e
 \subsection{Espacio de Búsqueda}
 Para alcanzar el máximo rendimiento predictivo del sistema, la fase final de experimentación se centró en la exploración y optimización profunda de tres nuevos enfoques avanzados. 
 
-En primer lugar, se implementó el modelo \textbf{ESR\_Best\_Model}, el cual hace uso de la clase diseñada a medida ESR para buscar la mejor arquitectura secuencial posible. Esta estrategia integra dos algoritmos predictivos distintos, seleccionados estratégicamente a partir de los modelos clásicos que demostraron mejores resultados en la fase de evaluación inicial. Como se puede observar en el extracto de código \ref{cod:esr_best_model}, se usa el algoritmo RandomForestRegressor para la predicción de la potencia reactiva inyectada y el modelo XGBRegressor para la predicción de tensiones y pérdidas. Para la exploración de hiperparámetros se hizo uso del \textit{framework} MetaGen.
+En primer lugar, se implementó el modelo \textbf{ESR\_Best\_Model}, el cual se consolida como una de las principales contribuciones técnicas de este proyecto. Este modelo hace uso de la clase diseñada a medida ESR para construir una arquitectura secuencial híbrida que maximiza las capacidades predictivas del sistema. Esta estrategia no se limita a aplicar un único algoritmo a todo el problema, sino que integra dos paradigmas predictivos distintos, seleccionados estratégicamente a partir de las fortalezas demostradas en la fase de evaluación inicial. 
+
+Como se puede observar en el extracto de código \ref{cod:esr_best_model}, se explota la excelente capacidad de partición ortogonal del algoritmo \textbf{Random Forest} para predecir el comportamiento discreto y escalonado de la potencia reactiva inyectada ($Q_{gen7}$). Acto seguido, la propagación de esta estimación alimenta un modelo \textbf{XGBoost}, cuya optimización basada en gradiente resulta ideal para capturar las complejas relaciones continuas y no lineales que rigen las tensiones nodales y las pérdidas del sistema. De esta forma, la arquitectura permite que cada algoritmo se especialice en la variable física que mejor resuelve. Para la exploración de hiperparámetros de este modelo se hizo uso del \textit{framework} \textbf{MetaGen}.
 \begin{lstlisting}[language=Python, caption={Código de definición del modelo ESR\_Best\_Model}, label={cod:esr_best_model}, captionpos=b]
 	model = ElectricSequentialRegressor(
 		RandomForestRegressor(
@@ -157,13 +161,13 @@ De la misma forma que en la sección de evaluación inicial, se recogieron los r
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_avanzados_sin_desplazamiento.png}
-	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos avanzados. Fuente: Elaboración propia}
+	\captionof{table}{Comparación de métricas de evaluación entre modelos avanzados}
 	\label{fig:resultados-avanzados-not-shifted}
 \end{figure}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{figures/resultados_avanzados_con_desplazamiento.png}
-	\captionof{table}{Tabla de comparación de métricas de evaluación entre modelos avanzados (MAPE desplazado). Fuente: Elaboración propia}
+	\captionof{table}{Comparación de métricas de evaluación entre modelos avanzados (MAPE desplazado)}
 	\label{fig:resultados-avanzados-shifted}
 \end{figure}
 
