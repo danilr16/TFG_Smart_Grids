@@ -37,7 +37,7 @@
 \contentsline {subsection}{\numberline {5.1.2}Tecnologías y Herramientas}{27}{subsection.5.1.2}%
 \contentsline {section}{\numberline {5.2}Desarrollo}{29}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Adquisición de Datos}{29}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Procesamiento de Datos}{32}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.2}Procesamiento de Datos}{31}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Enfoque del Entrenamiento}{39}{subsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.2.4}Entrenamiento de Modelos}{42}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}Optimización de Hiperparámetros}{47}{subsection.5.2.5}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  30 MAR 2026 18:18
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  30 MAR 2026 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1358,8 +1358,8 @@ Capítulo 5.
 ] [28]
 File: figures/red_tfg.png Graphic file (type bmp)
 <figures/red_tfg.png>
- [29] (tables/dataframe_entradas.tex) (tables/dataframe_salidas.tex)
-[30] [31]
+ [29] (tables/dataframe_entradas.tex [30])
+(tables/dataframe_salidas.tex) [31]
 File: figures/hist_data_input.png Graphic file (type bmp)
 <figures/hist_data_input.png>
  [32] [33]
@@ -1376,16 +1376,16 @@ File: figures/hist_clean_data_output.png Graphic file (type bmp)
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 12
-6.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 13
+0.
 
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 126.
+(Font)              scaled to size 12.0pt on input line 130.
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 12.0pt on input line 129.
+(Font)              scaled to size 12.0pt on input line 133.
 
 [36
 
@@ -1482,7 +1482,7 @@ Package rerunfilecheck Info: File `TFG.out' has not changed.
 Here is how much of TeX's memory you used:
  31212 strings out of 402987
  589998 string characters out of 5448524
- 1512631 words of memory out of 5000000
+ 1512746 words of memory out of 5000000
  59313 multiletter control sequences out of 15000+600000
  659675 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
