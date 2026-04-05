@@ -1,2 +1,10 @@
 \chapter*{Resumen}
-%TODO
+La creciente integración de fuentes de energía renovable, la generación distribuida y la adopción masiva de tecnologías emergentes están introduciendo un nivel de complejidad radical en el sistema eléctrico. Este nuevo paradigma limita la viabilidad operativa de los métodos matemáticos de optimización tradicionales debido a sus altos costes computacionales y problemas de escalabilidad en tiempo real.
+
+El objetivo principal consiste es desarrollar y evaluar modelos predictivos basados en técnicas de aprendizaje supervisado capaces de estimar, de forma ágil y precisa, los valores de referencia óptimos para el control de la red. Concretamente, la investigación se centra en predecir la inyección estratégica de potencia reactiva por parte de los generadores distribuidos, con el fin de minimizar las pérdidas de energía del sistema y mantener los perfiles de tensión dentro de límites seguros.
+
+Para ello, se construye un \textit{pipeline} analítico que procesa datos temporales y aplica validación cruzada secuencial para garantizar la integridad de los resultados. La investigación analiza arquitecturas de ensamblaje como \textit{Random Forest} y \textit{XGBoost} frente a modelos de aprendizaje profundo. Como aportación técnica principal, se diseña e implementa la arquitectura ElectricSequentialRegressor (ESR). Esta estructura jerárquica emula la causalidad física de la red al predecir inicialmente la variable de control y propagar dicha información para estimar el estado del sistema con mayor precisión.
+
+Los resultados demuestran que el control de la red no representa un problema predictivo monolítico. Las variables de estado (tensiones y pérdidas) se ajustan mejor mediante redes neuronales y algoritmos de potenciación por gradiente, mientras que la variable de control se modela de forma óptima a través de particiones ortogonales. Finalmente, la arquitectura híbrida ESR maximiza el rendimiento global y consolida a la inteligencia artificial como una herramienta operativa fundamental para el futuro de las redes de distribución.
+
+%TODO: Líneas futuras investigación

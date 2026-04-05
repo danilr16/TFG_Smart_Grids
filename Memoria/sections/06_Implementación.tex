@@ -1,10 +1,11 @@
 \chapter{Implementación}\label{cap:implementacion}
+Este capítulo describe el proceso de construcción y materialización del sistema predictivo propuesto. Para facilitar su comprensión, el contenido se ha estructurado en dos bloques principales. En primer lugar, se exponen las \textbf{decisiones de diseño}, donde se justifica la arquitectura del sistema y la selección del ecosistema tecnológico utilizado. En segundo lugar, se detalla el desarrollo técnico, que abarca el flujo completo de trabajo desde la adquisición y el procesamiento de los datos eléctricos hasta las fases críticas de entrenamiento y optimización de los modelos de inteligencia artificial.
 
 \section{Decisiones de Diseño}
 Al tratarse de un proyecto centrado en la investigación y la inteligencia artificial y no en el desarrollo de una aplicación clásica, el diseño se enfoca en la robustez del tratamiento de los datos, la causalidad física de los modelos y la estructuración de un \textit{pipeline} analítico reproducible.
 
 \subsection{Arquitectura}
-A diferencia de las arquitecturas de \textit{software} tradicionales, los sistemas de \textit{Machine Learning} modernos orientados a la investigación se diseñan habitualmente como \textbf{pipelines de datos estructurados}. Para este proyecto, la arquitectura se ha materializado en un ecosistema de \textbf{cuadernos de experimentación interactivos} apoyados por \textit{scripts} modulares de utilidades.
+A diferencia de las arquitecturas de \textit{software} tradicionales, los sistemas de aprendizaje automático modernos orientados a la investigación se diseñan habitualmente como \textbf{pipelines de datos estructurados}. Para este proyecto, la arquitectura se ha materializado en un ecosistema de \textbf{cuadernos de experimentación interactivos} apoyados por \textit{scripts} modulares de utilidades.
 
 Esta decisión arquitectónica de tratar cada experimento como un ``módulo'' independiente dentro del sistema se justifica por las siguientes ventajas técnicas:
 \begin{itemize}
@@ -29,11 +30,11 @@ Para la implementación de los requisitos recogidos y la construcción de los cu
 		\subitem \textbf{Seaborn:} \cite{documentacion-seaborn} Construida sobre Matplotlib, proporciona una interfaz de alto nivel para trazar gráficos estadísticos atractivos e informativos.
 	\item \textbf{Librerías de modelos predictivos:}
 		\subitem \textbf{Scikit-Learn:} \cite{documentacion-scikit-learn} Es una librería que incluye varios algoritmos de clasificación, regresión y clustering. Además, implementa gran parte de lógica necesaria para la normalización, creación de particiones y cálculo de métricas.
-	\item \textbf{Deep Learning:}
-		\subitem \textbf{TensorFlow y Keras:} TensorFlow \cite{documentacion-tensor-flow} y Keras \cite{documentacion-keras} son Frameworks desarrollados por Google utilizados para construir, compilar y entrenar Redes Neuronales mediante su API funcional.
+	\item \textbf{Aprendizaje profundo:}
+		\subitem \textbf{TensorFlow y Keras:} TensorFlow \cite{documentacion-tensor-flow} y Keras \cite{documentacion-keras} son \textit{frameworks} desarrollados por Google utilizados para construir, compilar y entrenar Redes Neuronales mediante su API funcional.
 	\item \textbf{Optimización y búsqueda de hiperparámetros:}
-		\subitem \textbf{Keras Tuner:} Keras Tuner \cite{documentacion-keras-tuner} es una librería específica de optimización para modelos de \textit{Deep Learning}.
-		\subitem \textbf{MetaGen:} \cite{github-metagen} Framework de optimización herística y metaheurística.
+		\subitem \textbf{Keras Tuner:} Keras Tuner \cite{documentacion-keras-tuner} es una librería específica de optimización para modelos de aprendizaje profundo.
+		\subitem \textbf{MetaGen:} \cite{github-metagen} \textit{Framework} de optimización heurística y metaheurística.
 	\item \textbf{Persistencia de modelos:}
 		\subitem \textbf{Joblib:} \cite{documentacion-joblib} Es una biblioteca que proporciona herramientas para facilitar y optimizar la ejecución de código. Además, permite la persistencia de modelos.
 \end{itemize}
@@ -71,6 +72,7 @@ De esta forma en la tabla \ref{table:dataset-1}, se puede observar la forma del 
 \input{tables/dataframe_entradas}
 
 En la tabla \ref{table:dataset-2} se puede observar la forma del \textit{dataset} con los atributos de salida. Se ha recortado el contenido de este para mostrar la información de las tensiones de los primeros 5 nudos. Presenta de nuevo la misma indexación. La columna QGEN7 corresponde con la cantidad de potencia reactiva inyectada. Las columnas con el formato $VX$ muestran la tensión del nudo \textit{X} y la columna PERD las pérdidas del sistema, correspondientes tras inyectar dicha potencia reactiva. Además de las columnas que se observan, también se disponen de las intensidades de corrientes en las líneas entre cada nudo. Sin embargo, como se explicará en siguientes secciones, estas columnas no se utilizarán.
+\clearpage
 
 \input{tables/dataframe_salidas}
 
@@ -111,7 +113,7 @@ Analizando la variable de pérdidas de la red, se observa que presenta valores n
 
 Por otro lado, la variable correspondiente a la inyección de potencia reactiva revela un comportamiento marcadamente discreto. Debido a la resolución numérica del problema de flujo de cargas óptimo ejecutada por el software GAMS, los valores de esta variable varían mediante saltos escalonados en intervalos de 0,01. A pesar de este comportamiento discreto, esta variable no debe de abordarse como un problema de clasificación. En primer lugar, la potencia reactiva es una magnitud físicamente continua. En segundo lugar, los modelos de clasificación estándar no evalúan la magnitud del error entre clases, penalizando por igual una desviación mínima (ej. predecir 0,06 en lugar de 0,05) que un error máximo. Por tanto, el enfoque de regresión es el idóneo matemáticamente, ya que minimiza la distancia real del error, permitiendo aplicar un redondeo en el postprocesamiento si el sistema requiere verdaderamente de un comportamiento discreto.
 
-La normalización de las variables de entrada es un proceso casi obligatorio en el \textit{Machine Learning}, sin embargo, este proceso no tiene por qué aplicarse a las variables objetivo. Si bien hay ciertos modelos que requieren también de esta doble normalización (Redes Neuronales), a menos que se intenten predecir diferentes variables con rangos muy distintos, este proceso no es aconsejable. Las métricas de evaluación de estos modelos, sobre las que se profundizará en futuras secciones, tratan de medir la diferencia entre el valor esperado y el predicho. Si se normalizan las variables estas diferencias pierden significado en el problema, mientras que si se mantienen, es posible hablar en unidades físicas reales. En este caso las tensiones tienen un rango aproximado entre 0 a 1 y las pérdidas positivas un rango entre 0 y 20, por lo que se tratará de preservar la distribución de estas variables.
+La normalización de las variables de entrada es un proceso casi obligatorio en el aprendizaje automático, sin embargo, este proceso no tiene por qué aplicarse a las variables objetivo. Si bien hay ciertos modelos que requieren también de esta doble normalización (Redes Neuronales), a menos que se intenten predecir diferentes variables con rangos muy distintos, este proceso no es aconsejable. Las métricas de evaluación de estos modelos, sobre las que se profundizará en futuras secciones, tratan de medir la diferencia entre el valor esperado y el predicho. Si se normalizan las variables estas diferencias pierden significado en el problema, mientras que si se mantienen, es posible hablar en unidades físicas reales. En este caso las tensiones tienen un rango aproximado entre 0 a 1 y las pérdidas positivas un rango entre 0 y 20, por lo que se tratará de preservar la distribución de estas variables.
 
 En las figuras \ref{fig:hist_clean_input} y \ref{fig:hist_clean_output}, se pueden observar los histogramas de las variables del \textit{dataset} una vez tratadas. Estos valores son los que se usarán en el entrenamiento de los diferentes modelos. En total, después de este tratamiento (en el que se han descartado 184 muestras por presentar pérdidas negativas), el conjunto de entrenamiento final se compone de 104.936 muestras, frente a las 105.120 originales. En el extracto de código \ref{cod:clean_dataset}, se expone el tratamiento que se ha realizado para la limpieza del conjunto de datos. 
 
@@ -146,10 +148,10 @@ Antes de entrar en el entrenamiento de cada modelo, se definirán diferentes dec
 
 En anteriores secciones, se ha comentado la necesidad de realizar una partición del conjunto de datos en dos subconjuntos independientes. Hay una amplia variedad de técnicas que tienen como objetivo esta división, pero principalmente se pueden resumir en dos enfoques: 
 \begin{itemize}
-	\item \textbf{Validación por retención (\textit{holdout validation}):} Consiste en dividir el conjunto de datos en dos subconjuntos: un subconjunto de entrenamiento a partir del cual se construirá el modelo y un subconjunto de prueba del que se calcula el rendimiento del modelo. La separación de estos conjuntos se realiza generalmente de manera aleatoria, asignando un porcentaje mayoritario al entrenamiento (típicamente entre el 70\% y el 80\%).
+	\item \textbf{\textit{Holdout validation} (validación por retención):} Consiste en dividir el conjunto de datos en dos subconjuntos: un subconjunto de entrenamiento a partir del cual se construirá el modelo y un subconjunto de prueba del que se calcula el rendimiento del modelo. La separación de estos conjuntos se realiza generalmente de manera aleatoria, asignando un porcentaje mayoritario al entrenamiento (típicamente entre el 70\% y el 80\%).
 		\subitem \textbf{Ventajas:} Es un método computacionalmente muy eficiente y rápido de ejecutar, ya que el modelo solo necesita entrenarse una vez.
 		\subitem \textbf{Desventajas:} Los resultados dependen en gran medida de qué ejemplos concretos hayan caído aleatoriamente en el conjunto de prueba. Además, en conjuntos de datos pequeños, se sacrifica una cantidad valiosa de información que el modelo no podrá usar para aprender.
-	\item \textbf{Validación cruzada con k pliegues (\textit{k fold cross validation}):} Consiste en subdividir el conjunto de datos original en k subconjuntos o pliegues del mismo tamaño. El proceso se repite iterativamente k veces. En cada iteración, se utiliza un pliegue distinto como conjunto de prueba y los $k - 1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Finalmente, se calcula el rendimiento global del modelo como la media aritmética de las k estimaciones obtenidas.
+	\item \textbf{\textit{K fold cross validation} (validación cruzada con k pliegues):} Consiste en subdividir el conjunto de datos original en k subconjuntos o pliegues del mismo tamaño. El proceso se repite iterativamente k veces. En cada iteración, se utiliza un pliegue distinto como conjunto de prueba y los $k - 1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Finalmente, se calcula el rendimiento global del modelo como la media aritmética de las k estimaciones obtenidas.
 		\subitem \textbf{Ventajas:} Proporciona una estimación mucho más robusta, fiable y menos sesgada del rendimiento del modelo, garantizando que todos los ejemplos del \textit{dataset} original se hayan utilizado tanto para entrenar como para evaluar.
 		\subitem \textbf{Desventajas:} Su coste computacional es considerablemente mayor, ya que exige entrenar y evaluar el modelo k veces.
 \end{itemize}
@@ -166,7 +168,7 @@ El proceso definido consta en primer lugar de una validación por retención tem
 	x_test, y_test = X[train_size:], Y[train_size:]
 \end{lstlisting}
 
-En segundo lugar, para llevar a cabo la selección del algoritmo óptimo y el ajuste de hiperparámetros, se aplica una validación cruzada sobre el subconjunto de entrenamiento (el 80\% inicial). Dado que la aplicación de un \textit{K-Fold} tradicional es incorrecto en este escenario temporal, se ha empleado la variante de Scikit-learn \textbf{Time Series Split} \cite{scikit-learn-time-series}. A lo largo de los experimentos, se emplean configuraciones de 3 o 5 pliegues, dependiendo del coste computacional requerido por cada modelo.
+En segundo lugar, para llevar a cabo la selección del algoritmo óptimo y el ajuste de hiperparámetros, se aplica una validación cruzada sobre el subconjunto de entrenamiento (el 80\% inicial). Dado que la aplicación de una validación cruzada tradicional es incorrecto en este escenario temporal, se ha empleado la variante de Scikit-learn \textbf{Time Series Split} \cite{scikit-learn-time-series}. A lo largo de los experimentos, se emplean configuraciones de 3 o 5 pliegues, dependiendo del coste computacional requerido por cada modelo.
 
 \begin{figure}[htp]
 	\centering
@@ -211,9 +213,9 @@ Aunque el MSE es excelente para el aprendizaje, su interpretabilidad humana es c
 \end{itemize}
 
 \subsection{Entrenamiento de Modelos}
-En el enfoque tradicional del \textit{Machine Learning} para problemas de regresión con múltiples salidas, los algoritmos estándar tratan de predecir todas las variables objetivo de forma simultánea y paralela a partir de las variables de entrada. Sin embargo, este paradigma ignora gran parte de la naturaleza del problema eléctrico. Físicamente, la potencia reactiva inyectada por un generador ($Q_{gen7}$ en este caso) no es una variable aislada, sino que altera de forma directa el perfil de tensiones en los nudos de la red y como consecuencia también define las pérdidas del sistema.
+En el enfoque tradicional del aprendizaje automático para problemas de regresión con múltiples salidas, los algoritmos estándar tratan de predecir todas las variables objetivo de forma simultánea y paralela a partir de las variables de entrada. Sin embargo, este paradigma ignora gran parte de la naturaleza del problema eléctrico. Físicamente, la potencia reactiva inyectada por un generador ($Q_{gen7}$ en este caso) no es una variable aislada, sino que altera de forma directa el perfil de tensiones en los nudos de la red y como consecuencia también define las pérdidas del sistema.
 
-De tal forma, para los modelos puede ser interesante aprender de esta relación entre las variables objetivo. Para resolver esta limitación, en este proyecto no solo se han evaluado modelos predictivos directos, sino que se ha diseñado e implementado una arquitectura de software propia denominada \textbf{ElectricSequentialRegressor (ESR)} basado en lo que se conoce como \textbf{Modelo Jerárquico o Cadenas de Regresores}. Esta clase está programada a medida, es completamente compatible con el ecosistema de scikit-learn y modela la red de distribución en dos fases secuenciales:
+De tal forma, para los modelos puede ser interesante aprender de esta relación entre las variables objetivo. Para resolver esta limitación, en este proyecto no solo se han evaluado modelos predictivos directos, sino que se ha diseñado e implementado una arquitectura de software propia denominada \textbf{ElectricSequentialRegressor (ESR)} basada en lo que se conoce como \textbf{modelo jerárquico o cadenas de regresores}. Esta clase está programada a medida y garantiza una compatibilidad total y nativa con el ecosistema de \textbf{scikit-learn}. Para lograr esta integración, la arquitectura hereda de las clases estructurales \textbf{\textit{BaseEstimator}} y \textbf{\textit{RegressorMixin}} de dicha librería. Esta decisión de diseño permite al modelo implementar automáticamente métodos estándar (como la evaluación de precisión) y someterse a procesos complejos de validación cruzada y optimización de hiperparámetros sin necesidad de adaptadores externos. A nivel operativo, el ESR modela la red de distribución en las siguientes dos fases secuenciales:
 \begin{itemize}
 	\item \textbf{Fase de estimación pivote (Modelo 1):} El sistema utiliza un primer estimador para predecir exclusivamente una variable clave o ``pivote'' a partir de las variables de entrada. En este caso la variable pivote es la potencia inyectada $Q_{gen7}$.
 	\item \textbf{Fase de Propagación (Modelo 2):} En lugar de predecir el resto de variables partiendo de las variables de entrada, el algoritmo concatena la matriz de entrada original con la predicción obtenida en la primera fase. De este modo el segundo estimador se entrena utilizando la información previa para predecir con mayor precisión las variables más complejas (en este caso las tensiones y las pérdidas).
@@ -224,6 +226,17 @@ De tal forma, para los modelos puede ser interesante aprender de esta relación 
 	\caption{Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}
 \end{figure}
 A nivel de software, la clase garantiza la paralelización del entrenamiento mediante la librería \textit{joblib}, reduciendo drásticamente los tiempos de cómputo en la fase de ajuste. Además, esta implementación permite utilizar modelos diferentes para cada fase, lo que puede llegar a ser muy conveniente. A nivel eléctrico, este diseño secuencial emula el proceso analítico de un flujo de carga real, obligando al modelo a asimilar que la topología de tensiones y las pérdidas son una consecuencia directa de las inyecciones de potencia previas.
+\clearpage
+\begin{lstlisting}[language=Python, caption={Ejemplo de uso del modelo ESR}, label={cod:esr_use}, captionpos=b]
+	model = ElectricSequentialRegressor(
+	estimator1=RandomForestRegressor(n_jobs=1, random_state=42), 
+	estimator2=RandomForestRegressor(n_jobs=1, random_state=42), 
+	pivot_col_index=-1, 
+	n_jobs=1
+	)
+	model.fit(x_train, y_train)
+	predictions = model.predict(x_test)
+\end{lstlisting}
 \begin{lstlisting}[language=Python, caption={Código del constructor del ESR}, label={cod:esr_constructor}, captionpos=b]
 	class ElectricSequentialRegressor(RegressorMixin, BaseEstimator):
 		def __init__(self, estimator1=None, estimator2=None, 
@@ -234,6 +247,7 @@ A nivel de software, la clase garantiza la paralelización del entrenamiento med
 			self.pivot_col_index = pivot_col_index
 			self.n_jobs = n_jobs
 \end{lstlisting}
+\clearpage
 \begin{lstlisting}[language=Python, caption={Código del método de entrenamiento del ESR}, label={cod:esr_fit}, captionpos=b]
 	def fit(self, X, y):
 		assert self.estimator1 is not None 
@@ -275,6 +289,7 @@ A nivel de software, la clase garantiza la paralelización del entrenamiento med
 		
 		return self
 \end{lstlisting}
+\clearpage
 \begin{lstlisting}[language=Python, caption={Código del método de predicciones del ESR}, label={cod:esr_predictions}, captionpos=b]
 	def predict(self, X):
 		check_is_fitted(self, ['model1_', 'model2_'])
@@ -295,101 +310,23 @@ A nivel de software, la clase garantiza la paralelización del entrenamiento med
 		predictions[:, mask] = predictions2
 		return predictions
 \end{lstlisting}
-\begin{lstlisting}[language=Python, caption={Ejemplo de uso del modelo ESR}, label={cod:esr_use}, captionpos=b]
-	model = ElectricSequentialRegressor(
-		estimator1=RandomForestRegressor(n_jobs=1, random_state=42), 
-		estimator2=RandomForestRegressor(n_jobs=1, random_state=42), 
-		pivot_col_index=-1, 
-		n_jobs=1
-	)
-	model.fit(x_train, y_train)
-	predictions = model.predict(x_test)
-\end{lstlisting}
 
-Para complementar y expandir el enfoque del ESR utilizando algoritmos de \textit{Deep Learning}, se ha diseñado una arquitectura de Red Neuronal Profunda basándose en la topología jerárquica de este. Utilizando las librerías \textbf{TensorFlow y Keras}, se ha construido un modelo que no se limita a procesar las entradas en una única capa de salida masiva, sino que ramifica su aprendizaje respetando la naturaleza del problema eléctrico descrito anteriormente.
+Para complementar y expandir el enfoque del ESR utilizando algoritmos de aprendizaje profundo, se ha diseñado una arquitectura de Red Neuronal Profunda basándose en la topología jerárquica de este. Utilizando las librerías \textbf{TensorFlow y Keras}, se ha construido un modelo que no se limita a procesar las entradas en una única capa de salida masiva, sino que ramifica su aprendizaje respetando la naturaleza del problema eléctrico descrito anteriormente.
 
-Tras numerosas pruebas con esta arquitectura se llegó a la conclusión de que era necesario implementar dos variaciones que no se implementaron en el resto de modelos. Dado que el modelo estima tres salidas de naturaleza y magnitud drásticamente diferentes, el algoritmo por su propia naturaleza, ignoraba las variables más complejas y tendía a minimizar el error de las más simples. Para solucionar esto, se asignaron unos pesos específicos a la función de error de cada una de las variables (1 a las variables de las tensiones y la potencia inyectada y 2 a las pérdidas) y se normalizaron las variables objetivo entre 0 y 1 antes de realizar el entrenamiento del modelo (las predicciones por tanto estarán también normalizadas). 
-\begin{lstlisting}[language=Python, caption={Código del método que crea la red neuronal}, label={cod:red_neuronal}, captionpos=b]
-	def make_build_model(input_dim, num_voltages):
-		def build_model(hp):
-			inputs = tf.keras.Input(shape=(input_dim,), name='input_x')
-			x_norm = inputs
-			
-			activation = hp.Choice('activation', ['relu', 'elu'])
-			dropout_rate = hp.Float('dropout', 0.0, 0.3, step=0.1)
-			use_batch_norm = hp.Boolean('use_batch_norm')
-			learning_rate = hp.Float('lr', 1e-4, 1e-2, sampling='log')
-			optimizer = hp.Choice('optimizer', values=['sgd', 'adam'])
-			if optimizer == 'sgd':
-				optimizer = tf.keras.optimizers.SGD(learning_rate=learning_rate)
-			else:
-				optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
-			
-			n_hidden_q = hp.Int('n_hidden_q', 1, 3)
-			n_neurons_q = hp.Int('n_neurons_q', 32, 128, step=32)
-			
-			x1 = x_norm
-			for _ in range(n_hidden_q):
-				x1 = tf.keras.layers.Dense(n_neurons_q)(x1)
-				if use_batch_norm:
-					x1 = tf.keras.layers.BatchNormalization()(x1)
-				x1 = tf.keras.layers.Activation(activation)(x1)
-				if dropout_rate > 0:
-					x1 = tf.keras.layers.Dropout(dropout_rate)(x1)
-			
-			out_qgen = tf.keras.layers.Dense(1, activation='linear', 
-				name='out_qgen7')(x1)
-			merged = tf.keras.layers.Concatenate()([x_norm, out_qgen])
-			
-			n_hidden_v = hp.Int('n_hidden_v', 1, 2)
-			n_neurons_v = hp.Int('n_neurons_v', 64, 256, step=32)
-			
-			x2 = merged
-			for _ in range(n_hidden_v):
-				x2 = tf.keras.layers.Dense(n_neurons_v)(x2)
-				if use_batch_norm:
-					x2 = tf.keras.layers.BatchNormalization()(x2)
-				x2 = tf.keras.layers.Activation(activation)(x2)
-				if dropout_rate > 0:
-					x2 = tf.keras.layers.Dropout(dropout_rate)(x2)
-			
-			out_v = tf.keras.layers.Dense(num_voltages, activation='linear', 
-				name='out_volt')(x2)
-			
-			n_hidden_p = hp.Int('n_hidden_p', 2, 5)
-			n_neurons_p = hp.Int('n_neurons_p', 64, 256, step=64)
-			
-			x3 = merged
-			for _ in range(n_hidden_p):
-				x3 = tf.keras.layers.Dense(n_neurons_p)(x3)
-				if use_batch_norm:
-					x3 = tf.keras.layers.BatchNormalization()(x3)
-				x3 = tf.keras.layers.Activation(activation)(x3)
-				if dropout_rate > 0:
-					x3 = tf.keras.layers.Dropout(dropout_rate)(x3)
-			
-			out_perd = tf.keras.layers.Dense(1, activation='linear', 
-				name='out_perd')(x3)
-			
-			model = tf.keras.Model(inputs=inputs, outputs=[out_v, 
-				out_perd, out_qgen])
-			
-			model.compile(
-				optimizer=optimizer,
-				loss_weights={'out_qgen7': 1.0, 'out_volt': 1.0, 
-					'out_perd': 2.0},
-				loss={'out_qgen7': 'mse', 'out_volt': 'mse', 
-					'out_perd': 'mse'},
-				metrics={'out_qgen7': ['mae', 'mape', 
-						tf.keras.metrics.R2Score(name='r2_score')],
-					'out_volt': ['mae', 'mape', 
-						tf.keras.metrics.R2Score(name='r2_score')],
-					'out_perd': ['mae', 'mape', 
-						tf.keras.metrics.R2Score(name='r2_score')]},
-			)
-			return model
-	return build_model
-\end{lstlisting}
+Durante el diseño de esta arquitectura, se hace evidente la necesidad de implementar dos ajustes estructurales complementarios en el cálculo del error. Por un lado, la red neuronal estima simultáneamente tres salidas con escalas de magnitud drásticamente diferentes. Si no se interviene, el entrenamiento resulta ineficiente al intentar equilibrar el aprendizaje de variables tan dispares. Como se expone en la tabla \ref{fig:rn_sin_ajuste}, al probar la red en bruto (sin normalización ni pesos diferenciados), el algoritmo es incapaz de capturar correctamente el comportamiento global del sistema, estancándose en un rendimiento deficiente con coeficientes $R^2$ de 0,59245 para las tensiones nodales, 0,54185 para las pérdidas y 0,78123 para la potencia reactiva.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/malos_resultados_red_neuronal.png}
+	\captionof{table}{Resultados de la red neuronal antes del ajuste de pesos}
+	\label{fig:rn_sin_ajuste}
+\end{figure}
+\clearpage
+
+Para corregir esta ineficiencia predictiva y conformar el modelo definitivo, en primer lugar se normalizan todas las variables objetivo entre 0 y 1 de forma previa al entrenamiento. Sin embargo, al igualar las escalas numéricas, surge un segundo reto. Las pérdidas de energía presentan un comportamiento altamente no lineal en comparación con las tensiones. Para evitar que la red priorice aprender únicamente las relaciones matemáticas más sencillas, se asignan pesos específicos a la función de pérdida (peso de 1 para las tensiones y la potencia inyectada, y peso de 2 para las pérdidas). De este modo, la normalización garantiza la equidad matemática inicial, mientras que la asignación de pesos dirige el esfuerzo computacional hacia la variable de mayor dificultad no lineal, logrando una optimización simultánea y un incremento drástico en la precisión de la red.
+
+Dada la extensión del código fuente de esta implementación, el desarrollo en Python y Keras se adjunta en el anexo C de esta memoria \ref{cod:red_neuronal}. A nivel lógico, el modelo emula la causalidad del ESR estructurándose en fases secuenciales.
+
+En primer lugar, una rama predictiva inicial procesa las características de entrada para estimar la potencia reactiva. Seguidamente, esta predicción se concatena con los datos originales, creando un tensor de información enriquecido que alimenta dos ramas paralelas encargadas de estimar el estado continuo del sistema (tensiones nodales y pérdidas de energía). Finalmente, el modelo se compila implementando la función de coste con pesos asimétricos previamente justificada (peso de 2.0 para las pérdidas y 1.0 para el resto), lo que obliga a la red a ajustar todas las variables de forma simultánea y equilibrada.
 
 \subsection{Optimización de Hiperparámetros}
 En cuanto a la optimización de hiperparámetros, para asegurar el máximo rendimiento predictivo y la capacidad de generalización de los modelos planteados, se llevaron a cabo varios procesos de ajuste. Las estrategias seleccionadas priorizaron la eficiencia computacional (debido a la limitación de recursos en este aspecto) sin comprometer la calidad de los resultados, optando por enfoques de búsqueda aleatoria. 
@@ -397,7 +334,7 @@ En cuanto a la optimización de hiperparámetros, para asegurar el máximo rendi
 Para los modelos basados en árboles de decisión, se definieron los siguientes espacios de búsqueda:
 \begin{itemize}
 	\item \textbf{Random Forest:} Se optimizó la complejidad estructural mediante el número de árboles \textbf{(n\_estimators)} y su profundidad máxima \textbf{(max\_depth)}. Para controlar el sobreajuste y fomentar la diversidad del bosque, se ajustó el mínimo de muestras necesarias para dividir un nodo \textbf{(min\_samples\_split)} y la proporción de variables evaluadas en cada iteración \textbf{(max\_features)}.
-	\item \textbf{XGBoost:} Al tratarse de un método iterativo (boosting), la búsqueda se centró en la tasa de aprendizaje \textbf{(learning\_rate)}, que pondera la corrección que aporta cada nuevo árbol. Esto se combinó con el ajuste de la cantidad y profundidad de los árboles \textbf{(n\_estimators, max\_depth)} y el submuestreo de variables por árbol para actuar como regulador \textbf{(colsample\_bytree)}.
+	\item \textbf{XGBoost:} Al tratarse de un método iterativo (\textit{boosting}), la búsqueda se centró en la tasa de aprendizaje \textbf{(learning\_rate)}, que pondera la corrección que aporta cada nuevo árbol. Esto se combinó con el ajuste de la cantidad y profundidad de los árboles \textbf{(n\_estimators, max\_depth)} y el submuestreo de variables por árbol para actuar como regulador \textbf{(colsample\_bytree)}.
 \end{itemize}
 Dado que la arquitectura propia \textbf{ESR} se construye instanciando estos mismos algoritmos base, su proceso de optimización no requirió parámetros nuevos, sino que consistió en explorar estos mismos espacios de búsqueda por duplicado. De este modo, la búsqueda aleatoria permite optimizar el conjunto de hiperparámetros para el modelo 1 y otro conjunto independiente para el modelo 2, permitiendo que cada fase adaptara su complejidad a la dificultad de su tarea.
 
@@ -434,6 +371,7 @@ Para la exploración de estos conjuntos, se utilizó la implementación \textbf{
 	
 	random_search.fit(x_train, y_train)
 \end{lstlisting}
+\clearpage
 \begin{lstlisting}[language=Python, caption={Código de exploración de hiperparámetros con ESR\_XGBoost}, label={cod:hiperparam_xgboost}, captionpos=b]
 	random_model = ElectricSequentialRegressor(
 		XGBRegressor(objective='reg:squarederror', n_jobs=1, random_state=42), 
@@ -468,75 +406,10 @@ Para la exploración de estos conjuntos, se utilizó la implementación \textbf{
 	random_search.fit(x_train, y_train)
 \end{lstlisting}
 
-Por último, en la Red Neuronal Profunda, para la topología estructural, se permitió buscar de forma independiente el número de capas ocultas y la cantidad de neuronas para cada una de las tres ramas predictivas (potencia reactiva, tensiones y pérdidas). Este enfoque permite que la red asigne dinámicamente mayor capacidad matemática a las variables de mayor complejidad física. Asimismo, se exploraron técnicas de regularización como la tasa de \textit{Dropout} y la inclusión de \textit{Batch Normalization}, junto con la selección de la función de activación (ReLU o ELU). Para el algoritmo de entrenamiento, se evaluaron los optimizadores Adam y SGD \cite{keras-layers}. 
+Por último, en la Red Neuronal Profunda, para la topología estructural, se permite buscar de forma independiente el número de capas ocultas y la cantidad de neuronas para cada una de las tres ramas predictivas (potencia reactiva, tensiones y pérdidas). Este enfoque permite que la red asigne dinámicamente mayor capacidad matemática a las variables de mayor complejidad física. Asimismo, se exploraron técnicas de regularización como la tasa de \textit{Dropout} y la inclusión de \textit{Batch Normalization}, junto con la selección de la función de activación (ReLU o ELU). Para el algoritmo de entrenamiento, se evaluaron los optimizadores Adam y SGD \cite{keras-layers}. 
 
-Para evaluar estas combinaciones de forma rigurosa, se programó una clase a medida denominada \textbf{TimeSeriesRandomSearch}, basada en la librería \textit{Keras Tuner}. Esta implementación realiza una búsqueda aleatoria de hiperparámetros utilizando validación cruzada temporal (\textit{TimeSeriesSplit}), asegurando que siempre se respete el orden cronológico de los datos. Además, previene la fuga de información al escalar las variables (\textit{MinMaxScaler}) de forma aislada dentro de cada iteración del pliegue, evitando que el modelo ``vea'' la estadística de datos futuros durante su entrenamiento.
-\begin{lstlisting}[language=Python, caption={Código de exploración de hiperparámetros con Redes Neuronales}, label={cod:red_neuronal_random}, captionpos=b]
-	class TimeSeriesRandomSearch(kt.RandomSearch):
-		def run_trial(self, trial, x, y, n_splits=5, 
-			batch_size=32, epochs=10, callbacks=None, **kwargs):
-			
-			time_series = TimeSeriesSplit(n_splits=n_splits)
-			
-			metrics_fold = []
-			for fold, (train_index, test_index) 
-				in enumerate(time_series.split(x)):
-				
-				model = self.hypermodel.build(trial.hyperparameters)
-				if hasattr(x, 'iloc'):
-					x_train_fold, x_test_fold = x.iloc[train_index], 
-						x.iloc[test_index]
-				else:
-					x_train_fold, x_test_fold = x[train_index],
-						x[test_index]
-						
-				scaler_x = MinMaxScaler()
-				x_train_fold = scaler_x.fit_transform(x_train_fold)
-				x_test_fold = scaler_x.transform(x_test_fold)
-				
-				y_train_fold = {}
-				y_test_fold = {}
-				for key, data in y.items():
-					if hasattr(data, 'iloc'):
-						y_train_data = data.iloc[train_index]
-						y_test_data = data.iloc[test_index]
-					else:
-						y_train_data = data[train_index]
-						y_test_data = data[test_index]
-					
-					normalizer_y = MinMaxScaler()
-					y_train_values = y_train_data.values 
-						if hasattr(y_train_data, 'values') else y_train_data
-					y_test_values = y_test_data.values 
-						if hasattr(y_test_data, 'values') else y_test_data
-					
-					y_train_fold[key] = normalizer_y.
-						fit_transform(y_train_values)
-					y_test_fold[key] = normalizer_y.
-						transform(y_test_values)
-				
-				model.fit(x_train_fold, y_train_fold, 
-					validation_data=(x_test_fold, y_test_fold),
-				batch_size=batch_size, epochs=epochs, 
-					verbose=0, callbacks=callbacks)
-				metrics = model.evaluate(x_test_fold, y_test_fold,
-					verbose=0, return_dict=True)
-				metrics_fold.append(metrics)
-				
-				print(f'Trial {trial.trial_id} - Fold {fold + 1}:')
-				for metric, value in metrics.items():
-					print(f'\t {metric}: {value:.5f}')
-			
-			avg_metrics = {}
-			for metric_name in metrics_fold[0].keys():
-				values = [metrics[metric_name] for metrics in metrics_fold]
-				key_name = f'val_{metric_name}'
-				avg_metrics[key_name] = np.mean(values)
-			print(f"--- Promedio Trial {trial.trial_id}: 
-				val_loss = {avg_metrics['val_loss']:.5f} ---\n")
-			self.oracle.update_trial(trial.trial_id, avg_metrics)
-\end{lstlisting}
+Para evaluar estas combinaciones de forma rigurosa, se implementa una clase a medida denominada \textbf{TimeSeriesRandomSearch}, basada en la librería \textit{Keras Tuner} (cuyo código fuente se detalla en el anexo C \ref{cod:red_neuronal_random}). Esta implementación realiza una búsqueda aleatoria de hiperparámetros utilizando validación cruzada temporal (\textit{TimeSeriesSplit}), asegurando que siempre se respete el orden cronológico de los datos. Además, previene la fuga de información al escalar las variables (\textit{MinMaxScaler}) de forma aislada dentro de cada iteración del pliegue, evitando que el modelo ``vea'' la estadística de datos futuros durante su entrenamiento.
 
-Durante la fase de experimentación, se evaluó el uso de \textit{GridSearchCV} (búsqueda en rejilla y exhaustiva). Sin embargo, tras ejecuciones de hasta 5 horas, la mejora en el rendimiento de los modelos fue muy escasa, limitándose a variaciones de apenas unos decimales. Este comportamiento obligó a utilizar búsquedas menos costosas computacionalmente, en este caso la búsqueda aleatoria que permite una mayor cobertura de combinación de parámetros en menos tiempo.
+Durante la fase de experimentación, se evaluó el uso de \textit{GridSearchCV} (búsqueda en rejilla y exhaustiva). Sin embargo, tras ejecuciones de hasta 5 horas, la mejora en el rendimiento de los modelos fue muy escasa, limitándose a variaciones de apenas unos decimales. Este comportamiento obliga a utilizar búsquedas menos costosas computacionalmente, en este caso la búsqueda aleatoria que permite una mayor cobertura de combinación de parámetros en menos tiempo.
 
-Adicionalmente a las estrategias de búsqueda aleatorias descritas, se han explorado métodos alternativos más avanzados para la optimización de hiperparámetros, destacando el uso de la librería \textbf{MetaGen}. Esta herramienta es un \textit{framework} de Python diseñado específicamente para aplicar \textbf{algoritmos metaheurísticos} en la optimización de modelos. Su uso se exploró por su gran capacidad computacional para converger hacia configuraciones óptimas de manera mucho más eficiente al enfrentarse a arquitecturas complejas.
+Adicionalmente a las estrategias de búsqueda aleatorias descritas, se exploran métodos alternativos más avanzados para la optimización de hiperparámetros, destacando el uso de la librería \textbf{MetaGen}. Esta herramienta es un \textit{framework} de Python diseñado específicamente para aplicar \textbf{algoritmos metaheurísticos} en la optimización de modelos. Su uso se exploró por su gran capacidad computacional para converger hacia configuraciones óptimas de manera mucho más eficiente al enfrentarse a arquitecturas complejas.

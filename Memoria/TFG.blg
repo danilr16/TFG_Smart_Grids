@@ -45,45 +45,45 @@ Warning--empty year in scikit-learn-time-series
 Warning--empty year in keras-layers
 Warning--empty year in scikit-learn-random-forest
 Warning--empty year in xgboost-xgbregressor
-You've used 35 entries,
+You've used 40 entries,
             2481 wiz_defined-function locations,
-            673 strings with 8533 characters,
-and the built_in function-call counts, 8675 in all, are:
-= -- 737
-> -- 168
-< -- 24
-+ -- 134
-- -- 48
-* -- 471
-:= -- 1166
-add.period$ -- 93
-call.type$ -- 35
-change.case$ -- 71
-chr.to.int$ -- 19
-cite$ -- 82
-duplicate$ -- 497
-empty$ -- 1069
-format.name$ -- 72
-if$ -- 1936
+            709 strings with 10237 characters,
+and the built_in function-call counts, 11325 in all, are:
+= -- 944
+> -- 339
+< -- 28
++ -- 196
+- -- 100
+* -- 686
+:= -- 1581
+add.period$ -- 115
+call.type$ -- 40
+change.case$ -- 81
+chr.to.int$ -- 24
+cite$ -- 87
+duplicate$ -- 630
+empty$ -- 1294
+format.name$ -- 129
+if$ -- 2524
 int.to.chr$ -- 17
-int.to.str$ -- 36
-missing$ -- 1
-newline$ -- 171
-num.names$ -- 72
-pop$ -- 407
+int.to.str$ -- 41
+missing$ -- 6
+newline$ -- 203
+num.names$ -- 87
+pop$ -- 455
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 40
 quote$ -- 0
-skip$ -- 416
+skip$ -- 503
 stack$ -- 0
-substring$ -- 81
-swap$ -- 93
-text.length$ -- 0
+substring$ -- 181
+swap$ -- 133
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 245
+type$ -- 280
 warning$ -- 36
-while$ -- 48
+while$ -- 67
 width$ -- 0
-write$ -- 394
+write$ -- 473
 (There was 1 error message)

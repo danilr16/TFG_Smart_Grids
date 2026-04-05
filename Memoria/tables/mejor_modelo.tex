@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|p{3cm}|p{4cm}|p{8cm}|}
+		\hline
+		\rowcolor[HTML]{5B9BD5}
+		\textcolor{white}{\textbf{Categoría}} & \textcolor{white}{\textbf{Mejor Modelo}} & \textcolor{white}{\textbf{Justificación}} \\ \hline
+		
+		\textbf{Variables de Estado} \newline (Tensiones y Pérdidas) & \textbf{Red Neuronal} & Demuestra una capacidad superior para capturar las dependencias no lineales continuas y complejas que impone la topología de la red eléctrica. \\ \hline
+		
+		\textbf{Variable de Control} \newline (Potencia Reactiva) & \textbf{ESR\_RandomForest} & Excelente capacidad para modelar el comportamiento discreto y escalonado de la inyección gracias a las divisiones ortogonales de sus árboles de decisión. \\ \hline
+		
+		\rowcolor[HTML]{DCE6F1}
+		\textbf{Modelo Global} & \textbf{ESR\_Best\_Model} & \textbf{Solución definitiva:} Demuestra una potencia y eficacia sobresalientes al integrar los paradigmas anteriores en un flujo secuencial. Permite que el modelo \textit{Random Forest} prediga el control discreto y el \textit{XGBoost} estime el estado continuo de la red, obteniendo las métricas globales más precisas y robustas del estudio. \\ \hline
+	\end{tabular}
+	\caption{Resumen de los mejores modelos globales del estudio}
+	\label{tab:resumen-mejor-modelo}
+\end{table}

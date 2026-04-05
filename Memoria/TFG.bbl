@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -65,6 +65,17 @@ Manuel~Vallejos Alba.
 \newblock Trabajo de fin de máster, Dpto. Ingeniería Eléctrica Escuela
   Técnica Superior de Ingeniería, Universidad de Sevilla.
 
+\bibitem[Khaloie et~al.(2025)Khaloie, Dolányi, Toubeau, and
+  Vallée]{review-machine-learning}
+Hooman Khaloie, Mihály Dolányi, Jean-François Toubeau, and François
+  Vallée.
+\newblock Review of machine learning techniques for optimal power flow.
+\newblock \emph{Applied Energy}, 388:\penalty0 125637, 2025.
+\newblock ISSN 0306-2619.
+\newblock \doi{https://doi.org/10.1016/j.apenergy.2025.125637}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0306261925003678}.
+
 \bibitem[Iberdrola({\natexlab{c}})]{glosario-iberdrola}
 Grupo Iberdrola.
 \newblock Glosario de términos eléctricos, {\natexlab{c}}.
@@ -94,6 +105,45 @@ AWS Amazon.
 Aurélien Géron.
 \newblock Hands-on machine learning with scikit-learn, keras, and tensorflow.
 \newblock O’Reilly Media, 2022.
+
+\bibitem[Parvizi et~al.(2024)Parvizi, Amidi, Jalilian, and
+  Parvizi]{useful-application-smart-grids-ieee}
+Pooya Parvizi, Alireza~Mohammadi Amidi, Milad Jalilian, and Hana Parvizi.
+\newblock Useful application of machine learning methods in smart grids: A mini
+  review.
+\newblock In \emph{2024 9th International Conference on Technology and Energy
+  Management (ICTEM)}, pages 1--7, 2024.
+\newblock \doi{10.1109/ICTEM60690.2024.10631993}.
+
+\bibitem[Shahinzadeh et~al.(2024)Shahinzadeh, Sadrarhami, Hayati,
+  Majidi-Gharehnaz, Abapour, and Gharehpetian]{load-forecasting-2024}
+Hossein Shahinzadeh, Hamidreza Sadrarhami, Mohammad~Mohsen Hayati, Hassan
+  Majidi-Gharehnaz, Mehdi Abapour, and Gevork~B. Gharehpetian.
+\newblock Review and comparative analysis of deep learning techniques for smart
+  grid load forecasting.
+\newblock In \emph{2024 20th CSI International Symposium on Artificial
+  Intelligence and Signal Processing (AISP)}, pages 1--9, 2024.
+\newblock \doi{10.1109/AISP61396.2024.10475303}.
+
+\bibitem[Gupta et~al.(2024)Gupta, Gard, Varshney, Rao, Srivastava, and
+  Sharma]{fault-detection-2024}
+Sarita Gupta, Gopal~Krishan Gard, Neeraj Varshney, A~L~N Rao, Amit Srivastava,
+  and Deepti Sharma.
+\newblock Real-time fault detection and classification in smart grids using
+  support vector machines.
+\newblock In \emph{2024 4th International Conference on Innovative Practices in
+  Technology and Management (ICIPTM)}, pages 1--6, 2024.
+\newblock \doi{10.1109/ICIPTM59628.2024.10563501}.
+
+\bibitem[Aishwarya et~al.(2023)Aishwarya, Shekar, V, Singh, Singh, and
+  Abdulaali]{distributed-opf-ieee}
+BK~Aishwarya, K~Shekar, Revathi V, Jay Singh, Navdeep Singh, and Hayder~Saadoon
+  Abdulaali.
+\newblock Federated learning for distributed optimal power flow solutions in
+  smart grids.
+\newblock In \emph{2023 International Conference on Power Energy, Environment
+  \& Intelligent Control (PEEIC)}, pages 1741--1745, 2023.
+\newblock \doi{10.1109/PEEIC59336.2023.10451382}.
 
 \bibitem[Tributaria()]{amortizacion}
 Agencia Tributaria.

@@ -1,15 +1,11 @@
 \chapter{Análisis}\label{cap:analisis}
-Este capítulo tiene como propósito fundamental traducir los objetivos generales y técnicos del proyecto en especificaciones formales que guíen el diseño y la posterior implementación del sistema. 
+Para dar cumplimiento a la hoja de ruta trazada en el capítulo anterior, es necesario realizar un estudio detallado de las necesidades del sistema. Por ello, en este apartado se desarrolla el catálogo de requisitos y la planificación temporal y financiera del proyecto.
 
 \section{Catálogo de Requisitos}
 A continuación, se detallan los requisitos del sistema clasificados en generales, de información, funcionales y no funcionales.
 
 \subsection{Requisitos Generales}
 \input{tables/requisitos_generales}
-\clearpage
-
-\subsection{Requisitos de Información}
-\input{tables/requisitos_informacion}
 
 \subsection{Requisitos Funcionales}
 \input{tables/requisitos_funcionales}
@@ -17,6 +13,10 @@ A continuación, se detallan los requisitos del sistema clasificados en generale
 
 \subsection{Requisitos No Funcionales}
 \input{tables/requisitos_no_funcionales}
+
+\subsection{Requisitos de Información}
+\input{tables/requisitos_informacion}
+\clearpage
 
 \subsection{Matriz de Trazabilidad}
 \input{tables/matriz_trazabilidad}
@@ -60,13 +60,11 @@ Esta fase tiene como objetivo validar la eficacia de los modelos desarrollados f
 El propósito de esta fase final es la recopilación, documentación y presentación de todo el trabajo realizado, garantizando que el proyecto cumpla con los estándares académicos exigidos para su defensa.
 
 \input{tables/tareas_cierre}
-\clearpage
-
-\clearpage
 
 \subsubsection{Diagrama Temporal}
 \begin{figure}[htp]
 	\centering
+	\renewcommand{\arraystretch}{1.3}
 	\definecolor{azulGantt}{HTML}{5B9BD5}
 	\begin{ganttchart}[
 		vgrid,
@@ -80,17 +78,17 @@ El propósito de esta fase final es la recopilación, documentación y presentac
 		title top shift=0,
 		bar/.style={fill=azulGantt, draw=black, line width=0.6pt}
 		]{1}{9}
-		\gantttitle{2025}{4} \gantttitle{2026}{5} \\
+		\textcolor{white}{\gantttitle{2025}{4}} \textcolor{white}{\gantttitle{2026}{5}} \\
 		
-		\gantttitle{Sep}{1}
-		\gantttitle{Oct}{1}
-		\gantttitle{Nov}{1}
-		\gantttitle{Dic}{1}
-		\gantttitle{Ene}{1}
-		\gantttitle{Feb}{1}
-		\gantttitle{Mar}{1}
-		\gantttitle{Abr}{1}
-		\gantttitle{May}{1} \\
+		\textcolor{white}{\gantttitle{Sep}{1}}
+		\textcolor{white}{\gantttitle{Oct}{1}}
+		\textcolor{white}{\gantttitle{Nov}{1}}
+		\textcolor{white}{\gantttitle{Dic}{1}}
+		\textcolor{white}{\gantttitle{Ene}{1}}
+		\textcolor{white}{\gantttitle{Feb}{1}}
+		\textcolor{white}{\gantttitle{Mar}{1}}
+		\textcolor{white}{\gantttitle{Abr}{1}}
+		\textcolor{white}{\gantttitle{May}{1}} \\
 		
 		\ganttbar{Fase de Investigación}{1}{2} \\
 		\ganttbar{Fase de An\'alisis}{2}{3} \\
@@ -124,7 +122,7 @@ Los costes de capital engloban las inversiones en activos fijos necesarios para 
 \subsubsection{OPEX}
 Los costes operativos recogen los gastos derivados de la ejecución y el trabajo diario:
 \begin{itemize}
-	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se ha hecho un uso exclusivo de tecnologías libres y herramientas \textit{Open Source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 €}.
+	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se ha hecho un uso exclusivo de tecnologías libres y herramientas \textit{open source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 €}.
 	\item \textbf{Costes de personal:} Para el cálculo de estos costes se han tomado los datos obtenidos sobre el informe de precios para perfiles profesionales en el ámbito de las tecnologías de la información, proporcionados en la documentación del TFG \cite{precio-perfiles}. Se aplicaron en este caso los perfiles junior para cada uno de los roles del proyecto. El perfil de Científico de Datos no se contempla en dicha documentación, por lo que se ha seleccionado el perfil Consultor/a especializado en Business Intelligence para la selección de la tarifa por hora, por ser el perfil que más se asemeja al rol.
 \end{itemize}
 
