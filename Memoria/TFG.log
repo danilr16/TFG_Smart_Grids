@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  5 APR 2026 21:10
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  7 APR 2026 20:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1258,9 +1258,10 @@ File: figures/sobreajuste_subajuste.png Graphic file (type bmp)
  [7]
 File: figures/random_forest.png Graphic file (type bmp)
 <figures/random_forest.png>
- [8] [9]
+ [8]
 File: figures/decision_tree.png Graphic file (type bmp)
 <figures/decision_tree.png>
+ [9]
 File: figures/xgboost.png Graphic file (type bmp)
 <figures/xgboost.png>
  [10]
@@ -1298,45 +1299,42 @@ Overfull \hbox (10.97357pt too wide) in paragraph at lines 4--18
  [][] 
  []
 
-) [18
+) (tables/matriz_trazabilidad.tex) [18
 
-] (tables/matriz_trazabilidad.tex) [19
-
-] [20]
-(tables/tareas_investigacion.tex
+] [19] (tables/tareas_investigacion.tex
 Overfull \hbox (7.32079pt too wide) in paragraph at lines 3--19
  [][] 
  []
 
-) [21
+) [20
 
 ] (tables/tareas_analisis.tex
 Overfull \hbox (7.32079pt too wide) in paragraph at lines 3--21
  [][] 
  []
 
-) [22
+) [21
 
 ] (tables/tareas_desarrollo.tex
 Overfull \hbox (7.32079pt too wide) in paragraph at lines 3--25
  [][] 
  []
 
-) [23
+) [22
 
 ] (tables/tareas_evaluacion.tex
 Overfull \hbox (7.32079pt too wide) in paragraph at lines 3--21
  [][] 
  []
 
-) [24
+) [23
 
 ] (tables/tareas_cierre.tex
 Overfull \hbox (7.32079pt too wide) in paragraph at lines 3--19
  [][] 
  []
 
-) [25
+) [24
 
 ]
 Missing character: There is no € in font pplr8t!
@@ -1349,29 +1347,29 @@ Missing character: There is no € in font pplb8t!
 Missing character: There is no € in font pplb8t!
 Missing character: There is no € in font pplb8t!
 Missing character: There is no € in font pplb8t!
-[26] (tables/roles_horas.tex
+[25] (tables/roles_horas.tex
 LaTeX Font Info:    Font shape `U/eurosym/b/n' in size <12> not available
 (Font)              Font shape `U/eurosym/bx/n' tried instead on input line 7.
 ) (tables/presupuesto_total.tex))
-(sections/06_Implementación.tex [27]
+(sections/06_Implementación.tex [26]
 Capítulo 5.
-[28
+[27
 
-] [29]
+] [28]
 File: figures/red_tfg.png Graphic file (type bmp)
 <figures/red_tfg.png>
- [30] [31] (tables/dataframe_entradas.tex) [32]
+ [29] [30] (tables/dataframe_entradas.tex) [31]
 (tables/dataframe_salidas.tex)
 File: figures/hist_data_input.png Graphic file (type bmp)
 <figures/hist_data_input.png>
- [33
+ [32
 
-] [34]
+] [33]
 File: figures/hist_data_output.png Graphic file (type bmp)
 <figures/hist_data_output.png>
- [35
+ [34
 
-] [36]
+] [35]
 File: figures/hist_clean_data_input.png Graphic file (type bmp)
 <figures/hist_clean_data_input.png>
 File: figures/hist_clean_data_output.png Graphic file (type bmp)
@@ -1391,35 +1389,35 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
 (Font)              scaled to size 12.0pt on input line 135.
 
-[37
+[36
 
-] [38] [39] [40
+] [37] [38] [39
 
 ]
 File: figures/validacion_cruzada.png Graphic file (type bmp)
 <figures/validacion_cruzada.png>
 File: figures/time_series_split.png Graphic file (type bmp)
 <figures/time_series_split.png>
- [41] [42] [43]
+ [40] [41] [42]
 File: figures/modelo_propio.png Graphic file (type bmp)
 <figures/modelo_propio.png>
- [44] [45
+ [43] [44
 
-] [46
+] [45
 
 ]
 File: figures/malos_resultados_red_neuronal.png Graphic file (type bmp)
 <figures/malos_resultados_red_neuronal.png>
- [47
+ [46
 
-] [48
+] [47
 
-] [49] [50
+] [48] [49
 
 ])
-(sections/07_Resultados.tex [51]
+(sections/07_Resultados.tex [50]
 Capítulo 6.
-[52
+[51
 
 ] (tables/rf_hiperparam.tex) (tables/xgb_hiperparam.tex)
 (tables/esr_rf_hiperparam.tex) (tables/esr_xgb_hiperparam.tex)
@@ -1428,14 +1426,14 @@ Overfull \hbox (11.2235pt too wide) in paragraph at lines 4--34
  [][] 
  []
 
-) [53] [54]
+) [52] [53]
 File: figures/resultados_sin_desplazamiento.png Graphic file (type bmp)
 <figures/resultados_sin_desplazamiento.png>
 File: figures/resultados_con_desplazamiento.png Graphic file (type bmp)
 <figures/resultados_con_desplazamiento.png>
- [55
+ [54
 
-] [56]
+] [55]
 File: figures/resultados_modelos_PERD.png Graphic file (type bmp)
 <figures/resultados_modelos_PERD.png>
 File: figures/resultados_modelos_V2.png Graphic file (type bmp)
@@ -1444,15 +1442,15 @@ File: figures/resultados_modelos_V13.png Graphic file (type bmp)
 <figures/resultados_modelos_V13.png>
 File: figures/resultados_modelos_QGEN7.png Graphic file (type bmp)
 <figures/resultados_modelos_QGEN7.png>
- [57] [58] [59] [60] [61] [62
+ [56] [57] [58] [59] [60] [61
 
-] [63]
+] [62]
 (tables/esr_best_hiperparam.tex) (tables/nn_metagen_hiperparam.tex
 Overfull \hbox (26.2235pt too wide) in paragraph at lines 4--34
  [][] 
  []
 
-) [64
+) [63
 
 ]
 File: figures/resultados_avanzados_sin_desplazamiento.png Graphic file (type bm
@@ -1461,7 +1459,7 @@ p)
 File: figures/resultados_avanzados_con_desplazamiento.png Graphic file (type bm
 p)
 <figures/resultados_avanzados_con_desplazamiento.png>
- [65] [66]
+ [64] [65]
 File: figures/resultados_modelos_avanzados_PERD.png Graphic file (type bmp)
 <figures/resultados_modelos_avanzados_PERD.png>
 File: figures/resultados_modelos_avanzados_V2.png Graphic file (type bmp)
@@ -1470,36 +1468,36 @@ File: figures/resultados_modelos_avanzados_V13.png Graphic file (type bmp)
 <figures/resultados_modelos_avanzados_V13.png>
 File: figures/resultados_modelos_avanzados_QGEN7.png Graphic file (type bmp)
 <figures/resultados_modelos_avanzados_QGEN7.png>
- [67
+ [66
 
-] [68] [69] [70] [71] [72
+] [67] [68] [69] [70] [71
 
 ] (tables/mejor_modelo.tex
 Overfull \hbox (23.37357pt too wide) in paragraph at lines 4--16
  [][] 
  []
 
-)) (sections/08_Conclusiones.tex [73] [74]
+)) (sections/08_Conclusiones.tex [72] [73]
 Capítulo 7.
-) (TFG.bbl [75
+) (TFG.bbl [74
 
-] [76
+] [75
 
 ]
 Missing character: There is no ’ in font pplr8t!
-[77]) (sections/09_Anexos.tex [78]
+[76]) (sections/09_Anexos.tex [77]
 Apéndice A.
-[79
+[78
 
 ]
 Apéndice B.
-[80
+[79
 
-] [81]
+] [80]
 Apéndice C.
-[82
+[81
 
-] [83] [84]) [85] (TFG.aux
+] [82] [83]) [84] (TFG.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1511,12 +1509,12 @@ Package rerunfilecheck Info: File `TFG.out' has not changed.
 (rerunfilecheck)             Checksum: 405EBC2709E71A20173D758509FAF540;9693.
  ) 
 Here is how much of TeX's memory you used:
- 31256 strings out of 402987
- 591288 string characters out of 5448524
- 1449337 words of memory out of 5000000
- 59352 multiletter control sequences out of 15000+600000
+ 31257 strings out of 402987
+ 591315 string characters out of 5448524
+ 1479335 words of memory out of 5000000
+ 59353 multiletter control sequences out of 15000+600000
  659792 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 122i,17n,124p,1646b,1917s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,17n,124p,1640b,1917s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on TFG.pdf (94 pages).
+Output written on TFG.pdf (93 pages).

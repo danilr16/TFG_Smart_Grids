@@ -7,31 +7,31 @@
 \contentsline {table}{\numberline {4.2}{\ignorespaces Requisitos funcionales del sistema}}{17}{table.caption.20}%
 \contentsline {table}{\numberline {4.3}{\ignorespaces Requisitos no funcionales del sistema}}{18}{table.caption.21}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces Requisitos de información del sistema}}{18}{table.caption.22}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Matriz de trazabilidad de requisitos del sistema frente a los objetivos del proyecto}}{20}{table.caption.23}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Tareas de la fase de investigación}}{21}{table.caption.25}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Tareas de la fase de análisis}}{22}{table.caption.27}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Tareas de la fase de desarrollo}}{23}{table.caption.29}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Tareas de la fase de evaluación}}{24}{table.caption.31}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces Tareas de la fase de cierre}}{25}{table.caption.33}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Tabla de coste estimado por rol en el proyecto}}{27}{table.caption.38}%
-\contentsline {table}{\numberline {4.12}{\ignorespaces Tabla del presupuesto total estimado del proyecto}}{27}{table.caption.40}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Matriz de trazabilidad de requisitos del sistema frente a los objetivos del proyecto}}{19}{table.caption.23}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Tareas de la fase de investigación}}{20}{table.caption.25}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Tareas de la fase de análisis}}{21}{table.caption.27}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Tareas de la fase de desarrollo}}{22}{table.caption.29}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Tareas de la fase de evaluación}}{23}{table.caption.31}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Tareas de la fase de cierre}}{24}{table.caption.33}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Tabla de coste estimado por rol en el proyecto}}{26}{table.caption.38}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Tabla del presupuesto total estimado del proyecto}}{26}{table.caption.40}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Extracto del dataset de entrada}}{32}{table.caption.42}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Extracto del dataset de salida}}{33}{table.caption.43}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Resultados de la red neuronal antes del ajuste de pesos}}{47}{figure.caption.51}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Extracto del dataset de entrada}}{31}{table.caption.42}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Extracto del dataset de salida}}{32}{table.caption.43}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Resultados de la red neuronal antes del ajuste de pesos}}{46}{figure.caption.51}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Espacio de búsqueda de hiperparámetros (RandomForest)}}{53}{table.caption.52}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Espacio de búsqueda de hiperparámetros (XGBoost)}}{53}{table.caption.53}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_RandomForest)}}{54}{table.caption.54}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_XGBoost)}}{54}{table.caption.55}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal)}}{54}{table.caption.56}%
-\contentsline {table}{\numberline {6.6}{\ignorespaces Comparación de métricas de evaluación entre modelos}}{55}{figure.caption.57}%
-\contentsline {table}{\numberline {6.7}{\ignorespaces Comparación de métricas de evaluación entre modelos (MAPE desplazado)}}{56}{figure.caption.58}%
-\contentsline {table}{\numberline {6.8}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_Best\_Model)}}{64}{table.caption.67}%
-\contentsline {table}{\numberline {6.9}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal MetaGen)}}{65}{table.caption.68}%
-\contentsline {table}{\numberline {6.10}{\ignorespaces Comparación de métricas de evaluación entre modelos avanzados}}{65}{figure.caption.69}%
-\contentsline {table}{\numberline {6.11}{\ignorespaces Comparación de métricas de evaluación entre modelos avanzados (MAPE desplazado)}}{66}{figure.caption.70}%
-\contentsline {table}{\numberline {6.12}{\ignorespaces Resumen de los mejores modelos globales del estudio}}{74}{table.caption.75}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Espacio de búsqueda de hiperparámetros (RandomForest)}}{52}{table.caption.52}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Espacio de búsqueda de hiperparámetros (XGBoost)}}{52}{table.caption.53}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_RandomForest)}}{53}{table.caption.54}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_XGBoost)}}{53}{table.caption.55}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal)}}{53}{table.caption.56}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Comparación de métricas de evaluación entre modelos}}{54}{figure.caption.57}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Comparación de métricas de evaluación entre modelos (MAPE desplazado)}}{55}{figure.caption.58}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Espacio de búsqueda de hiperparámetros (ESR\_Best\_Model)}}{63}{table.caption.67}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces Espacio de búsqueda de hiperparámetros (Red Neuronal MetaGen)}}{64}{table.caption.68}%
+\contentsline {table}{\numberline {6.10}{\ignorespaces Comparación de métricas de evaluación entre modelos avanzados}}{64}{figure.caption.69}%
+\contentsline {table}{\numberline {6.11}{\ignorespaces Comparación de métricas de evaluación entre modelos avanzados (MAPE desplazado)}}{65}{figure.caption.70}%
+\contentsline {table}{\numberline {6.12}{\ignorespaces Resumen de los mejores modelos globales del estudio}}{73}{table.caption.75}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
