@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -233,5 +233,9 @@ XGBoost.
 \newblock Xgbregressor, {\natexlab{b}}.
 \newblock URL
   \url{https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor}.
+
+\bibitem[cre()]{creacion-venv}
+Creación de entornos virtuales en python.
+\newblock URL \url{https://docs.python.org/3/library/venv.html}.
 
 \end{thebibliography}

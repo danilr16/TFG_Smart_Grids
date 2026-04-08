@@ -65,5 +65,5 @@
 \contentsline {section}{\numberline {7.1}Trabajos futuros}{74}{section.7.1}%
 \contentsline {chapter}{Bibliografía}{75}{chapter*.76}%
 \contentsline {chapter}{\numberline {A}Manual de Instalación}{78}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Uso de la Inteligencia Artificial}{79}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Código y Figuras Extras}{81}{appendix.Alph3}%
+\contentsline {chapter}{\numberline {B}Uso de la Inteligencia Artificial}{81}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Código y Figuras Extras}{83}{appendix.Alph3}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  7 APR 2026 20:13
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  8 APR 2026 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,14 +1490,25 @@ Apéndice A.
 [78
 
 ]
-Apéndice B.
-[79
+(C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
 
-] [80]
-Apéndice C.
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 37.
+
+[79] [80]
+Apéndice B.
 [81
 
-] [82] [83]) [84] (TFG.aux
+] [82]
+Apéndice C.
+[83
+
+] [84] [85]) [86] (TFG.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1505,16 +1516,20 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `TFG.out' has not changed.
 (rerunfilecheck)             Checksum: 405EBC2709E71A20173D758509FAF540;9693.
  ) 
 Here is how much of TeX's memory you used:
- 31257 strings out of 402987
- 591315 string characters out of 5448524
- 1479335 words of memory out of 5000000
- 59353 multiletter control sequences out of 15000+600000
+ 31352 strings out of 402987
+ 592482 string characters out of 5448524
+ 1480318 words of memory out of 5000000
+ 59444 multiletter control sequences out of 15000+600000
  659792 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 122i,17n,124p,1640b,1917s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,17n,124p,1640b,1919s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on TFG.pdf (93 pages).
+Output written on TFG.pdf (95 pages).

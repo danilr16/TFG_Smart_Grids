@@ -1,7 +1,48 @@
 \appendix
 
 \chapter{Manual de Instalación}
-%TODO
+El presente apartado detalla el procedimiento técnico requerido para la configuración del entorno de desarrollo. Esta configuración es necesaria para la correcta ejecución de los cuadernos de experimentación y los \textit{scripts} implementados en este proyecto. En términos generales, para la ejecución del código es suficiente con la instalación de las librerías correspondientes a través del gestor de paquetes estándar de Python (\textbf{\texttt{pip}}). No obstante, se recomienda encarecidamente realizar este proceso dentro de un entorno virtual aislado. Esta práctica previene conflictos de versiones con otras dependencias del sistema y garantiza la reproducibilidad de los experimentos. 
+
+\section*{Requisitos Previos y Entorno de Desarrollo}
+Como requisito indispensable previo a la configuración, el sistema debe contar con una instalación de \textbf{Python en su versión 3.11.0 o superior}. Por otro lado, cabe destacar que la ejecución de los cuadernos de experimentación no requiere de la instalación de un Entorno de Desarrollo Integrado (IDE) específico. El propio servidor de Jupyter despliega una interfaz gráfica completa a través del navegador web del usuario. Sin embargo, para la visualización y edición profunda del código fuente estructurado en el directorio \textbf{\texttt{src}}, resulta altamente recomendable el uso de editores avanzados (tales como Visual Studio Code o PyCharm), los cuales ofrecen integración nativa tanto con cuadernos interactivos como con \textit{scripts} tradicionales.
+
+A continuación, se detallan los pasos para la correcta preparación del espacio de trabajo:
+
+\section*{Estructura del Directorio de Trabajo}
+Para asegurar el correcto funcionamiento de las rutas relativas y la adecuada importación del código fuente, es indispensable iniciar la consola de comandos y situarse en el directorio raíz del proyecto, denominado \textbf{\texttt{entrenamiento}}.
+
+Este directorio presenta la siguiente jerarquía estructural básica:
+\begin{itemize}
+	\item El subdirectorio \textbf{\texttt{src}}, que alberga el principal código fuente del proyecto y funciones auxiliares.
+	\item Los cuadernos de experimentación (.ipynb) organizados en subcarpetas.
+	\item El archivo de configuración \textbf{\texttt{setup.py}}.
+\end{itemize}
+
+\section*{Creación y Activación del Entorno Virtual (Recomendación)}
+Si se opta por el uso de un entorno virtual, se debe generar uno nuevo en el directorio actual ejecutando la instrucción \textbf{\texttt{python -m venv .env}} en Windows o \textbf{\texttt{python3 -m venv .env}} en Linux. 
+
+Una vez generado, se procede a su activación. En sistemas operativos Windows (empleando PowerShell), el comando correspondiente es \texttt{.\textbackslash.venv\textbackslash Scripts\textbackslash Activate.ps1} y en Linux \textbf{\texttt{source .venv/bin/activate}}.
+
+Para profundizar en la configuración del entono de creación virtual es recomendable la lectura de la documentación oficial de Python \cite{creacion-venv}.
+
+\section*{Instalación de Dependencias Externas}
+Con el entorno preparado (virtual o global), se lleva a cabo la instalación de las bibliotecas necesarias para el procesamiento de datos y el modelado de aprendizaje automático. La instalación se realiza ejecutando secuencialmente las siguientes instrucciones:
+\begin{lstlisting}[language=bash, caption={Comandos de instalación de librerías externas}, label={cod:instalacion_librerias}, captionpos=b]
+	pip install jupyter
+	pip install numpy pandas matplotlib seaborn
+	pip install scikit-learn tensorflow keras-tuner xgboost
+	pip install pymetagen-datalabupo
+\end{lstlisting}
+
+\textit{Nota: La relación expuesta comprende las dependencias principales. En el supuesto de que la ejecución de un cuaderno requiera una biblioteca auxiliar no contemplada inicialmente, el intérprete devolverá un error de tipo \texttt{ModuleNotFoundError}, procediéndose en tal caso a la instalación individual del paquete ausente.}
+
+\section*{Instalación del Paquete Local Editable}
+Dada la arquitectura modular del proyecto, el código fuente desarrollado en el subdirectorio \texttt{src} debe ser accesible desde los cuadernos de Jupyter. Para posibilitar esta importación sin incurrir en errores de enrutamiento, el proyecto se debe instalar como un paquete local en modo editable.
+
+Desde la raíz del directorio \texttt{entrenamiento} (donde reside el archivo \texttt{setup.py}), se ejecuta el comando\textbf{ \texttt{pip install -e .}}. El uso del argumento -e enlaza el paquete al código fuente original, de manera que cualquier modificación realizada en el directorio\texttt{src} se actualiza dinámicamente en el entorno de ejecución sin requerir reinstalaciones posteriores.
+
+\section*{Despliegue del Entorno de Ejecución}
+Completada la instalación de las dependencias externas y del módulo propio, se despliega el servidor local de Jupyter mediante la ejecución de la siguiente orden en la consola \textbf{\texttt{jupyter notebook}}. Esta acción inicia el servicio y abre automáticamente la interfaz gráfica en el navegador web predeterminado del sistema, permitiendo el acceso, la edición y la ejecución de los cuadernos de experimentación.
 
 \chapter{Uso de la Inteligencia Artificial}
 Durante el ciclo de vida de este Trabajo Fin de Grado se emplea la inteligencia artificial como un recurso de apoyo tecnológico. El propósito principal de su uso es incrementar la eficiencia en el desarrollo, perfeccionar la redacción formal y agilizar labores rutinarias o de formato. Es imperativo subrayar que la autoría intelectual, el análisis crítico y las decisiones de diseño arquitectónico pertenecen íntegramente al autor, no habiéndose delegado en ningún momento la creación autónoma de contenido académico o técnico sin una estricta supervisión. El modelo de inteligencia artificial usado en este caso es Gemini (Google).
