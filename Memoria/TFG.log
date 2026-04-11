@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  8 APR 2026 23:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  11 APR 2026 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1398,10 +1398,10 @@ File: figures/validacion_cruzada.png Graphic file (type bmp)
 <figures/validacion_cruzada.png>
 File: figures/time_series_split.png Graphic file (type bmp)
 <figures/time_series_split.png>
- [40] [41] [42]
+ [40] [41] [42] [43]
 File: figures/modelo_propio.png Graphic file (type bmp)
 <figures/modelo_propio.png>
- [43] [44
+ [44
 
 ] [45
 
@@ -1479,15 +1479,15 @@ Overfull \hbox (23.37357pt too wide) in paragraph at lines 4--16
 
 )) (sections/08_Conclusiones.tex [72] [73]
 Capítulo 7.
-) (TFG.bbl [74
+[74
 
-] [75
+] [75]) (TFG.bbl [76] [77
 
 ]
 Missing character: There is no ’ in font pplr8t!
-[76]) (sections/09_Anexos.tex [77]
+[78]) (sections/09_Anexos.tex [79]
 Apéndice A.
-[78
+[80
 
 ]
 (C:\Users\danil\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
@@ -1500,15 +1500,15 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
 (Font)              using `T1/zi4/m/n' instead on input line 37.
 
-[79] [80]
+[81] [82]
 Apéndice B.
-[81
-
-] [82]
-Apéndice C.
 [83
 
-] [84] [85]) [86] (TFG.aux
+] [84]
+Apéndice C.
+[85
+
+] [86] [87]) [88] (TFG.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1532,4 +1532,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  122i,17n,124p,1640b,1919s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on TFG.pdf (95 pages).
+Output written on TFG.pdf (97 pages).

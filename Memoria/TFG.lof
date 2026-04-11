@@ -20,7 +20,7 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Histogramas de atributos de salida limpios. Fuente: Elaboración propia}}{38}{figure.caption.47}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Validación cruzada. Fuente: \cite {scikit-learn-validacion-cruzada}}}{40}{figure.caption.48}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Time Series Split. Fuente: \cite {scikit-learn-validacion-cruzada}}}{41}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}}{43}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}}{44}{figure.caption.50}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Histogramas y gráficos de dispersión de las pérdidas (todos los modelos iniciales). Fuente: Elaboración propia}}{57}{figure.caption.61}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Histogramas y gráficos de dispersión de las tensiones del nudo 2 (todos los modelos iniciales). Fuente: Elaboración propia}}{58}{figure.caption.62}%

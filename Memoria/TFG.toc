@@ -62,8 +62,8 @@
 \contentsline {subsection}{\numberline {6.2.6}Exploración de Otras Arquitecturas Avanzadas}{71}{subsection.6.2.6}%
 \contentsline {section}{\numberline {6.3}Resumen del Entrenamiento de Modelos}{72}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Conclusiones}{74}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Trabajos futuros}{74}{section.7.1}%
-\contentsline {chapter}{Bibliografía}{75}{chapter*.76}%
-\contentsline {chapter}{\numberline {A}Manual de Instalación}{78}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Uso de la Inteligencia Artificial}{81}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Código y Figuras Extras}{83}{appendix.Alph3}%
+\contentsline {section}{\numberline {7.1}Trabajos futuros}{75}{section.7.1}%
+\contentsline {chapter}{Bibliografía}{77}{chapter*.76}%
+\contentsline {chapter}{\numberline {A}Manual de Instalación}{80}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Uso de la Inteligencia Artificial}{83}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Código y Figuras Extras}{85}{appendix.Alph3}%

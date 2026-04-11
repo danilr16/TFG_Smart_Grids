@@ -170,6 +170,8 @@ El proceso definido consta en primer lugar de una validación por retención tem
 
 En segundo lugar, para llevar a cabo la selección del algoritmo óptimo y el ajuste de hiperparámetros, se aplica una validación cruzada sobre el subconjunto de entrenamiento (el 80\% inicial). Dado que la aplicación de una validación cruzada tradicional es incorrecto en este escenario temporal, se ha empleado la variante de Scikit-learn \textbf{Time Series Split} \cite{scikit-learn-time-series}. A lo largo de los experimentos, se emplean configuraciones de 3 o 5 pliegues, dependiendo del coste computacional requerido por cada modelo.
 
+Cabe destacar que el conjunto de datos utilizado, al haber sido generado de forma pseudo-sintética mediante resoluciones aisladas del OPF en GAMS, carece de una evolución cronológica y una inercia dinámica reales. En un contexto puramente académico, esto permitiría el uso de una validación cruzada aleatoria tradicional. Sin embargo, se ha optado deliberadamente por diseñar el \textit{pipeline} analítico aplicando una validación temporal estricta mediante \textbf{Time Series Split}. Esta decisión de diseño garantiza que el flujo de trabajo respete la causalidad física del problema y dota a la arquitectura de la robustez metodológica necesaria para su futuro despliegue en un entorno de producción real, donde la fuga de información futura invalidaría por completo el sistema.
+
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/validacion_cruzada.png}
@@ -215,18 +217,22 @@ Aunque el MSE es excelente para el aprendizaje, su interpretabilidad humana es c
 \subsection{Entrenamiento de Modelos}
 En el enfoque tradicional del aprendizaje automático para problemas de regresión con múltiples salidas, los algoritmos estándar tratan de predecir todas las variables objetivo de forma simultánea y paralela a partir de las variables de entrada. Sin embargo, dicho paradigma ignora gran parte de la naturaleza del problema eléctrico. Físicamente, la potencia reactiva inyectada por un generador ($Q_{gen7}$ en este caso) no es una variable aislada, sino que altera de forma directa el perfil de tensiones en los nudos de la red y como consecuencia también define las pérdidas del sistema.
 
-Por consiguiente, resulta de gran utilidad que los modelos aprendan la interdependencia existente. Para resolver dicha limitación, en este proyecto no solo se evalúan modelos predictivos directos, sino que se ha diseñado e implementado una arquitectura de software propia denominada \textbf{ElectricSequentialRegressor (ESR)} basada en lo que se conoce como \textbf{modelo jerárquico o cadenas de regresores}. Esta clase está programada a medida y garantiza una compatibilidad total y nativa con el ecosistema de \textbf{scikit-learn}. Para lograr esta integración, la arquitectura hereda de las clases estructurales \textbf{\textit{BaseEstimator}} y \textbf{\textit{RegressorMixin}} de dicha librería. Esta decisión de diseño permite al modelo implementar automáticamente métodos estándar (como la evaluación de precisión) y someterse a procesos complejos de validación cruzada y optimización de hiperparámetros sin necesidad de adaptadores externos. A nivel operativo, el ESR modela la red de distribución en las siguientes dos fases secuenciales:
+Por consiguiente, resulta de gran utilidad que los modelos aprendan la interdependencia existente. Para resolver dicha limitación, en este proyecto no solo se evalúan modelos predictivos directos, sino que se ha diseñado e implementado una arquitectura de software propia denominada \textbf{ElectricSequentialRegressor (ESR)} basada en lo que se conoce como \textbf{modelo jerárquico o cadenas de regresores}. Esta clase está programada a medida y garantiza una compatibilidad total y nativa con el ecosistema de \textbf{scikit-learn}. 
+
+Para lograr una correcta integración con el ecosistema de scikit-learn, la arquitectura hereda de las clases estructurales \textbf{\textit{BaseEstimator}} y \textbf{\textit{RegressorMixin}} de dicha librería. Esta decisión de diseño permite al modelo implementar automáticamente métodos estándar (como la evaluación de precisión) y someterse a procesos complejos de validación cruzada y optimización de hiperparámetros sin necesidad de adaptadores externos. A nivel operativo, el ESR modela la red de distribución en las siguientes dos fases secuenciales:
 \begin{itemize}
 	\item \textbf{Fase de estimación pivote (Modelo 1):} El sistema utiliza un primer estimador para predecir exclusivamente una variable clave o ``pivote'' a partir de las variables de entrada. En este caso la variable pivote es la potencia inyectada $Q_{gen7}$.
 	\item \textbf{Fase de Propagación (Modelo 2):} En lugar de predecir el resto de variables partiendo de las variables de entrada, el algoritmo concatena la matriz de entrada original con la predicción obtenida en la primera fase. Así el segundo estimador se entrena utilizando la información previa para predecir con mayor precisión las variables más complejas (en este caso las tensiones y las pérdidas).
 \end{itemize}
+
+A nivel de software, la clase garantiza la paralelización del entrenamiento mediante la librería \textit{joblib}, reduciendo drásticamente los tiempos de cómputo en la fase de ajuste. Además, esta implementación permite utilizar modelos diferentes para cada fase, lo que puede llegar a ser muy conveniente. A nivel eléctrico, este diseño secuencial emula el proceso analítico de un flujo de carga real, obligando al modelo a asimilar que la topología de tensiones y las pérdidas son una consecuencia directa de las inyecciones de potencia previas.
+\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/modelo_propio.png}
 	\caption{Esquema de funcionamiento ElectricSequentialRegressor. Fuente: Elaboración propia}
 \end{figure}
-A nivel de software, la clase garantiza la paralelización del entrenamiento mediante la librería \textit{joblib}, reduciendo drásticamente los tiempos de cómputo en la fase de ajuste. Además, esta implementación permite utilizar modelos diferentes para cada fase, lo que puede llegar a ser muy conveniente. A nivel eléctrico, este diseño secuencial emula el proceso analítico de un flujo de carga real, obligando al modelo a asimilar que la topología de tensiones y las pérdidas son una consecuencia directa de las inyecciones de potencia previas.
-\clearpage
 \begin{lstlisting}[language=Python, caption={Ejemplo de uso del modelo ESR}, label={cod:esr_use}, captionpos=b]
 	model = ElectricSequentialRegressor(
 		estimator1=RandomForestRegressor(n_jobs=1, random_state=42), 
