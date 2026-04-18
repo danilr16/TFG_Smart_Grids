@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  11 APR 2026 12:55
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2026.3.26)  18 APR 2026 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1149,11 +1149,8 @@ File: figures/etsii_us.png Graphic file (type bmp)
 <figures/etsii_us.png>
  [1
 
-] [2]) (sections/00_agradecimientos.tex)
-(sections/00_resumen.tex [1
+] [2]) (sections/00_resumen.tex) [1
 
-
-]) [2
 
 ] (TFG.toc
 LaTeX Info: Redefining \. on input line 1.
@@ -1195,7 +1192,7 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 16.
 Package tocbasic Info: Using my definition of `\numberline' on input line 35.
 Package tocbasic Info: Using my definition of `\numberline' on input line 45.
 
-[3
+[2
 
 ]
 Package tocbasic Info: Using my definition of `\numberline' on input line 64.
@@ -1207,14 +1204,14 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 69.
 \tf@toc=\write5
 \openout5 = `TFG.toc'.
 
- [4] (TFG.lof
+ [3] (TFG.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lof=\write6
 \openout6 = `TFG.lof'.
 
- [5
+ [4
 
 ] (TFG.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -1223,7 +1220,7 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write7
 \openout7 = `TFG.lot'.
 
- [6
+ [5
 
 ] (TFG.lol
 LaTeX Info: Redefining \. on input line 1.
@@ -1232,7 +1229,7 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lol=\write8
 \openout8 = `TFG.lol'.
 
- [7
+ [6
 
 ]
 (sections/01_Introduccion.tex
@@ -1258,10 +1255,9 @@ File: figures/sobreajuste_subajuste.png Graphic file (type bmp)
  [7]
 File: figures/random_forest.png Graphic file (type bmp)
 <figures/random_forest.png>
- [8]
+ [8] [9]
 File: figures/decision_tree.png Graphic file (type bmp)
 <figures/decision_tree.png>
- [9]
 File: figures/xgboost.png Graphic file (type bmp)
 <figures/xgboost.png>
  [10]
@@ -1337,20 +1333,10 @@ Overfull \hbox (7.32079pt too wide) in paragraph at lines 3--19
 ) [24
 
 ]
-Missing character: There is no € in font pplr8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-Missing character: There is no € in font pplb8t!
-[25] (tables/roles_horas.tex
 LaTeX Font Info:    Font shape `U/eurosym/b/n' in size <12> not available
-(Font)              Font shape `U/eurosym/bx/n' tried instead on input line 7.
-) (tables/presupuesto_total.tex))
+(Font)              Font shape `U/eurosym/bx/n' tried instead on input line 118
+.
+ [25] (tables/roles_horas.tex) (tables/presupuesto_total.tex))
 (sections/06_Implementación.tex [26]
 Capítulo 5.
 [27
@@ -1521,15 +1507,15 @@ L3 programming layer <2025-11-06>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 405EBC2709E71A20173D758509FAF540;9693.
+(rerunfilecheck)             Checksum: 0DB420A61AE06060EEC22B0F1E2D405C;9693.
  ) 
 Here is how much of TeX's memory you used:
- 31352 strings out of 402987
- 592482 string characters out of 5448524
- 1480318 words of memory out of 5000000
+ 31350 strings out of 402987
+ 592290 string characters out of 5448524
+ 1479318 words of memory out of 5000000
  59444 multiletter control sequences out of 15000+600000
- 659792 words of font info for 92 fonts, out of 8000000 for 9000
+ 660143 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  122i,17n,124p,1640b,1919s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on TFG.pdf (97 pages).
+Output written on TFG.pdf (96 pages).

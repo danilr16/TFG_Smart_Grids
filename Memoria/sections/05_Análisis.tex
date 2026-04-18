@@ -2,7 +2,7 @@
 Para dar cumplimiento a la hoja de ruta trazada en el capítulo anterior, es necesario realizar un estudio detallado de las necesidades del sistema. Por ello, en este apartado se desarrolla el catálogo de requisitos y la planificación temporal y financiera del proyecto.
 
 \section{Catálogo de Requisitos}
-A continuación, se detallan los requisitos del sistema clasificados en generales, de información, funcionales y no funcionales.
+A continuación, se detallan los requisitos del sistema clasificados en generales, funcionales, no funcionales y de información.
 
 \subsection{Requisitos Generales}
 \input{tables/requisitos_generales}
@@ -44,7 +44,7 @@ Esta fase persigue traducir la investigación teórica en especificaciones forma
 \clearpage
 
 \subsubsection{Fase de Desarrollo}
-El propósito de la fase de desarrollo es la materialización del sistema predictivo. Engloba las tareas en lo referente a ingeniería de datos y el entrenamiento y la optimización de los modelos seleccionados.
+El propósito de la fase de desarrollo es la materialización del sistema predictivo. Engloba las tareas en lo referente a ingeniería de datos, el entrenamiento y la optimización de los modelos seleccionados.
 
 \input{tables/tareas_desarrollo}
 \clearpage
@@ -107,21 +107,21 @@ Para la estimación temporal, se ha considerado una duración aproximada del pro
 \subsubsection{CAPEX}
 Los costes de capital engloban las inversiones en activos fijos necesarios para el desarrollo del proyecto:
 \begin{itemize}
-	\item \textbf{Costes de hardware:} El proyecto se ha desarrollado utilizando el portátil HP OmniBook 7. En lugar de utilizar el precio total de compra del equipo, se ha aplicado el coeficiente de amortización lineal máximo establecido por las tablas de la Agencia Tributaria \cite{amortizacion} para ``Equipos electrónicos e informáticos'', fijado en un 25\% anual. Se asume un valor de mercado aproximado del equipo de 1.300,00 €. Para calcular el coste imputable al proyecto, se aplica un factor temporal correspondiente a los 8 meses de uso sobre los 12 meses del año.
+	\item \textbf{Costes de hardware:} El proyecto se ha desarrollado utilizando el portátil HP OmniBook 7. En lugar de utilizar el precio total de compra del equipo, se ha aplicado el coeficiente de amortización lineal máximo establecido por las tablas de la Agencia Tributaria \cite{amortizacion} para ``Equipos electrónicos e informáticos'', fijado en un 25\% anual. Se asume un valor de mercado aproximado del equipo de 1.300,00 \euro. Para calcular el coste imputable al proyecto, se aplica un factor temporal correspondiente a los 8 meses de uso sobre los 12 meses del año.
 	\item \textbf{Costes de infraestructura:} Cabe destacar que los gastos indirectos derivados del uso de instalaciones físicas, no han sido incluidos en este presupuesto debido a la imposibilidad de disponer de datos concretos y aislados del consumo exclusivo del presente proyecto.
 \end{itemize}
 
 \begin{equation}
 	\begin{split}
 		CAPEX &= \text{Costes hardware} + \text{Costes de infraestructura} \\
-		&= 1300,00 \cdot \frac{25}{100} \cdot \frac{8}{12} + 0,00 = \textbf{216,67 €}
+		&= 1300,00 \cdot \frac{25}{100} \cdot \frac{8}{12} + 0,00 = \textbf{216,67 \euro}
 	\end{split}
 \end{equation}
 
 \subsubsection{OPEX}
 Los costes operativos recogen los gastos derivados de la ejecución y el trabajo diario:
 \begin{itemize}
-	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se ha hecho un uso exclusivo de tecnologías libres y herramientas \textit{open source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 €}.
+	\item \textbf{Costes de software y licencias:} Para la implementación, el análisis de datos y el entrenamiento de los modelos predictivos, se ha hecho un uso exclusivo de tecnologías libres y herramientas \textit{open source} (tales como MetaGen, TensorFlow y Scikit-Learn). Por consiguiente, el coste asociado de licencias de software es de \textbf{0,00 \euro}.
 	\item \textbf{Costes de personal:} Para el cálculo de los costes de personal se han tomado los datos obtenidos sobre el informe de precios para perfiles profesionales en el ámbito de las tecnologías de la información, proporcionados en la documentación del TFG \cite{precio-perfiles}. Se aplicaron en este caso los perfiles junior para cada uno de los roles del proyecto. El perfil de Científico de Datos no se contempla en dicha documentación, por lo que se ha seleccionado el perfil Consultor/a especializado en Business Intelligence para la selección de la tarifa por hora, por ser el perfil que más se asemeja al rol.
 \end{itemize}
 

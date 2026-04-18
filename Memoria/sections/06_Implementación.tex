@@ -5,13 +5,13 @@ Este capítulo describe el proceso de construcción y materialización del siste
 Al tratarse de un proyecto centrado en la investigación y la inteligencia artificial y no en el desarrollo de una aplicación clásica, el diseño se enfoca en la robustez del tratamiento de los datos, la causalidad física de los modelos y la estructuración de un \textit{pipeline} analítico reproducible.
 
 \subsection{Arquitectura}
-A diferencia de las arquitecturas de \textit{software} tradicionales, los sistemas de aprendizaje automático modernos orientados a la investigación se diseñan habitualmente como \textbf{pipelines de datos estructurados}. Para este proyecto, la arquitectura se ha materializado en un ecosistema de \textbf{cuadernos de experimentación interactivos} apoyados por \textit{scripts} modulares de utilidades.
+A diferencia de las arquitecturas de \textit{software} tradicionales, los sistemas de aprendizaje automático modernos orientados a la investigación se diseñan habitualmente como \textbf{\textit{pipelines} de datos estructurados}. Para este proyecto, la arquitectura se ha materializado en un ecosistema de \textbf{cuadernos de experimentación interactivos} apoyados por \textit{scripts} modulares de utilidades.
 
 Esta decisión arquitectónica de tratar cada experimento como un ``módulo'' independiente dentro del sistema se justifica por las siguientes ventajas técnicas:
 \begin{itemize}
 	\item \textbf{Aislamiento de entornos de ejecución:} El entrenamiento de modelos como XGBoost o arquitecturas profundas en TensorFlow requiere un manejo intensivo de la memoria RAM. Al separar cada enfoque predictivo en un cuaderno distinto, se aísla el estado de las variables y se previenen desbordamientos de memoria o conflictos entre librerías.
 	\item \textbf{Interactividad y trazabilidad computacional:} La naturaleza de celda a celda de los cuadernos permite ejecutar, visualizar y validar el progreso de los experimentos. Dicha interactividad resulta determinante para la ingeniería de datos y la detección visual de anomalías antes de someter los datos a entrenamientos computacionalmente costosos.
-	\item \textbf{Documentación integrada:} Los cuadernos permiten entrelazar la lógica de programación en Python con bloques explicativos en \textit{Markdown} y salidas gráficas. Cada cuaderno actúa, por tanto, como un módulo de ejecución y como el propio reporte de resultados.
+	\item \textbf{Documentación integrada:} Los cuadernos permiten entrelazar la lógica de programación en Python con bloques explicativos en \textit{Markdown} y salidas gráficas. Cada cuaderno actúa, por tanto, como un módulo de ejecución y como el propio informe de resultados.
 \end{itemize}
 
 \subsection{Tecnologías y Herramientas}
@@ -31,7 +31,7 @@ Para la implementación de los requisitos recogidos y la construcción de los cu
 	\item \textbf{Librerías de modelos predictivos:}
 		\subitem \textbf{Scikit-Learn:} \cite{documentacion-scikit-learn} Es una librería que incluye varios algoritmos de clasificación, regresión y clustering. Además, implementa gran parte de lógica necesaria para la normalización, creación de particiones y cálculo de métricas.
 	\item \textbf{Aprendizaje profundo:}
-		\subitem \textbf{TensorFlow y Keras:} TensorFlow \cite{documentacion-tensor-flow} y Keras \cite{documentacion-keras} son \textit{frameworks} desarrollados por Google utilizados para construir, compilar y entrenar Redes Neuronales mediante su API funcional.
+		\subitem \textbf{TensorFlow y Keras:} TensorFlow \cite{documentacion-tensor-flow} y Keras \cite{documentacion-keras} son \textit{frameworks} desarrollados por Google utilizados para construir, compilar y entrenar redes neuronales mediante su API funcional.
 	\item \textbf{Optimización y búsqueda de hiperparámetros:}
 		\subitem \textbf{Keras Tuner:} Keras Tuner \cite{documentacion-keras-tuner} es una librería específica de optimización para modelos de aprendizaje profundo.
 		\subitem \textbf{MetaGen:} \cite{github-metagen} \textit{Framework} de optimización heurística y metaheurística.
@@ -61,7 +61,7 @@ El proceso de generación consiste en aplicar a los datos de \textit{P} y \texti
 
 A continuación, estos datos se procesan mediante la herramienta de modelado y optimización GAMS. Cabe señalar que los \textit{scripts} heredados en GAMS no se limitan a resolver un flujo de cargas estándar para obtener el estado de la red. Por el contrario, ejecutan un \textbf{Flujo de Cargas Óptimo (OPF)}. El objetivo de la optimización es encontrar la configuración óptima que minimice las pérdidas totales del sistema. Como resultado, se extraen los atributos de entrada para los modelos (las potencias en los nudos) y las variables objetivo que se pretenden predecir (las tensiones óptimas de los nudos y las pérdidas mínimas resultantes).
 
-Esta distinción es precisamente lo que separa este proyecto del TFM predecesor. Mientras que aquel se centraba en la predicción del estado de la red (resolución directa de flujos), este persigue el controlarla activamente para optimizar su eficiencia. 
+Esta distinción es precisamente lo que separa este proyecto del TFM predecesor. Mientras que aquel se centraba en la predicción del estado de la red (resolución directa de flujos), este persigue controlarla activamente para optimizar su eficiencia. 
 
 La estrategia de control se basa en la inyección estratégica de potencia reactiva mediante los inversores de los generadores. Al inyectar potencia reactiva localmente, se elevan las tensiones en el nudo y en sus adyacentes. Si esta inyección se realiza cerca de los puntos con alta demanda reactiva, se evita que dicha potencia deba ser transportada desde el transformador principal de la subestación. Esta compensación local reduce drásticamente la corriente total (\textit{I}), lo que se traduce en una minimización de las pérdidas del sistema, proporcionales a $I^2R$.
 
@@ -83,14 +83,14 @@ En la figura \ref{fig:hist_input}, se puede observar cómo las variables P2 y Q2
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/hist_data_input.png}
+	\includegraphics[width=1.0\textwidth]{figures/hist_data_input.png}
 	\caption{Histogramas de atributos de entrada. Fuente: Elaboración propia}
 	\label{fig:hist_input}
 \end{figure}
 
 \clearpage
 
-Analizando el rango de cada una de las variables de entrada, se puede observar cómo algunas presentan rangos muy amplios, como el nudo 12 (con potencia activa entre 0 y 30), mientras que otros presentan rangos más estrechos (entre 0 y 1). Si estos datos se introducen en crudo, ciertos algoritmos matemáticos basados en el descenso de gradiente o cálculo de distancias (como las Redes Neuronales) tenderán a otorgar un mayor peso a las variables con números mayores, opacando la influencia real en el resto de la red. Para mitigar este problema, es común realizar una \textbf{normalización o estandarización} de las variables. Al escalar todas las entradas a un rango común, se garantiza un marco de evaluación equitativo, asegurando que las métricas de error resultantes reflejen la verdadera capacidad de aprendizaje de cada arquitectura y no su sensibilidad frente a datos sin procesar. Por el contrario, los modelos de ensamblaje basados en árboles de decisión son matemáticamente invariantes a la escala monótona, por lo que son capaces de procesar las magnitudes físicas en bruto sin sufrir este sesgo. Siguiendo este criterio, finalmente se decide normalizar las entradas solo con los modelos de Redes Neuronales y dejar los datos en bruto para el resto de algoritmos.
+Analizando el rango de cada una de las variables de entrada, se puede observar cómo algunas presentan rangos muy amplios, como el nudo 12 (con potencia activa entre 0 y 30), mientras que otros presentan rangos más estrechos (entre 0 y 1). Si estos datos se introducen en crudo, ciertos algoritmos matemáticos basados en el descenso de gradiente o cálculo de distancias (como las redes neuronales) tenderán a otorgar un mayor peso a las variables con números mayores, opacando la influencia real en el resto de la red. Para mitigar este problema, es común realizar una \textbf{normalización o estandarización} de las variables. Al escalar todas las entradas a un rango común, se garantiza un marco de evaluación equitativo, asegurando que las métricas de error resultantes reflejen la verdadera capacidad de aprendizaje de cada arquitectura y no su sensibilidad frente a datos sin procesar. Por el contrario, los modelos de ensamblaje basados en árboles de decisión son matemáticamente invariantes a la escala monótona, por lo que son capaces de procesar las magnitudes físicas en bruto sin sufrir este sesgo. Siguiendo este criterio, finalmente se decide normalizar las entradas solo con los modelos de redes neuronales y dejar los datos en bruto para el resto de algoritmos.
 
 En la figura \ref{fig:hist_output}, se puede observar el mismo comportamiento constante con la variable V1, por lo que dicha columna también se descarta. En cuanto a los valores de las variables que representan las intensidades de corriente en cada línea, gran parte son nulos (I0\_1 son todos valores nulos) y presentan rangos muy estrechos. En este caso estas variables se descartarán y no se aprenderán por las siguientes razones:
 \begin{itemize}
@@ -102,7 +102,7 @@ En la figura \ref{fig:hist_output}, se puede observar el mismo comportamiento co
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/hist_data_output.png}
+	\includegraphics[width=1.0\textwidth]{figures/hist_data_output.png}
 	\caption{Histogramas de atributos de salida. Fuente: Elaboración propia}
 	\label{fig:hist_output}
 \end{figure}
@@ -189,11 +189,11 @@ Finalmente una vez seleccionado y entrenado el mejor modelo encontrado, se reali
 
 Dado que la estimación del estado de una red de distribución eléctrica es un problema de regresión múltiple, es necesario establecer \textbf{métricas objetivas} que permitan cuantificar la diferencia entre las predicciones del modelo y los valores reales calculados. En este proyecto, se ha establecido una clara distinción entre la métrica utilizada para la optimización interna del algoritmo durante su entrenamiento y las métricas orientadas a la evaluación e interpretabilidad humana.
 
-Para guiar el aprendizaje de los modelos durante la fase de entrenamiento, se ha seleccionado el \textbf{Error Cuadrático Medio (MSE)} como función de pérdida. Matemáticamente, se define como el promedio de los cuadrados de las diferencias entre los valores reales ($y_i$) y los valores predichos ($\hat{y}_i$). Siendo \textit{n} el número total de observaciones evaluados:
+Para guiar el aprendizaje de los modelos durante la fase de entrenamiento, se ha seleccionado el \textbf{Error Cuadrático Medio (MSE)} como función de pérdida. Matemáticamente, se define como el promedio de los cuadrados de las diferencias entre los valores reales ($y_i$) y los valores predichos ($\hat{y}_i$). Siendo \textit{n} el número total de observaciones evaluadas:
 \begin{equation}
 	MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
-La elección del MSE para el entrenamiento radica en dos motivos fundamentales. En primer lugar, al elevar el error al cuadrado, el algoritmo penaliza mucho más las grandes desviaciones. En un contexto eléctrico, predecir una tensión con un error grave es operativamente mucho más peligroso que cometer varios errores minúsculos. En segundo lugar, su superficie matemática es derivable y presenta un gradiente suave, lo que es un requisito indispensable para que algoritmos de optimización como el Descenso del Gradiente o \textit{Backpropagation} puedan actualizar los pesos de los modelos de manera eficiente y estable.
+La elección del MSE para el entrenamiento radica en dos motivos fundamentales. En primer lugar, al elevar el error al cuadrado, el algoritmo penaliza mucho más las grandes desviaciones. En un contexto eléctrico, predecir una tensión con un error grave es operativamente mucho más peligroso que cometer varios errores minúsculos. En segundo lugar, su superficie matemática es derivable y presenta un gradiente suave, lo que es un requisito indispensable para que algoritmos de optimización como el descenso del gradiente o \textit{backpropagation} puedan actualizar los pesos de los modelos de manera eficiente y estable.
 
 Aunque el MSE es excelente para el aprendizaje, su interpretabilidad humana es compleja. Por ello, para evaluar el rendimiento final de los modelos se han empleado tres métricas complementarias:
 \begin{itemize}
@@ -332,19 +332,19 @@ Para corregir esta ineficiencia predictiva y conformar el modelo definitivo, en 
 
 Dada la extensión del código fuente de esta implementación, el desarrollo en Python y Keras se adjunta en el anexo C \ref{cod:red_neuronal}. A nivel lógico, el modelo emula la causalidad del ESR estructurándose en fases secuenciales.
 
-En primer lugar, una rama predictiva inicial procesa las características de entrada para estimar la potencia reactiva. Seguidamente, esta predicción se concatena con los datos originales, creando un tensor de información enriquecido que alimenta dos ramas paralelas encargadas de estimar el estado continuo del sistema (tensiones nodales y pérdidas de energía). Finalmente, el modelo se compila implementando la función de coste con pesos asimétricos previamente justificada (peso de 2.0 para las pérdidas y 1.0 para el resto), lo que obliga a la red a ajustar todas las variables de forma simultánea y equilibrada.
+En primer lugar, una rama predictiva inicial procesa las características de entrada para estimar la potencia reactiva. Seguidamente, esta predicción se concatena con los datos originales, creando un tensor de información enriquecido que alimenta dos ramas paralelas encargadas de estimar el estado continuo del sistema (tensiones nodales y pérdidas de energía). Finalmente, el modelo se compila implementando la función de coste con pesos asimétricos previamente justificado (peso de 2.0 para las pérdidas y 1.0 para el resto), lo que obliga a la red a ajustar todas las variables de forma simultánea y equilibrada.
 
 \subsection{Optimización de Hiperparámetros}
-En cuanto a la optimización de hiperparámetros, para asegurar el máximo rendimiento predictivo y la capacidad de generalización de los modelos planteados, se llevaron a cabo varios procesos de ajuste. Las estrategias seleccionadas priorizaron la eficiencia computacional (debido a la limitación de recursos en este aspecto) sin comprometer la calidad de los resultados, optando por enfoques de búsqueda aleatoria. 
+En cuanto a la optimización de hiperparámetros, para asegurar el máximo rendimiento predictivo y la capacidad de generalización de los modelos planteados, se llevaron a cabo varios procesos de ajuste. Las estrategias seleccionadas priorizan la eficiencia computacional (debido a la limitación de recursos en este aspecto) sin comprometer la calidad de los resultados, optando por enfoques de búsqueda aleatoria. 
 
 Para los modelos basados en árboles de decisión, se definieron los siguientes espacios de búsqueda:
 \begin{itemize}
-	\item \textbf{Random Forest:} Se optimizó la complejidad estructural mediante el número de árboles \textbf{(n\_estimators)} y su profundidad máxima \textbf{(max\_depth)}. Para controlar el sobreajuste y fomentar la diversidad del bosque, se ajustó el mínimo de muestras necesarias para dividir un nodo \textbf{(min\_samples\_split)} y la proporción de variables evaluadas en cada iteración \textbf{(max\_features)}.
-	\item \textbf{XGBoost:} Al tratarse de un método iterativo (\textit{boosting}), la búsqueda se centró en la tasa de aprendizaje \textbf{(learning\_rate)}, que pondera la corrección que aporta cada nuevo árbol. Esto se combinó con el ajuste de la cantidad y profundidad de los árboles \textbf{(n\_estimators, max\_depth)} y el submuestreo de variables por árbol para actuar como regulador \textbf{(colsample\_bytree)}.
+	\item \textbf{Random Forest:} Se optimiza la complejidad estructural mediante el número de árboles \textbf{(n\_estimators)} y su profundidad máxima \textbf{(max\_depth)}. Para controlar el sobreajuste y fomentar la diversidad del bosque, se ajusta el mínimo de muestras necesarias para dividir un nodo \textbf{(min\_samples\_split)} y la proporción de variables evaluadas en cada iteración \textbf{(max\_features)}.
+	\item \textbf{XGBoost:} Al tratarse de un método iterativo (\textit{boosting}), la búsqueda se centra en la tasa de aprendizaje \textbf{(learning\_rate)}, que pondera la corrección que aporta cada nuevo árbol. Esto se combina con el ajuste de la cantidad y profundidad de los árboles \textbf{(n\_estimators, max\_depth)} y el submuestreo de variables por árbol para actuar como regulador \textbf{(colsample\_bytree)}.
 \end{itemize}
-Dado que la arquitectura propia \textbf{ESR} se construye instanciando estos mismos algoritmos base, su proceso de optimización no requiere parámetros nuevos, sino que consiste en explorar estos mismos espacios de búsqueda por duplicado. Por consiguiente, la búsqueda aleatoria permite optimizar el conjunto de hiperparámetros para el modelo 1 y otro conjunto independiente para el modelo 2, permitiendo que cada fase adaptara su complejidad a la dificultad de su tarea.
+Dado que la arquitectura propia \textbf{ESR} se construye instanciando estos mismos algoritmos base, su proceso de optimización no requiere parámetros nuevos, sino que consiste en explorar estos mismos espacios de búsqueda por duplicado. Por consiguiente, la búsqueda aleatoria permite optimizar el conjunto de hiperparámetros para el modelo 1 y otro conjunto independiente para el modelo 2, permitiendo que cada fase adapte su complejidad a la dificultad de su tarea.
 
-Para la exploración de los conjuntos de hiperparámetros, se utiliza la implementación \textbf{RandomizedSearchCV} de la biblioteca \textit{scikit-learn}. Esto permitió explorar distribuciones de valores mediante un muestreo aleatorio dentro de rangos predefinidos, evaluando el rendimiento a través de validación cruzada. 
+Para la exploración de los conjuntos de hiperparámetros, se utiliza la implementación \textbf{RandomizedSearchCV} de la biblioteca \textit{scikit-learn}. Esto permite explorar distribuciones de valores mediante un muestreo aleatorio dentro de rangos predefinidos, evaluando el rendimiento a través de validación cruzada. 
 \begin{lstlisting}[language=Python, caption={Código de exploración de hiperparámetros con ESR\_RandomForest}, label={cod:hiperparam_random_forest}, captionpos=b]
 	random_model = ElectricSequentialRegressor(
 		RandomForestRegressor(n_jobs=1, random_state=42),
@@ -412,7 +412,7 @@ Para la exploración de los conjuntos de hiperparámetros, se utiliza la impleme
 	random_search.fit(x_train, y_train)
 \end{lstlisting}
 
-Por último, en la Red Neuronal Profunda, para la topología estructural, se permite buscar de forma independiente el número de capas ocultas y la cantidad de neuronas para cada una de las tres ramas predictivas (potencia reactiva, tensiones y pérdidas). Este enfoque permite que la red asigne dinámicamente mayor capacidad matemática a las variables de mayor complejidad física. Asimismo, se exploraron técnicas de regularización como la tasa de \textit{Dropout} y la inclusión de \textit{Batch Normalization}, junto con la selección de la función de activación (ReLU o ELU). Para el algoritmo de entrenamiento, se evaluaron los optimizadores Adam y SGD \cite{keras-layers}. 
+Por último, en la red neuronal profunda, para la topología estructural, se permite buscar de forma independiente el número de capas ocultas y la cantidad de neuronas para cada una de las tres ramas predictivas (potencia reactiva, tensiones y pérdidas). Este enfoque permite que la red asigne dinámicamente mayor capacidad matemática a las variables de mayor complejidad física. Asimismo, se exploraron técnicas de regularización como la tasa de \textit{Dropout} y la inclusión de \textit{Batch Normalization}, junto con la selección de la función de activación (ReLU o ELU). Para el algoritmo de entrenamiento, se evaluaron los optimizadores Adam y SGD \cite{keras-layers}. 
 
 Para evaluar estas combinaciones de forma rigurosa, se implementa una clase a medida denominada \textbf{TimeSeriesRandomSearch}, basada en la librería \textit{Keras Tuner} (cuyo código fuente se detalla en el anexo C \ref{cod:red_neuronal_random}). Esta implementación realiza una búsqueda aleatoria de hiperparámetros utilizando validación cruzada temporal (\textit{TimeSeriesSplit}), asegurando que siempre se respete el orden cronológico de los datos. Además, previene la fuga de información al escalar las variables (\textit{MinMaxScaler}) de forma aislada dentro de cada iteración del pliegue, evitando que el modelo ``vea'' la estadística de datos futuros durante su entrenamiento.
 
