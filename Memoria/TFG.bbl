@@ -5,9 +5,9 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Forecasting()]{energias}
+\bibitem[Forecasting(2025)]{energias}
 AleaSoft~Energy Forecasting.
-\newblock Sistema eléctrico en evolución.
+\newblock Sistema eléctrico en evolución, 2025.
 \newblock URL
   \url{https://aleasoft.com/es/evolucion-sistema-electrico-cambio-paradigma-energetico/}.
 
@@ -17,26 +17,26 @@ Wikipedia.
 \newblock URL
   \url{https://es.wikipedia.org/wiki/Red_de_distribuci%C3%B3n_de_energ%C3%ADa_el%C3%A9ctrica}.
 
-\bibitem[Scikit-Learn({\natexlab{a}})]{scikit-learn-over-under}
+\bibitem[Scikit-Learn(2026{\natexlab{a}})]{scikit-learn-over-under}
 Scikit-Learn.
-\newblock Explicación de underfitting y overfitting, {\natexlab{a}}.
+\newblock Explicación de underfitting y overfitting, 2026{\natexlab{a}}.
 \newblock URL
   \url{https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html}.
 
-\bibitem[IBM({\natexlab{a}})]{xgboost_ibm}
+\bibitem[IBM(2026)]{xgboost_ibm}
 IBM.
-\newblock Explicación del algoritmo xgboost, {\natexlab{a}}.
+\newblock Explicación del algoritmo xgboost, 2026.
 \newblock URL \url{https://www.ibm.com/es-es/think/topics/xgboost}.
 
-\bibitem[Scikit-Learn({\natexlab{b}})]{scikit-learn-validacion-cruzada}
+\bibitem[Scikit-Learn(2026{\natexlab{b}})]{scikit-learn-validacion-cruzada}
 Scikit-Learn.
-\newblock Explicación validación cruzada, {\natexlab{b}}.
+\newblock Explicación validación cruzada, 2026{\natexlab{b}}.
 \newblock URL
   \url{https://scikit-learn.org/stable/modules/cross_validation.html}.
 
-\bibitem[Iberdrola({\natexlab{a}})]{iberdrola-red-distribucion}
+\bibitem[Iberdrola(2026{\natexlab{a}})]{iberdrola-red-distribucion}
 Iberdrola.
-\newblock Tensiones en redes eléctricas, {\natexlab{a}}.
+\newblock Tensiones en redes eléctricas, 2026{\natexlab{a}}.
 \newblock URL
   \url{https://www.iberdrola.com/conocenos/nuestra-actividad/smart-grids/diferencia-alta-media-baja-tension-electrica}.
 
@@ -52,9 +52,9 @@ Gobierno de~España.
 \newblock URL
   \url{https://www.miteco.gob.es/es/prensa/ultimas-noticias/2025/junio/se-presenta-el-informe-del-comite-de-analisis-de-la-crisis-elect.html}.
 
-\bibitem[Iberdrola({\natexlab{b}})]{smart-grids-iberdrola}
+\bibitem[Iberdrola()]{smart-grids-iberdrola}
 Iberdrola.
-\newblock Smart grids, {\natexlab{b}}.
+\newblock Smart grids.
 \newblock URL
   \url{https://www.iberdrola.com/conocenos/nuestra-actividad/smart-grids}.
 
@@ -76,29 +76,29 @@ Hooman Khaloie, Mihály Dolányi, Jean-François Toubeau, and François
 \newblock URL
   \url{https://www.sciencedirect.com/science/article/pii/S0306261925003678}.
 
-\bibitem[Iberdrola({\natexlab{c}})]{glosario-iberdrola}
+\bibitem[Iberdrola(2026{\natexlab{b}})]{glosario-iberdrola}
 Grupo Iberdrola.
-\newblock Glosario de términos eléctricos, {\natexlab{c}}.
+\newblock Glosario de términos eléctricos, 2026{\natexlab{b}}.
 \newblock URL \url{https://www.i-de.es/glosario/}.
 
-\bibitem[Amazon({\natexlab{a}})]{aws-hiperparam}
+\bibitem[Amazon(2026{\natexlab{a}})]{aws-hiperparam}
 AWS Amazon.
-\newblock Ajuste de hiperparámetros, {\natexlab{a}}.
+\newblock Ajuste de hiperparámetros, 2026{\natexlab{a}}.
 \newblock URL \url{https://aws.amazon.com/es/what-is/hyperparameter-tuning/}.
 
-\bibitem[IBM({\natexlab{b}})]{ibm-bagging}
+\bibitem[IBM()]{ibm-bagging}
 IBM.
-\newblock Bagging o bootstrap aggregating, {\natexlab{b}}.
+\newblock Bagging o bootstrap aggregating.
 \newblock URL \url{https://www.ibm.com/es-es/think/topics/bagging}.
 
-\bibitem[XGBoost({\natexlab{a}})]{xgboost}
+\bibitem[XGBoost(2025)]{xgboost}
 XGBoost.
-\newblock Documentación de xgboost, {\natexlab{a}}.
+\newblock Documentación de xgboost, 2025.
 \newblock URL \url{https://xgboost.readthedocs.io/en/stable/}.
 
-\bibitem[Amazon({\natexlab{b}})]{aws-red-neuro}
+\bibitem[Amazon(2026{\natexlab{b}})]{aws-red-neuro}
 AWS Amazon.
-\newblock Explicación de las redes neuronales, {\natexlab{b}}.
+\newblock Explicación de las redes neuronales, 2026{\natexlab{b}}.
 \newblock URL \url{https://aws.amazon.com/es/what-is/neural-network/}.
 
 \bibitem[Géron(2022)]{o-reilly-machine-learning}
@@ -155,12 +155,12 @@ Agencia Tributaria.
 Plataforma de trabajos de fin de grado de la etsii.
 \newblock URL \url{https://tfc.eii.us.es/TFG/}.
 
-\bibitem[des({\natexlab{a}})]{descarga-python}
-Descarga de python, {\natexlab{a}}.
+\bibitem[des(2026)]{descarga-python}
+Descarga de python, 2026.
 \newblock URL \url{https://www.python.org/downloads/}.
 
-\bibitem[des({\natexlab{b}})]{descarga-jupyter}
-Página de jupyter notebook, {\natexlab{b}}.
+\bibitem[des()]{descarga-jupyter}
+Página de jupyter notebook.
 \newblock URL \url{https://jupyter.org/}.
 
 \bibitem[JetBrains()]{descarga-pycharm}
@@ -169,38 +169,38 @@ JetBrains.
 \newblock URL
   \url{https://www.jetbrains.com/pycharm/download/?section=windows}.
 
-\bibitem[doc({\natexlab{a}})]{documentacion-numpy}
-Documentación numpy, {\natexlab{a}}.
+\bibitem[doc(2026{\natexlab{a}})]{documentacion-numpy}
+Documentación numpy, 2026{\natexlab{a}}.
 \newblock URL \url{https://numpy.org/}.
 
-\bibitem[doc({\natexlab{b}})]{documentacion-pandas}
-Documentación pandas, {\natexlab{b}}.
+\bibitem[doc(2026{\natexlab{b}})]{documentacion-pandas}
+Documentación pandas, 2026{\natexlab{b}}.
 \newblock URL \url{https://pandas.pydata.org/}.
 
-\bibitem[doc({\natexlab{c}})]{documentacion-matplotlib}
-Documentación matplotlib, {\natexlab{c}}.
+\bibitem[doc(2026{\natexlab{c}})]{documentacion-matplotlib}
+Documentación matplotlib, 2026{\natexlab{c}}.
 \newblock URL \url{https://matplotlib.org/}.
 
-\bibitem[doc({\natexlab{d}})]{documentacion-seaborn}
-Documentación seaborn, {\natexlab{d}}.
+\bibitem[doc(2026{\natexlab{d}})]{documentacion-seaborn}
+Documentación seaborn, 2026{\natexlab{d}}.
 \newblock URL \url{https://seaborn.pydata.org/}.
 
-\bibitem[doc({\natexlab{e}})]{documentacion-scikit-learn}
-Documentación scikit-learn, {\natexlab{e}}.
+\bibitem[doc(2026{\natexlab{e}})]{documentacion-scikit-learn}
+Documentación scikit-learn, 2026{\natexlab{e}}.
 \newblock URL \url{https://sklearn.org/stable/}.
 
-\bibitem[Google({\natexlab{a}})]{documentacion-tensor-flow}
+\bibitem[Google(2026{\natexlab{a}})]{documentacion-tensor-flow}
 Google.
-\newblock Documentación tensorflow, {\natexlab{a}}.
+\newblock Documentación tensorflow, 2026{\natexlab{a}}.
 \newblock URL \url{https://www.tensorflow.org/?hl=es-419}.
 
-\bibitem[Google({\natexlab{b}})]{documentacion-keras}
+\bibitem[Google(2026{\natexlab{b}})]{documentacion-keras}
 Google.
-\newblock Documentación keras, {\natexlab{b}}.
+\newblock Documentación keras, 2026{\natexlab{b}}.
 \newblock URL \url{https://keras.io/}.
 
-\bibitem[doc({\natexlab{f}})]{documentacion-keras-tuner}
-Documentación keras tuner, {\natexlab{f}}.
+\bibitem[doc(2026{\natexlab{f}})]{documentacion-keras-tuner}
+Documentación keras tuner, 2026{\natexlab{f}}.
 \newblock URL \url{https://keras.io/keras_tuner/}.
 
 \bibitem[git()]{github-metagen}
@@ -208,29 +208,30 @@ Github metagen.
 \newblock URL
   \url{https://github.com/Data-Science-Big-Data-Research-Lab/MetaGen}.
 
-\bibitem[doc({\natexlab{g}})]{documentacion-joblib}
-Documentación de joblib, {\natexlab{g}}.
+\bibitem[doc(2026{\natexlab{g}})]{documentacion-joblib}
+Documentación de joblib, 2026{\natexlab{g}}.
 \newblock URL \url{https://joblib.readthedocs.io/en/stable/}.
 
-\bibitem[Scikit-Learn({\natexlab{c}})]{scikit-learn-time-series}
+\bibitem[Scikit-Learn(2026{\natexlab{c}})]{scikit-learn-time-series}
 Scikit-Learn.
-\newblock Explicación time series split, {\natexlab{c}}.
+\newblock Explicación time series split, 2026{\natexlab{c}}.
 \newblock URL
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html}.
 
 \bibitem[Keras()]{keras-layers}
 Keras.
 \newblock Tipos de capas de las redes neuronales.
+\newblock URL \url{https://keras.io/api/layers/}.
 
-\bibitem[Scikit-Learn({\natexlab{d}})]{scikit-learn-random-forest}
+\bibitem[Scikit-Learn(2026{\natexlab{d}})]{scikit-learn-random-forest}
 Scikit-Learn.
-\newblock Randomforestregressor, {\natexlab{d}}.
+\newblock Randomforestregressor, 2026{\natexlab{d}}.
 \newblock URL
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html}.
 
-\bibitem[XGBoost({\natexlab{b}})]{xgboost-xgbregressor}
+\bibitem[XGBoost(2026)]{xgboost-xgbregressor}
 XGBoost.
-\newblock Xgbregressor, {\natexlab{b}}.
+\newblock Xgbregressor, 2026.
 \newblock URL
   \url{https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor}.
 

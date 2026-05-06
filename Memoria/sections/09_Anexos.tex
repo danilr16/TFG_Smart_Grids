@@ -18,12 +18,12 @@ Este directorio presenta la siguiente jerarquía estructural básica:
 	\item El archivo de configuración \textbf{\texttt{setup.py}}.
 \end{itemize}
 
-\section*{Creación y Activación del Entorno Virtual (Recomendación)}
+\section*{Creación y Activación del Entorno Virtual (Recomendado)}
 Si se opta por el uso de un entorno virtual, se debe generar uno nuevo en el directorio actual ejecutando la instrucción \textbf{\texttt{python -m venv .env}} en Windows o \textbf{\texttt{python3 -m venv .env}} en Linux. 
 
 Una vez generado, se procede a su activación. En sistemas operativos Windows (empleando PowerShell), el comando correspondiente es \texttt{.\textbackslash.venv\textbackslash Scripts\textbackslash Activate.ps1} y en Linux \textbf{\texttt{source .venv/bin/activate}}.
 
-Para profundizar en la configuración del entono de creación virtual es recomendable la lectura de la documentación oficial de Python \cite{creacion-venv}.
+Para profundizar en la configuración del entorno de creación virtual es recomendable la lectura de la documentación oficial de Python \cite{creacion-venv}.
 
 \section*{Instalación de Dependencias Externas}
 Con el entorno preparado (virtual o global), se lleva a cabo la instalación de las bibliotecas necesarias para el procesamiento de datos y el modelado de aprendizaje automático. La instalación se realiza ejecutando secuencialmente las siguientes instrucciones:
@@ -39,7 +39,7 @@ Con el entorno preparado (virtual o global), se lleva a cabo la instalación de 
 \section*{Instalación del Paquete Local Editable}
 Dada la arquitectura modular del proyecto, el código fuente desarrollado en el subdirectorio \texttt{src} debe ser accesible desde los cuadernos de Jupyter. Para posibilitar esta importación sin incurrir en errores de enrutamiento, el proyecto se debe instalar como un paquete local en modo editable.
 
-Desde la raíz del directorio \texttt{entrenamiento} (donde reside el archivo \texttt{setup.py}), se ejecuta el comando\textbf{ \texttt{pip install -e .}}. El uso del argumento -e enlaza el paquete al código fuente original, de manera que cualquier modificación realizada en el directorio\texttt{src} se actualiza dinámicamente en el entorno de ejecución sin requerir reinstalaciones posteriores.
+Desde la raíz del directorio \texttt{entrenamiento} (donde reside el archivo \texttt{setup.py}), se ejecuta el comando\textbf{ \texttt{pip install -e .}}. El uso del argumento -e enlaza el paquete al código fuente original, de manera que cualquier modificación realizada en el directorio \texttt{src} se actualiza dinámicamente en el entorno de ejecución sin requerir reinstalaciones posteriores.
 
 \section*{Despliegue del Entorno de Ejecución}
 Completada la instalación de las dependencias externas y del módulo propio, se despliega el servidor local de Jupyter mediante la ejecución de la siguiente orden en la consola \textbf{\texttt{jupyter notebook}}. Esta acción inicia el servicio y abre automáticamente la interfaz gráfica en el navegador web predeterminado del sistema, permitiendo el acceso, la edición y la ejecución de los cuadernos de experimentación.

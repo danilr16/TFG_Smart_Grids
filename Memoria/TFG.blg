@@ -5,85 +5,64 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: bibliografia.bib
-"{" immediately follows a field name---line 101 of file bibliografia.bib
- :  url
- :     {https://keras.io/api/layers/}
+I was expecting a `,' or a `}'---line 23 of file bibliografia.bib
+ :  
+ :  year = {2026},
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--empty year in energias
 Warning--empty year in red-distribucion
-Warning--empty year in scikit-learn-over-under
-Warning--empty year in xgboost_ibm
-Warning--empty year in scikit-learn-validacion-cruzada
-Warning--empty year in iberdrola-red-distribucion
 Warning--empty year in fallo-electrico-australia
 Warning--empty year in fallo-electrico-españa
 Warning--empty year in smart-grids-iberdrola
 Warning--empty year in tfm-manuel
 Warning--empty year in tfm-manuel
-Warning--empty year in glosario-iberdrola
-Warning--empty year in aws-hiperparam
 Warning--empty year in ibm-bagging
-Warning--empty year in xgboost
-Warning--empty year in aws-red-neuro
 Warning--empty booktitle in o-reilly-machine-learning
 Warning--empty year in amortizacion
 Warning--empty year in precio-perfiles
-Warning--empty year in descarga-python
 Warning--empty year in descarga-jupyter
 Warning--empty year in descarga-pycharm
-Warning--empty year in documentacion-numpy
-Warning--empty year in documentacion-pandas
-Warning--empty year in documentacion-matplotlib
-Warning--empty year in documentacion-seaborn
-Warning--empty year in documentacion-scikit-learn
-Warning--empty year in documentacion-tensor-flow
-Warning--empty year in documentacion-keras
-Warning--empty year in documentacion-keras-tuner
 Warning--empty year in github-metagen
-Warning--empty year in documentacion-joblib
-Warning--empty year in scikit-learn-time-series
 Warning--empty year in keras-layers
-Warning--empty year in scikit-learn-random-forest
-Warning--empty year in xgboost-xgbregressor
 Warning--empty year in creacion-venv
 You've used 41 entries,
             2481 wiz_defined-function locations,
-            712 strings with 10334 characters,
-and the built_in function-call counts, 11539 in all, are:
-= -- 963
+            714 strings with 10366 characters,
+and the built_in function-call counts, 11465 in all, are:
+= -- 964
 > -- 339
 < -- 28
-+ -- 198
++ -- 194
 - -- 100
-* -- 698
-:= -- 1601
-add.period$ -- 117
+* -- 662
+:= -- 1603
+add.period$ -- 118
 call.type$ -- 41
 change.case$ -- 83
-chr.to.int$ -- 25
-cite$ -- 90
+chr.to.int$ -- 29
+cite$ -- 68
 duplicate$ -- 644
 empty$ -- 1326
 format.name$ -- 129
-if$ -- 2576
-int.to.chr$ -- 17
+if$ -- 2577
+int.to.chr$ -- 13
 int.to.str$ -- 42
 missing$ -- 6
-newline$ -- 207
+newline$ -- 208
 num.names$ -- 87
-pop$ -- 468
+pop$ -- 491
 preamble$ -- 1
 purify$ -- 41
 quote$ -- 0
-skip$ -- 516
+skip$ -- 504
 stack$ -- 0
 substring$ -- 184
-swap$ -- 135
+swap$ -- 128
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 287
-warning$ -- 37
+warning$ -- 15
 while$ -- 67
 width$ -- 0
 write$ -- 482
