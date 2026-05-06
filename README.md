@@ -96,8 +96,12 @@ jupyter notebook
 
 ## 📂 Estructura del Proyecto
 
-    /Memoria: Código de la memoria en LaTex con todos los recursos utilizadas por esta.
-    
+    /Memoria: Código de la memoria en LaTeX con todos los recursos utilizados por esta.
+        /figures: Imágenes utilizadas en la memoria.
+        /tables: Tablas utilizadas en la memoria.
+        /sections: Secciones de la memoria.
+        bibliografia.bib: Bibliografía utilizada para la memoria.
+        TFG.tex: Plantilla base que define la estructura de la memoria en LaTeX.
     /Proyecto:
         /comprimidos: Comprimidos originales distribuido por los tutores para la generación del dataset. (Contenido no desarrollado por el alumno).
         /creacion_dataset: Código distribuido por los tutores para la generación del dataset. (Contenido no desarrollado por el alumno).
